@@ -134,11 +134,16 @@
 </main>
 </div>
 
-<section id="services" style="display:flex; min-height:100vh;">
-    <!-- Photo: full left column -->
-    <div style="flex:0 0 35%; background:url('paul.jpg') center top / cover no-repeat;"></div>
-    <!-- Content: centered right -->
-    <div style="flex:1; padding:4rem 3rem; display:flex; flex-direction:column; justify-content:center; text-align:center; max-width:700px; margin:0 auto;">
+<section id="services" style="position:relative; padding:5rem 2rem; overflow:hidden;">
+    <!-- Photo: left side with fade edges -->
+    <div style="position:absolute; left:0; top:0; bottom:0; width:30%;
+        background:url('paul.jpg') center 20% / cover no-repeat;
+        mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
+        -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
+        opacity:0.6;">
+    </div>
+    <!-- Content: centered on page -->
+    <div style="position:relative; z-index:1; text-align:center; max-width:600px; margin:0 auto;">
             <h2 style="font-size:1.8rem; font-weight:900; color:#fff; margin-bottom:0.3rem;">Paul GIUNTA</h2>
             <p style="color:rgba(255,255,255,0.4); font-size:1rem; margin-bottom:2rem;">Automaticien &amp; chef de projet, Lorient</p>
             <div style="color:rgba(255,255,255,0.5); font-size:1.05rem; font-weight:300; margin-bottom:2.5rem;">
