@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - IA Lorient | Paul Giunta</title>
+    <meta name="description" content="Services d'automatisation et IA pour entreprises a Lorient. CRM, relances, reporting, integration d'outils, intelligence artificielle.">
+    <link rel="canonical" href="https://ia-lorient.fr/services.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0b1628;
+            color: rgba(255,255,255,0.7);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(11, 22, 40, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        nav a.logo { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+        nav a.back { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+        nav a.back:hover { color: #fff; }
+
+        .hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero img {
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            flex-shrink: 0;
+        }
+        .hero-text h1 {
+            font-size: 2rem; font-weight: 900; color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .hero-text .subtitle {
+            color: rgba(255,255,255,0.4);
+            font-size: 1rem; font-weight: 300;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        section h2 {
+            font-size: 1.4rem; font-weight: 700; color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .service {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border-color 0.3s;
+        }
+        .service:hover { border-color: rgba(255,255,255,0.15); }
+        .service .icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
+        .service h3 { font-size: 1rem; color: #fff; margin-bottom: 0.4rem; font-weight: 700; }
+        .service p { font-size: 0.9rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+        .bio {
+            color: rgba(255,255,255,0.5);
+            font-size: 1.05rem;
+            font-weight: 300;
+            max-width: 600px;
+        }
+        .bio p { margin-bottom: 1rem; }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .cta-section a {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: rgba(255,255,255,0.1); color: #fff;
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 1rem 2.2rem; border-radius: 60px;
+            text-decoration: none; font-size: 1.1rem; font-weight: 500;
+            transition: all 0.3s;
+        }
+        .cta-section a:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
+
+        .foot {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.15);
+        }
+
+        @media (max-width: 600px) {
+            .hero { flex-direction: column; text-align: center; padding: 7rem 1.5rem 2rem; gap: 1.5rem; }
+            section { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="logo">IA Lorient</a>
+    <a href="/" class="back">&larr; Retour</a>
+</nav>
+
+<div class="hero">
+    <img src="paul.jpg" alt="Paul Giunta">
+    <div class="hero-text">
+        <h1>Paul Giunta</h1>
+        <p class="subtitle">Automaticien &amp; chef de projet, Lorient</p>
+    </div>
+</div>
+
+<section>
+    <div class="bio">
+        <p>Ancien chef de projet chez Naval Group (3 ans, budgets de 40M+), je conçois aujourd'hui des systèmes d'automatisation pour les entreprises qui veulent arrêter de perdre du temps sur des tâches répétitives.</p>
+        <p>Mon approche : comprendre votre problème, proposer une solution simple, la mettre en place, et vous former dessus. Pas de jargon, pas de complexité inutile.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Ce que je peux faire pour vous</h2>
+    <div class="services">
+        <div class="service">
+            <div class="icon">&#9881;</div>
+            <h3>CRM sur mesure</h3>
+            <p>Suivi de vos clients, prospects et relances. Tout au même endroit, mis à jour automatiquement.</p>
+        </div>
+        <div class="service">
+            <div class="icon">&#9993;</div>
+            <h3>Relances automatiques</h3>
+            <p>Vos clients reçoivent les bons messages au bon moment. Factures, rappels, suivis.</p>
+        </div>
+        <div class="service">
+            <div class="icon">&#128202;</div>
+            <h3>Tableaux de bord</h3>
+            <p>Vos chiffres se mettent à jour tous seuls. Un coup d'œil suffit pour savoir où vous en êtes.</p>
+        </div>
+        <div class="service">
+            <div class="icon">&#128279;</div>
+            <h3>Connexion entre outils</h3>
+            <p>Vos logiciels communiquent entre eux. Plus besoin de copier-coller d'un outil à l'autre.</p>
+        </div>
+        <div class="service">
+            <div class="icon">&#129302;</div>
+            <h3>Intelligence artificielle</h3>
+            <p>Qualification de prospects, génération de contenu, analyse de données. L'IA au service de votre activité.</p>
+        </div>
+        <div class="service">
+            <div class="icon">&#128200;</div>
+            <h3>Alertes et notifications</h3>
+            <p>Soyez prévenu quand un contrat expire, un paiement est en retard ou un client revient.</p>
+        </div>
+    </div>
+</section>
+
+<div class="cta-section">
+    <a href="mailto:giunta.paul.ai@gmail.com">Contactez-moi &rarr;</a>
+</div>
+
+<div class="foot">
+    &copy; 2026 ia-lorient.fr &mdash; Paul Giunta, Lorient, Bretagne
+</div>
+
+</body>
+</html>

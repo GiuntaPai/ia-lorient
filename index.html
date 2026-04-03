@@ -98,6 +98,13 @@
         .cta:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
         .cta .arrow { transition: transform 0.3s ease; }
         .cta:hover .arrow { transform: translateX(4px); }
+        .link-secondary {
+            display: inline-block; margin-top: 1.5rem;
+            color: rgba(255,255,255,0.3); font-size: 0.85rem;
+            text-decoration: none; letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .link-secondary:hover { color: rgba(255,255,255,0.6); }
         .foot {
             position: fixed; bottom: 0; left: 0; right: 0;
             display: flex; justify-content: space-between;
@@ -122,6 +129,7 @@
     <a href="mailto:giunta.paul.ai@gmail.com" class="cta">
         Contactez-moi <span class="arrow">&rarr;</span>
     </a>
+    <a href="services.html" class="link-secondary">En savoir plus</a>
 </main>
 
 <div class="foot">
@@ -158,8 +166,8 @@ function wrapLetters(elementId, text, allowWrap) {
 }
 wrapLetters('tagline', 'Lorient \u2014 Automatisation \u2014 IA', false);
 wrapLetters('headline', 'Automatisez', false);
-wrapLetters('subheadline', 'vos t\u00e2ches r\u00e9p\u00e9titives.', false);
-wrapLetters('desctext', 'Automatisation sur mesure pour les TPE et PME de Lorient et alentours.', true);
+wrapLetters('subheadline', 'vos t\u00e2ches r\u00e9p\u00e9titives', false);
+wrapLetters('desctext', 'Automatisation sur mesure pour les TPE et PME de la r\u00e9gion lorientaise', true);
 
 const canvas = document.getElementById('metro');
 const ctx = canvas.getContext('2d');
