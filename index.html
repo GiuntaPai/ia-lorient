@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Lorient - Automatisation pour entreprises</title>
+    <meta name="description" content="Automatisation et intelligence artificielle pour TPE et PME a Lorient et alentours. Moins de taches repetitives, plus de temps pour votre metier.">
+    <meta name="keywords" content="IA Lorient, AI Lorient, automatisation Lorient, intelligence artificielle entreprise Lorient, automatisation PME Bretagne, automatisation TPE Lorient">
+    <link rel="canonical" href="https://ia-lorient.fr">
+    <meta property="og:title" content="IA Lorient - Automatisation pour entreprises">
+    <meta property="og:description" content="Automatisation et IA pour TPE/PME a Lorient et alentours.">
+    <meta property="og:url" content="https://ia-lorient.fr">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0b1628;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        main {
+            position: relative; z-index: 1;
+            max-width: 900px; margin: 0 auto; padding: 0 2rem;
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center;
+        }
+        .tag {
+            font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
+            color: rgba(255,255,255,0.5); margin-bottom: 2rem; font-weight: 700;
+            word-spacing: 0.1em;
+        }
+        .tag .letter { display: inline; }
+        h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 900;
+            color: #ffffff; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 0.5rem;
+        }
+        .letter {
+            display: inline; transition: color 0.8s ease;
+        }
+        h1 .letter, .sub-headline .letter {
+            display: inline-block;
+        }
+        .sub-headline {
+            font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 300;
+            color: rgba(255,255,255,0.6); margin-bottom: 2rem; letter-spacing: -0.01em;
+        }
+        .desc {
+            font-size: 1.25rem; font-weight: 300; line-height: 1.7;
+            color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto 2.5rem;
+        }
+        .cta {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: rgba(255,255,255,0.1); color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 1rem 2.2rem; border-radius: 60px;
+            text-decoration: none; font-size: 1.1rem; font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .cta:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
+        .cta .arrow { transition: transform 0.3s ease; }
+        .cta:hover .arrow { transform: translateX(4px); }
+        .foot {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            display: flex; justify-content: space-between;
+            padding: 1.5rem 2rem; font-size: 0.7rem;
+            color: rgba(255,255,255,0.2); letter-spacing: 0.05em; z-index: 1;
+        }
+        @media (max-width: 600px) {
+            main { padding: 0 1.5rem; }
+            .foot { flex-direction: column; align-items: center; gap: 0.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="metro"></canvas>
+
+<main>
+    <div class="tag" id="tagline"></div>
+    <h1 id="headline"></h1>
+    <p class="sub-headline" id="subheadline"></p>
+    <p class="desc" id="desctext"></p>
+    <a href="mailto:giunta.paul.ai@gmail.com" class="cta">
+        Contactez-moi <span class="arrow">&rarr;</span>
+    </a>
+</main>
+
+<div class="foot">
+    <span>Paul Giunta &mdash; Lorient, Bretagne</span>
+    <span>ia-lorient.fr</span>
+</div>
+
+<script>
+function wrapLetters(elementId, text, allowWrap) {
+    const el = document.getElementById(elementId);
+    el.innerHTML = '';
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === ' ') {
+            if (allowWrap) {
+                // Real space for word-wrap
+                el.appendChild(document.createTextNode(' '));
+            } else {
+                const span = document.createElement('span');
+                span.className = 'letter';
+                span.textContent = '\u00A0';
+                span.dataset.colored = 'false';
+                span.dataset.isSpace = 'true';
+                el.appendChild(span);
+            }
+            continue;
+        }
+        const span = document.createElement('span');
+        span.className = 'letter';
+        span.textContent = text[i];
+        span.dataset.colored = 'false';
+        span.dataset.isSpace = 'false';
+        el.appendChild(span);
+    }
+}
+wrapLetters('tagline', 'Lorient \u2014 Automatisation \u2014 IA', false);
+wrapLetters('headline', 'Automatis\u00e9es.', false);
+wrapLetters('subheadline', 'Vos t\u00e2ches r\u00e9p\u00e9titives.', false);
+wrapLetters('desctext', 'Automatisation sur mesure pour les tr\u00e8s petites, petites et moyennes entreprises de Lorient et alentours.', true);
+
+const canvas = document.getElementById('metro');
+const ctx = canvas.getContext('2d');
+let W, H;
+const DPR = 1; // render at 1x, not devicePixelRatio — lighter on GPU
+function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+resize();
+window.addEventListener('resize', resize);
+
+const COLORS = ['#e6c840', '#5cb85c', '#4a9fd6', '#e05555'];
+const missions = [];
+const MAX_MISSIONS = 3;
+const SHAPE_COUNT = 3;
+const SHAPE_SIZE = 6;
+const SPEED = 2.5;
+const SPAWN_INTERVAL = 3000;
+const SHAPE_DELAY_MS = 2000;
+
+const GRID_SIZE = 10; // collision grid cell size
+
+function getAllLetters() { return document.querySelectorAll('.letter'); }
+
+function getWhiteLetters() {
+    const all = getAllLetters();
+    const white = [];
+    all.forEach(l => {
+        if (l.dataset.isSpace === 'true') return;
+        if (l.dataset.colored === 'false') white.push(l);
+    });
+    if (white.length > 0) return white;
+    const fallback = [];
+    all.forEach(l => { if (l.dataset.isSpace !== 'true') fallback.push(l); });
+    return fallback;
+}
+
+function getAvailableColor() {
+    const used = new Set();
+    missions.forEach(m => used.add(m.color));
+    getAllLetters().forEach(l => { if (l.dataset.colored === 'true') used.add(l.style.color); });
+    const avail = COLORS.filter(c => !used.has(c));
+    return avail.length > 0 ? avail[Math.floor(Math.random() * avail.length)] : null;
+}
+
+// Random side but never repeat last, and track usage to balance
+let lastSide = -1;
+let sideUsage = [0, 0, 0, 0]; // top, right, bottom, left
+
+function randomEdgePoint() {
+    // Pick the least used side, excluding last
+    let candidates = [0, 1, 2, 3].filter(s => s !== lastSide);
+    // Sort by least used
+    candidates.sort((a, b) => sideUsage[a] - sideUsage[b]);
+    // Pick randomly from the 2 least used
+    const pick = candidates[Math.floor(Math.random() * Math.min(2, candidates.length))];
+    lastSide = pick;
+    sideUsage[pick]++;
+
+    switch(pick) {
+        case 0: return { x: Math.random() * W, y: -20 };
+        case 1: return { x: W + 20, y: Math.random() * H };
+        case 2: return { x: Math.random() * W, y: H + 20 };
+        case 3: return { x: -20, y: Math.random() * H };
+    }
+}
+
+// Cache individual letter positions on demand
+const letterPosCache = new Map();
+
+function getLetterCenter(el) {
+    if (!letterPosCache.has(el)) {
+        const r = el.getBoundingClientRect();
+        letterPosCache.set(el, { x: r.left + r.width / 2, y: r.top + r.height / 2 });
+    }
+    return letterPosCache.get(el);
+}
+
+// ── Corridor-based pathfinding ──────────────────────────────
+let cachedCorridors = null;
+let cachedEdges = null;
+
+function getCorridors() {
+    if (cachedCorridors) return cachedCorridors;
+    // Collect all visual line rects
+    const lineRects = [];
+    const elements = ['tagline', 'headline', 'subheadline', 'desctext'];
+    for (const id of elements) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        // Get individual line rects (handles word-wrap)
+        const letters = el.querySelectorAll('.letter');
+        if (letters.length === 0) continue;
+        let lineTop = null, lineBottom = null;
+        let lastY = null;
+        letters.forEach(l => {
+            const r = l.getBoundingClientRect();
+            const midY = Math.round(r.top + r.height / 2);
+            if (lastY === null || Math.abs(midY - lastY) > 10) {
+                // New visual line
+                if (lineTop !== null) lineRects.push({ top: lineTop, bottom: lineBottom });
+                lineTop = r.top; lineBottom = r.bottom;
+            } else {
+                lineBottom = Math.max(lineBottom, r.bottom);
+            }
+            lastY = midY;
+        });
+        if (lineTop !== null) lineRects.push({ top: lineTop, bottom: lineBottom });
+    }
+
+    // Also add CTA
+    const cta = document.querySelector('.cta');
+    if (cta) {
+        const r = cta.getBoundingClientRect();
+        lineRects.push({ top: r.top, bottom: r.bottom });
+    }
+
+    // Sort by top position
+    lineRects.sort((a, b) => a.top - b.top);
+
+    // Build corridors: above first line, between each pair, below last line
+    const corridors = [];
+    if (lineRects.length > 0) {
+        corridors.push({ y: lineRects[0].top - 50 });
+        for (let i = 0; i < lineRects.length - 1; i++) {
+            const gap = (lineRects[i].bottom + lineRects[i + 1].top) / 2;
+            corridors.push({ y: gap });
+        }
+        corridors.push({ y: lineRects[lineRects.length - 1].bottom + 50 });
+    }
+
+    cachedCorridors = corridors;
+    return corridors;
+}
+
+// Find which corridor is closest above and below a letter
+function findNearestCorridors(letterY, corridors) {
+    let above = corridors[0], below = corridors[corridors.length - 1];
+    for (const c of corridors) {
+        if (c.y < letterY && c.y > above.y) above = c;
+        if (c.y > letterY && c.y < below.y) below = c;
+    }
+    return { above, below };
+}
+
+// Get the safe vertical X positions (left and right edges of all text)
+function getTextEdges() {
+    if (cachedEdges) return cachedEdges;
+    const els = [
+        document.getElementById('tagline'),
+        document.getElementById('headline'),
+        document.getElementById('subheadline'),
+        document.querySelector('.desc')
+    ];
+    let leftMost = W, rightMost = 0;
+    for (const el of els) {
+        if (!el) continue;
+        const r = el.getBoundingClientRect();
+        if (r.left < leftMost) leftMost = r.left;
+        if (r.right > rightMost) rightMost = r.right;
+    }
+    cachedEdges = { left: leftMost - 30, right: rightMost + 30 };
+    return cachedEdges;
+}
+
+// Switch corridor via a safe edge: go horizontal to edge, vertical to new corridor, horizontal back
+function addCorridorSwitch(points, fromX, fromY, toY, edges) {
+    // Pick left or right edge — whichever is closer
+    const distLeft = Math.abs(fromX - edges.left);
+    const distRight = Math.abs(fromX - edges.right);
+    const edgeX = distLeft < distRight ? edges.left : edges.right;
+
+    points.push({ x: edgeX, y: fromY });  // horizontal to edge
+    points.push({ x: edgeX, y: toY });    // vertical along edge (safe, no text)
+}
+
+// Build path using corridors, vertical moves only on edges
+function buildCorridorPath(spawn, target, targetLetter) {
+    const corridors = getCorridors();
+    const edges = getTextEdges();
+    const letterY = target.y;
+    const letterX = target.x;
+    const { above, below } = findNearestCorridors(letterY, corridors);
+
+    const points = [{ x: spawn.x, y: spawn.y }];
+
+    // Pick entry corridor closest to spawn
+    let entryCorridor = corridors[0];
+    let bestDist = Infinity;
+    for (const c of corridors) {
+        const d = Math.abs(spawn.y - c.y);
+        if (d < bestDist) { bestDist = d; entryCorridor = c; }
+    }
+
+    // Determine overall horizontal direction: spawn → letter
+    const goingRight = spawn.x < letterX;
+    // Use one edge for ALL vertical transitions (consistent side)
+    const verticalEdgeX = goingRight ? edges.left : edges.right;
+
+    // Step 1: go to entry corridor
+    points.push({ x: spawn.x, y: entryCorridor.y });
+
+    let currentCorridorY = entryCorridor.y;
+    let currentX = spawn.x;
+
+    // Step 2: find approach corridor
+    const approachFromAbove = currentCorridorY <= letterY;
+    const approachCorridor = approachFromAbove ? above : below;
+
+    // Find intermediate corridors between entry and approach
+    const midCorridors = corridors.filter(c => {
+        if (approachFromAbove) return c.y > currentCorridorY && c.y < approachCorridor.y;
+        return c.y < currentCorridorY && c.y > approachCorridor.y;
+    });
+
+    // Visit 0-1 intermediate corridor for variety
+    const visitCount = Math.min(midCorridors.length, Math.random() > 0.5 ? 1 : 0);
+    const toVisit = midCorridors.sort(() => Math.random() - 0.5).slice(0, visitCount);
+    toVisit.sort((a, b) => approachFromAbove ? a.y - b.y : b.y - a.y);
+
+    for (const corridor of toVisit) {
+        // Progress horizontally toward letter (never back)
+        const progressX = goingRight
+            ? currentX + (letterX - currentX) * (0.2 + Math.random() * 0.3)
+            : currentX - (currentX - letterX) * (0.2 + Math.random() * 0.3);
+        points.push({ x: progressX, y: currentCorridorY });
+        currentX = progressX;
+
+        // Switch corridor via the consistent vertical edge
+        points.push({ x: verticalEdgeX, y: currentCorridorY });
+        points.push({ x: verticalEdgeX, y: corridor.y });
+        currentCorridorY = corridor.y;
+        currentX = verticalEdgeX;
+    }
+
+    // Step 3: get to approach corridor if not already there
+    if (Math.abs(currentCorridorY - approachCorridor.y) > 5) {
+        // Progress horizontally first
+        const progressX = goingRight
+            ? currentX + (letterX - currentX) * (0.3 + Math.random() * 0.3)
+            : currentX - (currentX - letterX) * (0.3 + Math.random() * 0.3);
+        points.push({ x: progressX, y: currentCorridorY });
+        currentX = progressX;
+
+        // Switch via vertical edge
+        points.push({ x: verticalEdgeX, y: currentCorridorY });
+        points.push({ x: verticalEdgeX, y: approachCorridor.y });
+        currentCorridorY = approachCorridor.y;
+        currentX = verticalEdgeX;
+    }
+
+    // Step 4: go to letter X in approach corridor (single direction)
+    points.push({ x: letterX, y: currentCorridorY });
+
+    // Step 5: drop/rise to letter
+    points.push({ x: letterX, y: letterY });
+
+    return points;
+}
+
+function drawShape(x, y, type, color, size) {
+    ctx.fillStyle = color;
+    switch(type) {
+        case 0:
+            ctx.beginPath(); ctx.arc(x, y, size, 0, Math.PI * 2); ctx.fill(); break;
+        case 1:
+            ctx.fillRect(x - size, y - size, size * 2, size * 2); break;
+        case 2:
+            ctx.beginPath(); ctx.moveTo(x, y - size * 1.2);
+            ctx.lineTo(x + size, y + size * 0.8); ctx.lineTo(x - size, y + size * 0.8);
+            ctx.closePath(); ctx.fill(); break;
+    }
+}
+
+// Track which text lines have active missions
+function getTargetLine(letter) {
+    if (letter.closest('#tagline')) return 'tag';
+    if (letter.closest('#headline')) return 'h1';
+    if (letter.closest('#subheadline')) return 'sub';
+    if (letter.closest('#desctext')) return 'desc';
+    return 'other';
+}
+
+function createMission() {
+    if (missions.length >= MAX_MISSIONS) return;
+    const whites = getWhiteLetters();
+
+    // Filter out letters on lines that already have an active mission
+    const busyLines = new Set();
+    missions.forEach(m => busyLines.add(m.targetLine));
+    const available = whites.filter(l => !busyLines.has(getTargetLine(l)));
+    if (available.length === 0) return;
+
+    // Group by line and pick from the least targeted line
+    const byLine = {};
+    available.forEach(l => {
+        const line = getTargetLine(l);
+        if (!byLine[line]) byLine[line] = [];
+        byLine[line].push(l);
+    });
+
+    // Count how many letters are already colored per line
+    const coloredCount = {};
+    getAllLetters().forEach(l => {
+        if (l.dataset.isSpace === 'true') return;
+        const line = getTargetLine(l);
+        if (!coloredCount[line]) coloredCount[line] = 0;
+        if (l.dataset.colored === 'true') coloredCount[line]++;
+    });
+
+    // Pick the line with fewest colored letters
+    let bestLine = null, bestCount = Infinity;
+    for (const line of Object.keys(byLine)) {
+        const count = coloredCount[line] || 0;
+        if (count < bestCount) { bestCount = count; bestLine = line; }
+    }
+
+    const pool = byLine[bestLine] || available;
+    const targetLetter = pool[Math.floor(Math.random() * pool.length)];
+    const color = getAvailableColor();
+    if (!color) return;
+
+    const spawn = randomEdgePoint();
+    const target = getLetterCenter(targetLetter);
+    const path = buildCorridorPath(spawn, target, targetLetter);
+    // Pick shape type that isn't overused (max 1 mission per shape type = 3 shapes each)
+    const shapeCount = [0, 0, 0]; // circle, square, triangle
+    missions.forEach(m => shapeCount[m.shapeType]++);
+    const availableShapes = [0, 1, 2].filter(s => shapeCount[s] < 1);
+    if (availableShapes.length === 0) return;
+    const shapeType = availableShapes[Math.floor(Math.random() * availableShapes.length)];
+
+    const shapes = [];
+    for (let i = 0; i < SHAPE_COUNT; i++) {
+        shapes.push({
+            pathIndex: 0, x: spawn.x, y: spawn.y,
+            arrived: false, delayFrames: i * 70
+        });
+    }
+
+    const targetLine = getTargetLine(targetLetter);
+    missions.push({ spawn, target, path, color, shapeType, shapes, targetLetter, targetLine, phase: 'traveling', fillStart: 0 });
+}
+
+function update() {
+    const speed = SPEED;
+    ctx.clearRect(0, 0, W, H);
+
+    for (let m = missions.length - 1; m >= 0; m--) {
+        const mission = missions[m];
+
+        if (mission.phase === 'traveling') {
+            // Spawn dot
+            ctx.globalAlpha = 0.5 + 0.5 * Math.sin(Date.now() * 0.005);
+            ctx.fillStyle = mission.color;
+            ctx.beginPath(); ctx.arc(mission.spawn.x, mission.spawn.y, 8, 0, Math.PI * 2); ctx.fill();
+            ctx.globalAlpha = 1;
+
+            let allArrived = true;
+            for (const shape of mission.shapes) {
+                if (shape.arrived) {
+                    // Shrink to nothing over 400ms
+                    if (!shape.arriveTime) shape.arriveTime = Date.now();
+                    const shrinkProgress = (Date.now() - shape.arriveTime) / 400;
+                    const shrinkSize = SHAPE_SIZE * Math.max(0, 1 - shrinkProgress);
+                    if (shrinkSize > 0.3) {
+                        drawShape(shape.x, shape.y, mission.shapeType, mission.color, shrinkSize);
+                    }
+                    continue;
+                }
+                if (shape.delayFrames > 0) { shape.delayFrames--; allArrived = false; continue; }
+
+                // Check if shape has reached the actual letter
+                const lp = getLetterCenter(mission.targetLetter);
+                if (Math.abs(shape.x - lp.x) + Math.abs(shape.y - lp.y) < speed + 2) {
+                    shape.x = lp.x; shape.y = lp.y;
+                    shape.arrived = true;
+                } else {
+                    // Move along path, consuming full speed budget per frame
+                    let remaining = speed;
+                    while (remaining > 0.5) {
+                        const npt = mission.path[shape.pathIndex + 1];
+                        const tx = npt ? npt.x : lp.x;
+                        const ty = npt ? npt.y : lp.y;
+                        const mdx = tx - shape.x;
+                        const mdy = ty - shape.y;
+                        const dist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+                        if (dist < 0.5) {
+                            // At target point
+                            if (npt) { shape.pathIndex++; continue; }
+                            else break;
+                        }
+
+                        if (remaining >= dist) {
+                            // Reach this waypoint and keep going
+                            shape.x = tx; shape.y = ty;
+                            remaining -= dist;
+                            if (npt) shape.pathIndex++;
+                            else break;
+                        } else {
+                            // Partial move
+                            shape.x += (mdx / dist) * remaining;
+                            shape.y += (mdy / dist) * remaining;
+                            remaining = 0;
+                        }
+                    }
+                    allArrived = false;
+                }
+                drawShape(shape.x, shape.y, mission.shapeType, mission.color, SHAPE_SIZE);
+            }
+
+            if (allArrived) {
+                mission.phase = 'fading';
+                mission.fillStart = Date.now();
+                mission.targetLetter.style.color = mission.color;
+                mission.targetLetter.dataset.colored = 'true';
+            }
+        }
+        else if (mission.phase === 'fading') {
+            // Fade out shapes + spawn over 600ms
+            const elapsed = Date.now() - mission.fillStart;
+            const alpha = Math.max(0, 1 - elapsed / 600);
+            ctx.globalAlpha = alpha;
+            for (const shape of mission.shapes) {
+                drawShape(shape.x, shape.y, mission.shapeType, mission.color, SHAPE_SIZE);
+            }
+            // Fade spawn dot too
+            ctx.fillStyle = mission.color;
+            ctx.beginPath(); ctx.arc(mission.spawn.x, mission.spawn.y, 8, 0, Math.PI * 2); ctx.fill();
+            ctx.globalAlpha = 1;
+            if (elapsed > 600) mission.phase = 'done';
+        }
+        else if (mission.phase === 'done') {
+            missions.splice(m, 1);
+        }
+    }
+    requestAnimationFrame(update);
+}
+
+setInterval(createMission, SPAWN_INTERVAL);
+setTimeout(createMission, 500);
+requestAnimationFrame(update);
+</script>
+
+</body>
+</html>
