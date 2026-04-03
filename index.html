@@ -57,7 +57,7 @@
         }
         canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; }
         main {
-            position: relative; z-index: 1;
+            position: relative; z-index: 1; min-height: 100vh;
             max-width: 900px; margin: 0 auto; padding: 0 2rem;
             min-height: 100vh;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -119,6 +119,7 @@
 </head>
 <body>
 
+<div style="position:relative; min-height:100vh;">
 <canvas id="metro"></canvas>
 
 <main>
@@ -131,18 +132,16 @@
     </a>
     <a href="#services" class="link-secondary">En savoir plus &darr;</a>
 </main>
+</div>
 
-<section id="services" style="max-width:1100px; margin:0 auto; padding:6rem 2rem 3rem;">
-    <div style="display:flex; gap:3rem; align-items:flex-start; flex-wrap:wrap;">
-        <!-- Left: photo large -->
-        <div style="flex:0 0 300px;">
-            <img src="paul.jpg" alt="Paul Giunta" style="width:100%; border-radius:16px; object-fit:cover; object-position:center top;">
-        </div>
-        <!-- Right: bio + services -->
-        <div style="flex:1; min-width:300px; text-align:center;">
+<section id="services" style="position:relative; max-width:1100px; margin:0 auto; padding:6rem 2rem 3rem;">
+    <!-- Photo left side -->
+    <img src="paul.jpg" alt="Paul Giunta" style="position:absolute; left:2rem; top:6rem; width:250px; border-radius:16px; object-fit:cover; object-position:center top;">
+    <!-- Content centered -->
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
             <h2 style="font-size:1.8rem; font-weight:900; color:#fff; margin-bottom:0.3rem;">Paul GIUNTA</h2>
             <p style="color:rgba(255,255,255,0.4); font-size:1rem; margin-bottom:2rem;">Automaticien &amp; chef de projet, Lorient</p>
-            <div style="color:rgba(255,255,255,0.5); font-size:1.05rem; font-weight:300; margin-bottom:2.5rem; max-width:600px; margin-left:auto; margin-right:auto;">
+            <div style="color:rgba(255,255,255,0.5); font-size:1.05rem; font-weight:300; margin-bottom:2.5rem;">
                 <p style="margin-bottom:1rem;">Expert en automatisation d'IA, je con&ccedil;ois des syst&egrave;mes d'automatisation pour les entreprises qui veulent arr&ecirc;ter de perdre du temps sur des t&acirc;ches r&eacute;p&eacute;titives.</p>
                 <p>Mon approche : comprendre votre probl&egrave;me, proposer une solution simple, la mettre en place et vous accompagner dans sa maintenance et ses mises &agrave; jour.</p>
             </div>
@@ -184,8 +183,7 @@
             Contactez-moi &rarr;
         </a>
     </div>
-        </div><!-- end right column -->
-    </div><!-- end flex -->
+    </div><!-- end centered content -->
 </section>
 
 <div class="foot">
