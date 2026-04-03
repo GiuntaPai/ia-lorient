@@ -578,26 +578,22 @@ function update() {
                 drawShape(shape.x, shape.y, mission.shapeType, mission.color, SHAPE_SIZE);
             }
 
-            if (allArrived) {
-                mission.phase = 'fading';
-                mission.fillStart = Date.now();
+            if (allArrived && !mission.colorApplied) {
                 mission.targetLetter.style.color = mission.color;
                 mission.targetLetter.dataset.colored = 'true';
+                mission.colorApplied = true;
             }
-        }
-        else if (mission.phase === 'fading') {
-            // Fade out shapes + spawn over 600ms
-            const elapsed = Date.now() - mission.fillStart;
-            const alpha = Math.max(0, 1 - elapsed / 600);
-            ctx.globalAlpha = alpha;
-            for (const shape of mission.shapes) {
-                drawShape(shape.x, shape.y, mission.shapeType, mission.color, SHAPE_SIZE);
+
+            // Check if all shapes finished shrinking
+            if (allArrived) {
+                let allShrunk = true;
+                for (const shape of mission.shapes) {
+                    if (!shape.arriveTime || (Date.now() - shape.arriveTime) < 400) {
+                        allShrunk = false; break;
+                    }
+                }
+                if (allShrunk) mission.phase = 'done';
             }
-            // Fade spawn dot too
-            ctx.fillStyle = mission.color;
-            ctx.beginPath(); ctx.arc(mission.spawn.x, mission.spawn.y, 8, 0, Math.PI * 2); ctx.fill();
-            ctx.globalAlpha = 1;
-            if (elapsed > 600) mission.phase = 'done';
         }
         else if (mission.phase === 'done') {
             missions.splice(m, 1);
