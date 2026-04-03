@@ -250,9 +250,26 @@ const missions = [];
 const MAX_MISSIONS = 3;
 const SHAPE_COUNT = 3;
 const SHAPE_SIZE = 6;
-const SPEED = 2.5;
+// Speed scales with screen width: ~3s to cross full screen regardless of resolution
+const BASE_SPEED_RATIO = 0.08; // 8% of screen width per second
 const SPAWN_INTERVAL = 3000;
-const SHAPE_DELAY_MS = 2000;
+const SHAPE_DELAY_SEC = 1.5; // seconds between shapes
+let lastFrameTime = 0;
+let isTabVisible = true;
+
+// Handle tab visibility
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        isTabVisible = false;
+    } else {
+        isTabVisible = true;
+        lastFrameTime = 0; // reset to avoid huge dt on return
+        // Clear stale missions
+        missions.length = 0;
+        cachedCorridors = null;
+        cachedEdges = null;
+    }
+});
 
 const GRID_SIZE = 10; // collision grid cell size
 
@@ -579,7 +596,7 @@ function createMission() {
     for (let i = 0; i < SHAPE_COUNT; i++) {
         shapes.push({
             pathIndex: 0, x: spawn.x, y: spawn.y,
-            arrived: false, delayFrames: i * 70
+            arrived: false, delaySec: i * SHAPE_DELAY_SEC
         });
     }
 
@@ -587,12 +604,21 @@ function createMission() {
     missions.push({ spawn, target, path, color, shapeType, shapes, targetLetter, targetLine, phase: 'traveling', fillStart: 0 });
 }
 
-function update() {
-    const speed = SPEED;
+function update(timestamp) {
+    // Delta time in seconds, capped
+    if (!lastFrameTime) lastFrameTime = timestamp;
+    let dt = (timestamp - lastFrameTime) / 1000;
+    lastFrameTime = timestamp;
+    if (dt > 0.1) dt = 0.016; // cap: skip huge gaps (tab switch, lag)
+    if (dt <= 0) dt = 0.016;
+
+    // Speed in pixels/sec, proportional to screen width
+    const speed = W * BASE_SPEED_RATIO * dt;
+
     ctx.clearRect(0, 0, W, H);
 
-    // Don't update when scrolled away — positions are wrong
-    if (animationPaused) {
+    // Don't update when scrolled away or tab hidden
+    if (animationPaused || !isTabVisible) {
         requestAnimationFrame(update);
         return;
     }
@@ -619,11 +645,11 @@ function update() {
                     }
                     continue;
                 }
-                if (shape.delayFrames > 0) { shape.delayFrames--; allArrived = false; continue; }
+                if (shape.delaySec > 0) { shape.delaySec -= dt; allArrived = false; continue; }
 
                 // Check if shape has reached the actual letter
                 const lp = getLetterCenter(mission.targetLetter);
-                if (Math.abs(shape.x - lp.x) + Math.abs(shape.y - lp.y) < speed + 2) {
+                if (Math.abs(shape.x - lp.x) + Math.abs(shape.y - lp.y) < Math.max(speed + 2, 5)) {
                     shape.x = lp.x; shape.y = lp.y;
                     shape.arrived = true;
                 } else {
