@@ -327,16 +327,16 @@ function getLetterCenter(el) {
 
 // Pause animation when scrolled past first section
 let animationPaused = false;
-let wasPaused = false;
+let lastScrollY = 0;
 window.addEventListener('scroll', () => {
     animationPaused = window.scrollY > window.innerHeight * 0.3;
-    if (animationPaused && !wasPaused) {
-        // Just scrolled away — clear everything
+    // Any scroll movement invalidates paths since letter positions shift
+    if (Math.abs(window.scrollY - lastScrollY) > 2) {
         missions.length = 0;
         cachedCorridors = null;
         cachedEdges = null;
     }
-    wasPaused = animationPaused;
+    lastScrollY = window.scrollY;
 });
 
 // ── Corridor-based pathfinding ──────────────────────────────
