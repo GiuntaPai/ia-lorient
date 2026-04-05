@@ -86,8 +86,8 @@
             color: rgba(255,255,255,0.6); margin-bottom: 2rem; letter-spacing: -0.01em;
         }
         .desc {
-            font-size: 1.25rem; font-weight: 300; line-height: 1.7;
-            color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto 2.5rem;
+            font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.25rem); font-weight: 300; line-height: 1.7;
+            color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
         }
         .cta {
             display: inline-flex; align-items: center; gap: 0.6rem;
@@ -108,38 +108,42 @@
         }
         .link-secondary:hover { color: rgba(255,255,255,0.6); }
         .foot {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            display: flex; justify-content: space-between;
-            padding: 1.5rem 2rem; font-size: 1rem;
+            position: relative;
+            display: flex; justify-content: space-between; flex-wrap: wrap;
+            padding: clamp(0.8rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem);
+            font-size: clamp(0.7rem, 0.5rem + 0.3vw, 1rem);
             color: rgba(255,255,255,0.3); letter-spacing: 0.02em; z-index: 1;
+            gap: 0.2rem;
         }
+        /* Services: sidebar pattern (photo + content) */
         .services-layout {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             min-height: 90vh;
-            gap: 2rem;
+            gap: clamp(1rem, 3vw, 2rem);
         }
         .photo-bg {
-            flex: 0 0 280px;
-            height: 70vh;
-            min-height: 400px;
+            flex-basis: clamp(180px, 22vw, 280px);
+            flex-grow: 1;
+            aspect-ratio: 3 / 4;
+            max-height: 70vh;
         }
-        @media (max-width: 1100px) {
-            .photo-bg { display: none; }
-            .services-layout { justify-content: center; }
+        .services-content {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-inline-size: 55%;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        @media (max-width: 600px) {
-            main { padding: 0 1.2rem; }
-            .desc { font-size: 1rem; margin-bottom: 2rem; }
-            #services { padding: 1.5rem 1rem 1rem !important; min-height: auto !important; }
-            .service-grid { grid-template-columns: 1fr !important; }
-            .foot {
-                position: relative;
-                flex-direction: column; align-items: center; gap: 0.2rem;
-                font-size: 0.8rem; padding: 1rem;
-            }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.5rem, 1.5vw, 0.8rem);
         }
+        main { padding: 0 clamp(1rem, 3vw, 2rem); }
     </style>
 </head>
 <body>
@@ -171,7 +175,7 @@
         </div>
     </div>
     <!-- Content -->
-    <div style="text-align:center; max-width:600px; margin:0 auto;">
+    <div class="services-content">
             <h2 style="font-size:1.8rem; font-weight:900; color:#fff; margin-bottom:0.3rem;">Paul GIUNTA</h2>
             <p style="color:rgba(255,255,255,0.4); font-size:1rem; margin-bottom:1.2rem;">Automaticien &amp; chef de projet, Lorient</p>
             <div style="color:rgba(255,255,255,0.5); font-size:0.95rem; font-weight:300; margin-bottom:1.5rem;">
@@ -179,7 +183,7 @@
                 <p>Mon approche : comprendre votre probl&egrave;me, proposer une solution simple, la mettre en place et vous accompagner dans sa maintenance et ses mises &agrave; jour.</p>
             </div>
             <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:1rem;">Ce que je peux faire pour vous</h3>
-            <div class="service-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.8rem; margin-bottom:1.5rem;">
+            <div class="service-grid" style="margin-bottom:1.5rem;">
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <div style="font-size:1.5rem; margin-bottom:0.6rem;">&#128101;</div>
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">CRM sur mesure</h4>
