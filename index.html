@@ -121,9 +121,7 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
             gap: clamp(1rem, 3vw, 2rem);
-            padding: clamp(3rem, 8vh, 6rem) 0;
         }
         .photo-bg {
             flex-basis: clamp(220px, 30vw, 500px);
@@ -183,7 +181,7 @@
 </main>
 </div>
 
-<section id="services" style="padding: clamp(2rem, 5vh, 5rem) 2rem;">
+<section id="services" style="padding: 0 2rem; min-height:100vh; display:flex; flex-direction:column; justify-content:center;">
     <div class="services-layout">
     <!-- Photo: left side -->
     <div class="photo-bg">
