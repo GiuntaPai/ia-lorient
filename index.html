@@ -113,13 +113,25 @@
             padding: 1.5rem 2rem; font-size: 1rem;
             color: rgba(255,255,255,0.3); letter-spacing: 0.02em; z-index: 1;
         }
-        @media (max-width: 1024px) {
+        .services-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            gap: 2rem;
+        }
+        .photo-bg {
+            flex: 0 0 280px;
+            height: 70vh;
+            min-height: 400px;
+        }
+        @media (max-width: 1100px) {
             .photo-bg { display: none; }
+            .services-layout { justify-content: center; }
         }
         @media (max-width: 600px) {
             main { padding: 0 1.2rem; }
             .desc { font-size: 1rem; margin-bottom: 2rem; }
-            .photo-bg { display: none; }
             #services { padding: 1.5rem 1rem 1rem !important; min-height: auto !important; }
             .service-grid { grid-template-columns: 1fr !important; }
             .foot {
@@ -147,16 +159,19 @@
 </main>
 </div>
 
-<section id="services" style="position:relative; padding:2rem 2rem 1rem; overflow:hidden; min-height:100vh;">
-    <!-- Photo: left side with fade edges (hidden on mobile) -->
-    <div class="photo-bg" style="position:absolute; left:0; top:10%; bottom:10%; width:30%;
-        background:url('paul.jpg') center 15% / cover no-repeat;
-        mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
-        -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
-        opacity:0.6;">
+<section id="services" style="padding:2rem 2rem 1rem; min-height:100vh;">
+    <div class="services-layout">
+    <!-- Photo: left side -->
+    <div class="photo-bg">
+        <div style="width:100%; height:100%;
+            background:url('paul.jpg') center 15% / cover no-repeat;
+            mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
+            -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
+            opacity:0.6;">
+        </div>
     </div>
-    <!-- Content: centered on page -->
-    <div style="position:relative; z-index:1; text-align:center; max-width:600px; margin:0 auto;">
+    <!-- Content -->
+    <div style="text-align:center; max-width:600px; margin:0 auto;">
             <h2 style="font-size:1.8rem; font-weight:900; color:#fff; margin-bottom:0.3rem;">Paul GIUNTA</h2>
             <p style="color:rgba(255,255,255,0.4); font-size:1rem; margin-bottom:1.2rem;">Automaticien &amp; chef de projet, Lorient</p>
             <div style="color:rgba(255,255,255,0.5); font-size:0.95rem; font-weight:300; margin-bottom:1.5rem;">
@@ -203,6 +218,7 @@
         <p style="margin-top:0.8rem; color:rgba(255,255,255,0.35); font-size:0.85rem;">giunta.paul.ai@gmail.com</p>
     </div>
     </div><!-- end right content -->
+    </div><!-- end services-layout -->
 </section>
 
 <div class="foot">
