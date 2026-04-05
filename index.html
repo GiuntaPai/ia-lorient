@@ -114,8 +114,16 @@
             color: rgba(255,255,255,0.3); letter-spacing: 0.02em; z-index: 1;
         }
         @media (max-width: 600px) {
-            main { padding: 0 1.5rem; }
-            .foot { flex-direction: column; align-items: center; gap: 0.2rem; }
+            main { padding: 0 1.2rem; }
+            .desc { font-size: 1rem; margin-bottom: 2rem; }
+            .photo-bg { display: none; }
+            #services { padding: 1.5rem 1rem 1rem !important; min-height: auto !important; }
+            .service-grid { grid-template-columns: 1fr !important; }
+            .foot {
+                position: relative;
+                flex-direction: column; align-items: center; gap: 0.2rem;
+                font-size: 0.8rem; padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -137,8 +145,8 @@
 </div>
 
 <section id="services" style="position:relative; padding:2rem 2rem 1rem; overflow:hidden; min-height:100vh;">
-    <!-- Photo: left side with fade edges -->
-    <div style="position:absolute; left:0; top:10%; bottom:10%; width:30%;
+    <!-- Photo: left side with fade edges (hidden on mobile) -->
+    <div class="photo-bg" style="position:absolute; left:0; top:10%; bottom:10%; width:30%;
         background:url('paul.jpg') center 15% / cover no-repeat;
         mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
         -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
@@ -153,7 +161,7 @@
                 <p>Mon approche : comprendre votre probl&egrave;me, proposer une solution simple, la mettre en place et vous accompagner dans sa maintenance et ses mises &agrave; jour.</p>
             </div>
             <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:1rem;">Ce que je peux faire pour vous</h3>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.8rem; margin-bottom:1.5rem;">
+            <div class="service-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.8rem; margin-bottom:1.5rem;">
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <div style="font-size:1.5rem; margin-bottom:0.6rem;">&#128101;</div>
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">CRM sur mesure</h4>
