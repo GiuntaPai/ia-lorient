@@ -156,7 +156,12 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: clamp(0.5rem, 1.5vw, 0.8rem);
-            align-items: start;
+        }
+        .service-grid > div {
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         @container (max-width: 550px) {
             .service-grid { grid-template-columns: repeat(2, 1fr); }
@@ -213,7 +218,7 @@
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Communication professionnelle</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Et gestion commerciale : factures, rapports, suivis...</p>
+            <p style="font-size:1rem; color:rgba(255,255,255,0.4); text-align:justify;">Et gestion commerciale : factures, rapports, suivis...</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Tableaux de bord</h4>
@@ -225,7 +230,7 @@
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Intelligences artificielles</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Gestion de multiples LLMs et agents pour la qualification de donn&eacute;es, g&eacute;n&eacute;ration de contenu (support &eacute;crit, articles, scripts...) en fran&ccedil;ais et en anglais, analyse de donn&eacute;es...</p>
+            <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); text-align:justify;">Gestion de multiples LLMs et agents pour la qualification de donn&eacute;es, g&eacute;n&eacute;ration de contenu (support &eacute;crit, articles, scripts...) en fran&ccedil;ais et en anglais, analyse de donn&eacute;es...</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Alertes intelligentes</h4>
