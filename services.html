@@ -112,6 +112,48 @@
             color: rgba(255,255,255,0.15);
         }
 
+        /* Tech stack banner */
+        .tech-banner {
+            overflow: hidden;
+            background: rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 1.2rem 0;
+            margin-bottom: 1rem;
+        }
+        .tech-scroll {
+            display: flex;
+            gap: 3rem;
+            animation: scroll-left 40s linear infinite;
+            width: max-content;
+        }
+        .tech-scroll:hover { animation-play-state: paused; }
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+        .tech-item img {
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+        .tech-sep {
+            color: rgba(255,255,255,0.1);
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         @media (max-width: 600px) {
             .hero { flex-direction: column; text-align: center; padding: 7rem 1.5rem 2rem; gap: 1.5rem; }
             section { padding: 2rem 1.5rem; }
@@ -126,10 +168,95 @@
 </nav>
 
 <div class="hero">
-    <img src="paul.jpg" alt="Paul Giunta">
+    <img src="2_site_bg.png" alt="Paul Giunta">
     <div class="hero-text">
         <h1>Paul Giunta</h1>
         <p class="subtitle">Automaticien &amp; Chef de Projet Digital</p>
+    </div>
+</div>
+
+<div class="tech-banner">
+    <div class="tech-scroll">
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/n8n/white" alt="n8n">n8n</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/makerworld/white" alt="Make">Make.com</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/zapier/white" alt="Zapier">Zapier</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/anthropic/white" alt="Claude">Claude</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/openai/white" alt="OpenAI">OpenAI</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlegemini/white" alt="Gemini">Gemini</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/ollama/white" alt="Ollama">Ollama</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="Google Sheets">Google Sheets</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/microsoftexcel/white" alt="Excel">Excel</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/notion/white" alt="Notion">Notion</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/airtable/white" alt="Airtable">Airtable</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/python/white" alt="Python">Python</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/javascript/white" alt="JavaScript">JavaScript</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/googledrive/white" alt="Google Drive">Google Drive</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/gmail/white" alt="Gmail">Gmail</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/hubspot/white" alt="HubSpot">HubSpot</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/salesforce/white" alt="Salesforce">Salesforce</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/slack/white" alt="Slack">Slack</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/stripe/white" alt="Stripe">Stripe</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/html5/white" alt="HTML">HTML/CSS</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/n8n/white" alt="n8n">n8n</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/makerworld/white" alt="Make">Make.com</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/zapier/white" alt="Zapier">Zapier</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/anthropic/white" alt="Claude">Claude</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/openai/white" alt="OpenAI">OpenAI</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlegemini/white" alt="Gemini">Gemini</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/ollama/white" alt="Ollama">Ollama</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="Google Sheets">Google Sheets</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/microsoftexcel/white" alt="Excel">Excel</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/notion/white" alt="Notion">Notion</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/airtable/white" alt="Airtable">Airtable</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/python/white" alt="Python">Python</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/javascript/white" alt="JavaScript">JavaScript</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/googledrive/white" alt="Google Drive">Google Drive</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/gmail/white" alt="Gmail">Gmail</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/hubspot/white" alt="HubSpot">HubSpot</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/salesforce/white" alt="Salesforce">Salesforce</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/slack/white" alt="Slack">Slack</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/stripe/white" alt="Stripe">Stripe</span>
+        <span class="tech-sep">/</span>
+        <span class="tech-item"><img src="https://cdn.simpleicons.org/html5/white" alt="HTML">HTML/CSS</span>
     </div>
 </div>
 
