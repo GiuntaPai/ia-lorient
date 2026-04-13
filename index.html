@@ -152,6 +152,43 @@
                 order: -1;
             }
         }
+        /* Tech stack banner */
+        .tech-banner {
+            overflow: hidden;
+            background: rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0.8rem 0;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        .tech-scroll {
+            display: flex;
+            gap: 2rem;
+            animation: scroll-left 35s linear infinite;
+            width: max-content;
+        }
+        .tech-scroll:hover { animation-play-state: paused; }
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-shrink: 0;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+        .tech-item img {
+            width: 16px;
+            height: 16px;
+            opacity: 0.4;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
         .service-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -209,6 +246,51 @@
                 <p style="margin-bottom:1rem;">Expert en Intelligence Artificielle, je propose des solutions d'automatisation aux entreprises qui souhaitent optimiser la gestion de leurs t&acirc;ches r&eacute;p&eacute;titives.</p>
                 <p style="margin-bottom:1rem;">Mon approche : comprendre votre probl&egrave;me, proposer une automatisation simple, la mettre en place et vous accompagner dans sa maintenance et ses mises &agrave; jour.</p>
                 <p>Chaque solution est con&ccedil;ue pour faire gagner du temps &agrave; votre &eacute;quipe, r&eacute;duire vos co&ucirc;ts op&eacute;rationnels et s'adapter pr&eacute;cis&eacute;ment &agrave; votre activit&eacute;.</p>
+            </div>
+            <div class="tech-banner">
+                <div class="tech-scroll">
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/n8n/white" alt="">n8n</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/zapier/white" alt="">Zapier</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/anthropic/white" alt="">Claude</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/openai/white" alt="">OpenAI</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googlegemini/white" alt="">Gemini</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="">Google Sheets</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/microsoftexcel/white" alt="">Excel</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/notion/white" alt="">Notion</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/airtable/white" alt="">Airtable</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/python/white" alt="">Python</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/javascript/white" alt="">JavaScript</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googledrive/white" alt="">Google Drive</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/gmail/white" alt="">Gmail</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/hubspot/white" alt="">HubSpot</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/salesforce/white" alt="">Salesforce</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/slack/white" alt="">Slack</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/stripe/white" alt="">Stripe</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/html5/white" alt="">HTML/CSS</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googlebigquery/white" alt="">BigQuery</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/looker/white" alt="">Looker</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/n8n/white" alt="">n8n</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/zapier/white" alt="">Zapier</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/anthropic/white" alt="">Claude</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/openai/white" alt="">OpenAI</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googlegemini/white" alt="">Gemini</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="">Google Sheets</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/microsoftexcel/white" alt="">Excel</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/notion/white" alt="">Notion</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/airtable/white" alt="">Airtable</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/python/white" alt="">Python</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/javascript/white" alt="">JavaScript</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googledrive/white" alt="">Google Drive</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/gmail/white" alt="">Gmail</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/hubspot/white" alt="">HubSpot</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/salesforce/white" alt="">Salesforce</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/slack/white" alt="">Slack</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/stripe/white" alt="">Stripe</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/html5/white" alt="">HTML/CSS</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/googlebigquery/white" alt="">BigQuery</span>
+                    <span class="tech-item"><img src="https://cdn.simpleicons.org/looker/white" alt="">Looker</span>
+                </div>
             </div>
             <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:1rem;">Offres d'automatisation Intelligente sur-mesure</h3>
             <div class="service-grid" style="margin-bottom:1.5rem;">
