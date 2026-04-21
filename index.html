@@ -12,6 +12,8 @@
     <meta property="og:url" content="https://ia-lorient.fr">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:image" content="https://ia-lorient.fr/2_site_bg.png">
+    <meta property="og:site_name" content="IA Lorient">
     <meta name="color-scheme" content="dark">
     <meta name="darkreader-lock">
 
@@ -61,7 +63,6 @@
         main {
             position: relative; z-index: 1; min-height: 100vh;
             max-width: 900px; margin: 0 auto; padding: 0 2rem;
-            min-height: 100vh;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center;
         }
@@ -169,6 +170,9 @@
             width: max-content;
         }
         .tech-scroll:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+            .tech-scroll { animation: none; }
+        }
         .tech-item {
             display: flex;
             align-items: center;
@@ -287,7 +291,7 @@
     <div class="services-content">
             <h2 style="font-size:1.8rem; font-weight:900; color:#fff; margin-bottom:0.3rem;">Paul GIUNTA</h2>
             <p style="color:rgba(255,255,255,0.4); font-size:1rem; margin-bottom:1.2rem;">Automaticien &amp; Chef de Projet Digital</p>
-            <div style="color:rgba(255,255,255,0.5); font-size:0.95rem; font-weight:300; margin-bottom:1.5rem; text-align:justify;">
+            <div style="color:rgba(255,255,255,0.5); font-size:0.95rem; font-weight:300; margin-bottom:1.5rem; text-align:left;">
                 <p style="margin-bottom:1rem;">Expert en Intelligence Artificielle, je propose des solutions d'automatisation aux entreprises qui souhaitent optimiser la gestion de leurs t&acirc;ches r&eacute;p&eacute;titives.</p>
                 <p style="margin-bottom:1rem;">Mon approche : comprendre votre probl&egrave;me, proposer une automatisation simple, la mettre en place et vous accompagner dans sa maintenance et ses mises &agrave; jour.</p>
                 <p>Chaque solution est con&ccedil;ue pour faire gagner du temps &agrave; votre &eacute;quipe, r&eacute;duire vos co&ucirc;ts op&eacute;rationnels et s'adapter pr&eacute;cis&eacute;ment &agrave; votre activit&eacute;.</p>
@@ -296,27 +300,27 @@
             <div class="service-grid" style="margin-bottom:1.5rem;">
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">CRM</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Gestion de la relation clients, suivi de vos prospects et relances. Automatisation de vos actions marketing et d&eacute;veloppement de votre strat&eacute;gie commerciale.</p>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:left;">Gestion de la relation clients, suivi de vos prospects et relances. Automatisation de vos actions marketing et d&eacute;veloppement de votre strat&eacute;gie commerciale.</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Communication professionnelle</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Et gestion commerciale de votre entreprise : factures, devis, bons de commande, mails de confirmation et accus&eacute;s de r&eacute;ception.</p>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:left;">Et gestion commerciale de votre entreprise : factures, devis, bons de commande, mails de confirmation et accus&eacute;s de r&eacute;ception.</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Tableaux de bord</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Mise &agrave; jour automatique de vos donn&eacute;es chiffr&eacute;es en fonction de vos &eacute;ch&eacute;ances et de vos reportings.</p>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:left;">Mise &agrave; jour automatique de vos donn&eacute;es chiffr&eacute;es en fonction de vos &eacute;ch&eacute;ances et de vos reportings.</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Connexion API (REST)</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Vos logiciels de gestion d'entreprise communiquent entre eux sur commande et selon vos instructions.</p>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:left;">Vos logiciels de gestion d'entreprise communiquent entre eux sur commande et selon vos instructions.</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Intelligences artificielles</h4>
-            <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); text-align:justify;">Gestion de multiples LLMs et agents pour la qualification de donn&eacute;es, g&eacute;n&eacute;ration de contenu (support &eacute;crit, articles, scripts...) en fran&ccedil;ais et en anglais, analyse de donn&eacute;es...</p>
+            <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); text-align:left;">Gestion de multiples LLMs et agents pour la qualification de donn&eacute;es, g&eacute;n&eacute;ration de contenu (support &eacute;crit, articles, scripts...) en fran&ccedil;ais et en anglais, analyse de donn&eacute;es...</p>
         </div>
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
             <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Alertes intelligentes</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:justify;">Pilotage de vos agendas, notifications et dates d'expiration de vos contrats. Alertes paiement et gestion clients.</p>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:left;">Pilotage de vos agendas, notifications et dates d'expiration de vos contrats. Alertes paiement et gestion clients.</p>
         </div>
     </div>
     <div style="text-align:center; margin-top:1rem;">
