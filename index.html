@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Lorient - Automatisation pour entreprises</title>
-    <meta name="description" content="Automatisation et intelligence artificielle pour TPE et PME a Lorient et alentours. Moins de taches repetitives, plus de temps pour votre metier.">
+    <title>IA Lorient - Automatisation et IA pour TPE/PME a Lorient</title>
+    <meta name="description" content="Automatisation et intelligence artificielle pour TPE et PME a Lorient et alentours. Gagnez des heures chaque semaine sur vos taches repetitives. Diagnostic gratuit.">
     <meta name="keywords" content="IA Lorient, AI Lorient, automatisation Lorient, intelligence artificielle entreprise Lorient, automatisation PME Bretagne, automatisation TPE Lorient">
     <link rel="canonical" href="https://ia-lorient.fr">
     <meta property="og:title" content="IA Lorient - Automatisation pour entreprises">
-    <meta property="og:description" content="Automatisation et IA pour TPE/PME a Lorient et alentours.">
+    <meta property="og:description" content="Gagnez des heures chaque semaine. Automatisation et IA pour TPE/PME a Lorient et alentours.">
     <meta property="og:url" content="https://ia-lorient.fr">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
@@ -26,16 +26,9 @@
         "description": "Automatisation et intelligence artificielle pour TPE et PME. CRM, relances, reporting, synchronisation entre outils.",
         "url": "https://ia-lorient.fr",
         "email": "paulgiunta@ia-lorient.fr",
-        "founder": {
-            "@type": "Person",
-            "name": "Paul Giunta"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lorient",
-            "addressRegion": "Bretagne",
-            "addressCountry": "FR"
-        },
+        "telephone": "+33652759581",
+        "founder": { "@type": "Person", "name": "Paul Giunta" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Lorient", "addressRegion": "Bretagne", "addressCountry": "FR" },
         "areaServed": [
             {"@type": "City", "name": "Lorient"},
             {"@type": "City", "name": "Lanester"},
@@ -50,809 +43,530 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #11162a;
+            --bg2: #0c1020;
+            --ink: #ffffff;
+            --muted: rgba(255,255,255,0.72);
+            --faint: rgba(255,255,255,0.5);
+            --line: rgba(255,255,255,0.1);
+            --card: rgba(255,255,255,0.04);
+            --accent: #4a9fd6;
+            --accent2: #2f7fd0;
+            --green: #5cb85c;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #161b2e;
+            background: var(--bg);
+            color: var(--muted);
             min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.6;
         }
-        canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; }
+        a { color: inherit; }
+        .accent { color: var(--accent); }
+
+        /* ── Hero ───────────────────────────── */
+        .hero-wrap { position: relative; min-height: 100vh; background: radial-gradient(120% 80% at 50% 0%, #1a2140 0%, var(--bg) 55%, var(--bg2) 100%); }
+        canvas#metro { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; }
         main {
             position: relative; z-index: 1; min-height: 100vh;
-            max-width: 900px; margin: 0 auto; padding: 0 2rem;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center;
+            max-width: 920px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2rem);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
         }
         .tag {
-            font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
-            color: rgba(255,255,255,0.5); margin-bottom: 2rem; font-weight: 700;
-            word-spacing: 0.1em;
+            font-size: 0.78rem; letter-spacing: 0.32em; text-transform: uppercase;
+            color: var(--faint); margin-bottom: 1.6rem; font-weight: 600;
         }
-        .tag .letter { display: inline; }
         h1 {
-            font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 900;
-            color: #ffffff; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 0.5rem;
-        }
-        .letter {
-            display: inline; transition: color 0.8s ease;
-        }
-        h1 .letter, .sub-headline .letter {
-            display: inline-block;
+            font-size: clamp(2.8rem, 8vw, 6.5rem); font-weight: 900;
+            color: var(--ink); line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 0.4rem;
         }
         .sub-headline {
-            font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 300;
-            color: rgba(255,255,255,0.6); margin-bottom: 2rem; letter-spacing: -0.01em;
+            font-size: clamp(1.4rem, 4vw, 3rem); font-weight: 300;
+            color: rgba(255,255,255,0.78); margin-bottom: 1.6rem; letter-spacing: -0.01em;
         }
+        h1 .letter, .sub-headline .letter, .tag .letter, .desc .letter { display: inline-block; }
+        .letter { transition: color 0.8s ease; }
         .desc {
-            font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.25rem); font-weight: 300; line-height: 1.7;
-            color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
+            font-size: clamp(1rem, 0.9rem + 0.4vw, 1.3rem); font-weight: 300; line-height: 1.7;
+            color: var(--muted); max-width: 560px; margin: 0 auto 0.6rem;
         }
-        .cta {
-            display: inline-flex; align-items: center; gap: 0.6rem;
-            background: rgba(255,255,255,0.1); color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 1rem 2.2rem; border-radius: 60px;
-            text-decoration: none; font-size: 1.1rem; font-weight: 500;
-            transition: all 0.3s ease;
+        .benefit {
+            font-size: clamp(1rem, 0.95rem + 0.3vw, 1.25rem); font-weight: 500;
+            color: #fff; max-width: 560px; margin: 0 auto clamp(1.8rem, 3vw, 2.4rem);
         }
-        .cta:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
-        .cta .arrow { transition: transform 0.3s ease; }
-        .cta:hover .arrow { transform: translateX(4px); }
-        .link-secondary {
-            display: inline-block; margin-top: 1.5rem;
-            color: rgba(255,255,255,0.3); font-size: 0.85rem;
-            text-decoration: none; letter-spacing: 0.05em;
-            transition: color 0.3s;
+        .benefit b { color: var(--accent); font-weight: 700; }
+        .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            padding: 1rem 2rem; border-radius: 60px; text-decoration: none;
+            font-size: 1.05rem; font-weight: 600; transition: all 0.25s ease; border: 1px solid transparent;
         }
-        .link-secondary:hover { color: rgba(255,255,255,0.6); }
-        .foot {
-            position: relative;
-            display: flex; justify-content: space-between; flex-wrap: wrap;
-            padding: clamp(0.8rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem);
-            font-size: clamp(0.7rem, 0.5rem + 0.3vw, 1rem);
-            color: rgba(255,255,255,0.3); letter-spacing: 0.02em; z-index: 1;
-            gap: 0.2rem;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff; box-shadow: 0 6px 24px rgba(47,127,208,0.35);
         }
-        /* Services: sidebar pattern (photo + content) */
-        .services-layout {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: clamp(1rem, 3vw, 2rem);
-        }
-        .photo-bg {
-            flex-basis: 500px;
-            flex-shrink: 1;
-            aspect-ratio: 3 / 4;
-            max-height: 80vh;
-            min-width: 333px;
-        }
-        .services-content {
-            flex-basis: 400px;
-            flex-grow: 999;
-            text-align: center;
-            max-width: 700px;
-        }
-        .services-layout {
-            container-type: inline-size;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 3vw, 2rem);
-        }
-        @container (max-width: 850px) {
-            .photo-bg {
-                flex-basis: 100%;
-                flex-shrink: 1;
-                min-width: 0;
-                max-width: clamp(220px, 50vw, 350px);
-                margin: 0 auto;
-                order: -1;
-            }
-        }
-        /* Tech stack banner */
-        .tech-banner {
-            overflow: hidden;
-            background: rgba(255,255,255,0.03);
-            border-top: 1px solid rgba(255,255,255,0.06);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 0.8rem 0;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-        }
-        .tech-scroll {
-            display: flex;
-            gap: 2rem;
-            animation: scroll-left 35s linear infinite;
-            width: max-content;
-        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(47,127,208,0.5); }
+        .btn-ghost { background: rgba(255,255,255,0.06); color: #fff; border-color: var(--line); }
+        .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+        .btn .arrow { transition: transform 0.25s ease; }
+        .btn:hover .arrow { transform: translateX(4px); }
+        .contact-line { margin-top: 1.3rem; color: var(--faint); font-size: 0.9rem; }
+        .contact-line a { color: var(--muted); text-decoration: none; }
+        .contact-line a:hover { color: #fff; }
+
+        /* ── Section shell ──────────────────── */
+        section { position: relative; z-index: 1; }
+        .container { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 7vh, 5.5rem) clamp(1.2rem, 4vw, 2rem); }
+        .eyebrow { font-size: 0.75rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.7rem; text-align: center; }
+        .h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+        .lead { color: var(--muted); text-align: center; max-width: 620px; margin: 0 auto 2.5rem; font-weight: 300; font-size: 1.05rem; }
+
+        /* ── Trust strip ────────────────────── */
+        .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.02); }
+        .trust-inner { max-width: 1100px; margin: 0 auto; padding: 1.1rem clamp(1.2rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.6rem 2rem; justify-content: center; align-items: center; font-size: 0.9rem; color: var(--muted); }
+        .trust-inner span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .trust-inner .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+        /* ── Before / After ─────────────────── */
+        .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }
+        .ba-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.6rem; display: flex; flex-direction: column; }
+        .ba-card h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+        .ba-row { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.8rem; font-size: 0.95rem; }
+        .ba-row .ico { flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; margin-top: 1px; }
+        .ba-before .ico { background: rgba(224,85,85,0.15); color: #f08a8a; }
+        .ba-after .ico { background: rgba(92,184,92,0.15); color: #8fd98f; }
+        .ba-before { color: var(--faint); }
+        .ba-after { color: #fff; font-weight: 500; }
+        @media (max-width: 760px) { .ba-grid { grid-template-columns: 1fr; } }
+
+        /* ── Tech banner ────────────────────── */
+        .tech-banner { overflow: hidden; padding: 0.9rem 0; background: rgba(255,255,255,0.02); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .tech-scroll { display: flex; gap: 2.4rem; animation: scroll-left 38s linear infinite; width: max-content; }
         .tech-scroll:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-            .tech-scroll { animation: none; }
-        }
-        .tech-item {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            flex-shrink: 0;
-            color: rgba(255,255,255,0.35);
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            white-space: nowrap;
-        }
-        .tech-item img {
-            width: 16px;
-            height: 16px;
-            opacity: 0.4;
-            filter: brightness(0) invert(1);
-        }
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: clamp(0.5rem, 1.5vw, 0.8rem);
-        }
-        .service-grid > div {
-            height: 160px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        @container (max-width: 550px) {
-            .service-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @container (max-width: 300px) {
-            .service-grid { grid-template-columns: 1fr; }
-        }
-        main { padding: 0 clamp(1rem, 3vw, 2rem); }
+        @media (prefers-reduced-motion: reduce) { .tech-scroll { animation: none; } }
+        .tech-item { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; color: var(--faint); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; }
+        .tech-item img { width: 17px; height: 17px; opacity: 0.55; filter: brightness(0) invert(1); }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ── About + services ───────────────── */
+        .about { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); margin-bottom: 3rem; }
+        .about-photo { flex-basis: 320px; flex-grow: 1; aspect-ratio: 3/4; max-width: 360px; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+        .about-photo > div { width: 100%; height: 100%; background: url('2_site_bg.png') center 15% / cover no-repeat; opacity: 0.92; }
+        .about-text { flex-basis: 420px; flex-grow: 2; }
+        .about-text h3 { color: #fff; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.2rem; }
+        .about-text .role { color: var(--accent); font-size: 0.95rem; font-weight: 500; margin-bottom: 1.1rem; }
+        .about-text p { color: var(--muted); font-size: 0.98rem; font-weight: 300; margin-bottom: 0.9rem; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.8rem, 1.8vw, 1.1rem); }
+        .service-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; transition: all 0.25s ease; }
+        .service-card:hover { border-color: rgba(74,159,214,0.4); transform: translateY(-3px); background: rgba(255,255,255,0.06); }
+        .service-card h4 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .service-card p { color: var(--faint); font-size: 0.88rem; line-height: 1.55; }
+        @media (max-width: 760px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 460px) { .service-grid { grid-template-columns: 1fr; } }
+
+        /* ── Final CTA ──────────────────────── */
+        .final { text-align: center; border-top: 1px solid var(--line); background: radial-gradient(100% 120% at 50% 100%, #1a2140 0%, var(--bg) 70%); }
+        .final .h2 { margin-bottom: 0.5rem; }
+        .final p { color: var(--muted); margin-bottom: 1.8rem; }
+
+        /* ── Footer ─────────────────────────── */
+        .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; padding: 1.4rem clamp(1.2rem, 4vw, 2rem); font-size: 0.82rem; color: var(--faint); border-top: 1px solid var(--line); }
+        .foot a { color: var(--faint); text-decoration: none; }
+        .foot a:hover { color: #fff; }
+        .foot svg { vertical-align: -4px; opacity: 0.8; }
     </style>
 </head>
 <body>
 
-<div style="position:relative; min-height:100vh;">
+<div class="hero-wrap">
 <canvas id="metro"></canvas>
-
 <main>
     <div class="tag" id="tagline"></div>
     <h1 id="headline"></h1>
     <p class="sub-headline" id="subheadline"></p>
     <p class="desc" id="desctext"></p>
-    <a href="mailto:paulgiunta@ia-lorient.fr" class="cta">
-        Contactez-moi <span class="arrow">&rarr;</span>
-    </a>
-    <p style="color:rgba(255,255,255,0.4); font-size:0.85rem; margin-top:0.8rem;">paulgiunta@ia-lorient.fr &mdash; 06 52 75 95 81</p>
-    <a href="#services" class="link-secondary">En savoir plus &darr;</a>
+    <p class="benefit">Gagnez <b>plusieurs heures chaque semaine</b> sur vos taches repetitives, sans changer vos outils.</p>
+    <div class="cta-row">
+        <a href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit" class="btn btn-primary">Diagnostic gratuit <span class="arrow">&rarr;</span></a>
+        <a href="#exemples" class="btn btn-ghost">Voir des exemples</a>
+    </div>
+    <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;&middot;&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
 </main>
 </div>
 
-<section id="services" style="padding:0 0 2rem 0;">
-<div class="tech-banner">
-    <div class="tech-scroll">
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/n8n/white" alt="">n8n</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/zapier/white" alt="">Zapier</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/anthropic/white" alt="">Claude</span>
-        <span class="tech-item"><img src="icons/openai.svg" alt="">OpenAI</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlegemini/white" alt="">Gemini</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="">Google Sheets</span>
-        <span class="tech-item"><img src="icons/microsoftexcel.svg" alt="">Excel</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/notion/white" alt="">Notion</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/airtable/white" alt="">Airtable</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/python/white" alt="">Python</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/javascript/white" alt="">JavaScript</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googledrive/white" alt="">Google Drive</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/gmail/white" alt="">Gmail</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/hubspot/white" alt="">HubSpot</span>
-        <span class="tech-item"><img src="icons/salesforce.svg" alt="">Salesforce</span>
-        <span class="tech-item"><img src="icons/slack.svg" alt="">Slack</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/stripe/white" alt="">Stripe</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/html5/white" alt="">HTML/CSS</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlebigquery/white" alt="">BigQuery</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/looker/white" alt="">Looker</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/n8n/white" alt="">n8n</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/zapier/white" alt="">Zapier</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/anthropic/white" alt="">Claude</span>
-        <span class="tech-item"><img src="icons/openai.svg" alt="">OpenAI</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlegemini/white" alt="">Gemini</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="">Google Sheets</span>
-        <span class="tech-item"><img src="icons/microsoftexcel.svg" alt="">Excel</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/notion/white" alt="">Notion</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/airtable/white" alt="">Airtable</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/python/white" alt="">Python</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/javascript/white" alt="">JavaScript</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googledrive/white" alt="">Google Drive</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/gmail/white" alt="">Gmail</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/hubspot/white" alt="">HubSpot</span>
-        <span class="tech-item"><img src="icons/salesforce.svg" alt="">Salesforce</span>
-        <span class="tech-item"><img src="icons/slack.svg" alt="">Slack</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/stripe/white" alt="">Stripe</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/html5/white" alt="">HTML/CSS</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/googlebigquery/white" alt="">BigQuery</span>
-        <span class="tech-item"><img src="https://cdn.simpleicons.org/looker/white" alt="">Looker</span>
+<!-- Trust strip -->
+<div class="trust">
+    <div class="trust-inner">
+        <span><span class="dot"></span> Base a Lorient, Bretagne Sud</span>
+        <span><span class="dot"></span> TPE &amp; PME locales</span>
+        <span><span class="dot"></span> 5 ans de gestion de projet (Naval Group)</span>
+        <span><span class="dot"></span> Diagnostic gratuit, sans engagement</span>
     </div>
 </div>
-<div style="padding: clamp(2.5rem, 6vh, 5rem) 2rem 0;">
-    <div class="services-layout">
-    <!-- Photo: left side -->
-    <div class="photo-bg">
-        <div style="width:100%; height:100%;
-            background:url('2_site_bg.png') center 15% / cover no-repeat;
-            mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
-            -webkit-mask-image:linear-gradient(to right, transparent 0%, black 15%, black 70%, transparent 100%);
-            opacity:0.6;">
-        </div>
-    </div>
-    <!-- Content -->
-    <div class="services-content">
-            <h2 style="font-size:1.8rem; font-weight:900; color:#fff; margin-bottom:0.3rem;">Paul GIUNTA</h2>
-            <p style="color:rgba(255,255,255,0.4); font-size:1rem; margin-bottom:1.2rem;">Automaticien &amp; Chef de Projet Digital</p>
-            <div style="color:rgba(255,255,255,0.5); font-size:0.95rem; font-weight:300; margin-bottom:1.5rem; text-align:center;">
-                <p style="margin-bottom:1rem;">Expert en Intelligence Artificielle, je propose des solutions d'automatisation aux entreprises qui souhaitent optimiser la gestion de leurs t&acirc;ches r&eacute;p&eacute;titives.</p>
-                <p style="margin-bottom:1rem;">Mon approche : comprendre votre probl&egrave;me, proposer une automatisation simple, la mettre en place et vous accompagner dans sa maintenance et ses mises &agrave; jour.</p>
-                <p>Chaque solution est con&ccedil;ue pour faire gagner du temps &agrave; votre &eacute;quipe, r&eacute;duire vos co&ucirc;ts op&eacute;rationnels et s'adapter pr&eacute;cis&eacute;ment &agrave; votre activit&eacute;.</p>
+
+<!-- Before / After -->
+<section id="exemples">
+    <div class="container">
+        <p class="eyebrow">Concretement</p>
+        <h2 class="h2">Ce que l'automatisation change pour vous</h2>
+        <p class="lead">Pas de jargon. Voici trois situations du quotidien d'une TPE, avant et apres.</p>
+        <div class="ba-grid">
+            <div class="ba-card">
+                <h3>Devis &amp; factures</h3>
+                <div class="ba-row ba-before"><span class="ico">&times;</span><span>Vous les saisissez a la main, un par un, le soir.</span></div>
+                <div class="ba-row ba-after"><span class="ico">&check;</span><span>Generes et envoyes automatiquement depuis vos donnees, en quelques secondes.</span></div>
             </div>
-            <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:1rem;">Offres d'automatisation Intelligente sur-mesure</h3>
-            <div class="service-grid" style="margin-bottom:1.5rem;">
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
-            <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">CRM</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:center;">Gestion de la relation clients, suivi de vos prospects et relances. Automatisation de vos actions marketing et d&eacute;veloppement de votre strat&eacute;gie commerciale.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
-            <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Communication professionnelle</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:center;">Et gestion commerciale de votre entreprise : factures, devis, bons de commande, mails de confirmation et accus&eacute;s de r&eacute;ception.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
-            <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Tableaux de bord</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:center;">Mise &agrave; jour automatique de vos donn&eacute;es chiffr&eacute;es en fonction de vos &eacute;ch&eacute;ances et de vos reportings.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
-            <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Connexion API (REST)</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:center;">Vos logiciels de gestion d'entreprise communiquent entre eux sur commande et selon vos instructions.</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
-            <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Intelligences artificielles</h4>
-            <p style="font-size:0.75rem; color:rgba(255,255,255,0.4); text-align:center;">Gestion de multiples LLMs et agents pour la qualification de donn&eacute;es, g&eacute;n&eacute;ration de contenu (support &eacute;crit, articles, scripts...) en fran&ccedil;ais et en anglais, analyse de donn&eacute;es...</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem;">
-            <h4 style="font-size:1rem; color:#fff; margin-bottom:0.3rem;">Alertes intelligentes</h4>
-            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); text-align:center;">Pilotage de vos agendas, notifications et dates d'expiration de vos contrats. Alertes paiement et gestion clients.</p>
+            <div class="ba-card">
+                <h3>Relances clients</h3>
+                <div class="ba-row ba-before"><span class="ico">&times;</span><span>Vous oubliez de relancer, et vous perdez des ventes.</span></div>
+                <div class="ba-row ba-after"><span class="ico">&check;</span><span>Relances et rappels envoyes tout seuls, au bon moment, avec le bon message.</span></div>
+            </div>
+            <div class="ba-card">
+                <h3>Reporting</h3>
+                <div class="ba-row ba-before"><span class="ico">&times;</span><span>Vous compilez vos chiffres dans Excel chaque semaine.</span></div>
+                <div class="ba-row ba-after"><span class="ico">&check;</span><span>Un tableau de bord toujours a jour, sans que vous touchiez a rien.</span></div>
+            </div>
         </div>
     </div>
-    <div style="text-align:center; margin-top:1rem;">
-        <a href="mailto:paulgiunta@ia-lorient.fr" style="display:inline-flex; align-items:center; gap:0.6rem; background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.25); padding:1rem 2.2rem; border-radius:60px; text-decoration:none; font-size:1.1rem; font-weight:500; transition:all 0.3s;">
-            Contactez-moi &rarr;
-        </a>
-        <p style="margin-top:0.8rem; color:rgba(255,255,255,0.35); font-size:0.85rem;">paulgiunta@ia-lorient.fr</p>
-    </div>
-    </div><!-- end right content -->
-    </div><!-- end services-layout -->
+</section>
+
+<!-- Tech banner -->
+<div class="tech-banner">
+    <div class="tech-scroll" id="techScroll"></div>
 </div>
+
+<!-- About + services -->
+<section id="services">
+    <div class="container">
+        <div class="about">
+            <div class="about-photo"><div></div></div>
+            <div class="about-text">
+                <h3>Paul Giunta</h3>
+                <p class="role">Automaticien &amp; Chef de Projet Digital</p>
+                <p>Expert en intelligence artificielle, je propose des solutions d'automatisation aux entreprises qui souhaitent optimiser la gestion de leurs taches repetitives.</p>
+                <p>Mon approche : comprendre votre probleme, proposer une automatisation simple, la mettre en place, puis vous accompagner dans sa maintenance et ses mises a jour.</p>
+                <p>Chaque solution est concue pour faire gagner du temps a votre equipe, reduire vos couts operationnels et s'adapter precisement a votre activite.</p>
+            </div>
+        </div>
+
+        <p class="eyebrow">Ce que je mets en place</p>
+        <h2 class="h2">Offres d'automatisation sur-mesure</h2>
+        <p class="lead">On part toujours de votre besoin reel, jamais d'un outil a la mode.</p>
+        <div class="service-grid">
+            <div class="service-card"><h4>CRM</h4><p>Gestion de la relation clients, suivi de vos prospects et relances. Automatisation de vos actions marketing et de votre strategie commerciale.</p></div>
+            <div class="service-card"><h4>Communication professionnelle</h4><p>Gestion commerciale : factures, devis, bons de commande, mails de confirmation et accuses de reception.</p></div>
+            <div class="service-card"><h4>Tableaux de bord</h4><p>Mise a jour automatique de vos donnees chiffrees selon vos echeances et vos reportings.</p></div>
+            <div class="service-card"><h4>Connexion API (REST)</h4><p>Vos logiciels de gestion communiquent entre eux, sur commande et selon vos instructions.</p></div>
+            <div class="service-card"><h4>Intelligences artificielles</h4><p>Gestion de plusieurs LLMs et agents pour la qualification de donnees, la generation de contenu (support ecrit, articles, scripts) en francais et en anglais, l'analyse de donnees.</p></div>
+            <div class="service-card"><h4>Alertes intelligentes</h4><p>Pilotage de vos agendas, notifications, dates d'expiration de contrats. Alertes de paiement et gestion clients.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final">
+    <div class="container">
+        <h2 class="h2">Parlons de votre premiere automatisation</h2>
+        <p>Un echange court et gratuit pour identifier ce qui vous fait perdre le plus de temps. Sans engagement.</p>
+        <div class="cta-row" style="justify-content:center;">
+            <a href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit" class="btn btn-primary">Demander mon diagnostic gratuit <span class="arrow">&rarr;</span></a>
+        </div>
+        <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;&middot;&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
+    </div>
 </section>
 
 <div class="foot">
-    <span>Paul Giunta &mdash; Lorient, Bretagne - <span style="white-space:nowrap;">T&eacute;l: 06 52 75 95 81</span> - <a href="https://www.linkedin.com/in/paul-giunta-pro/" target="_blank" rel="noopener" style="opacity:0.8;vertical-align:middle;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" style="vertical-align:-4px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></span>
+    <span>Paul Giunta &mdash; Lorient, Bretagne &middot; <span style="white-space:nowrap;">Tel : 06 52 75 95 81</span> &middot; <a href="https://www.linkedin.com/in/paul-giunta-pro/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></span>
     <span>ia-lorient.fr</span>
 </div>
 
 <script>
+// ── Tech stack banner (built from array, duplicated for seamless loop) ──
+const TECH = [
+    ['https://cdn.simpleicons.org/n8n/white','n8n'],['https://cdn.simpleicons.org/zapier/white','Zapier'],
+    ['https://cdn.simpleicons.org/anthropic/white','Claude'],['icons/openai.svg','OpenAI'],
+    ['https://cdn.simpleicons.org/googlegemini/white','Gemini'],['https://cdn.simpleicons.org/googlesheets/white','Google Sheets'],
+    ['icons/microsoftexcel.svg','Excel'],['https://cdn.simpleicons.org/notion/white','Notion'],
+    ['https://cdn.simpleicons.org/airtable/white','Airtable'],['https://cdn.simpleicons.org/python/white','Python'],
+    ['https://cdn.simpleicons.org/javascript/white','JavaScript'],['https://cdn.simpleicons.org/googledrive/white','Google Drive'],
+    ['https://cdn.simpleicons.org/gmail/white','Gmail'],['https://cdn.simpleicons.org/hubspot/white','HubSpot'],
+    ['icons/salesforce.svg','Salesforce'],['icons/slack.svg','Slack'],
+    ['https://cdn.simpleicons.org/stripe/white','Stripe'],['https://cdn.simpleicons.org/html5/white','HTML/CSS'],
+    ['https://cdn.simpleicons.org/googlebigquery/white','BigQuery'],['https://cdn.simpleicons.org/looker/white','Looker']
+];
+(function(){
+    const wrap = document.getElementById('techScroll');
+    let html = '';
+    for (let pass = 0; pass < 2; pass++) {
+        for (const [src,label] of TECH) html += '<span class="tech-item"><img src="'+src+'" alt="">'+label+'</span>';
+    }
+    wrap.innerHTML = html;
+})();
+
+// ── Headline letter wrapping (for the animation to target) ──
 function wrapLetters(elementId, text, allowWrap) {
     const el = document.getElementById(elementId);
     el.innerHTML = '';
     for (let i = 0; i < text.length; i++) {
-        if (text[i] === '\n') {
-            el.appendChild(document.createElement('br'));
-            continue;
-        }
+        if (text[i] === '\n') { el.appendChild(document.createElement('br')); continue; }
         if (text[i] === ' ') {
-            if (allowWrap) {
-                el.appendChild(document.createTextNode(' '));
-            } else {
-                const span = document.createElement('span');
-                span.className = 'letter';
-                span.textContent = '\u00A0';
-                span.dataset.colored = 'false';
-                span.dataset.isSpace = 'true';
-                el.appendChild(span);
-            }
+            if (allowWrap) { el.appendChild(document.createTextNode(' ')); }
+            else { const s = document.createElement('span'); s.className='letter'; s.textContent=' '; s.dataset.colored='false'; s.dataset.isSpace='true'; el.appendChild(s); }
             continue;
         }
         const span = document.createElement('span');
-        span.className = 'letter';
-        span.textContent = text[i];
-        span.dataset.colored = 'false';
-        span.dataset.isSpace = 'false';
+        span.className = 'letter'; span.textContent = text[i];
+        span.dataset.colored = 'false'; span.dataset.isSpace = 'false';
         el.appendChild(span);
     }
 }
-wrapLetters('tagline', 'Lorient \u2014 Automatisation \u2014 IA', false);
+wrapLetters('tagline', 'Lorient — Automatisation — IA', false);
 wrapLetters('headline', 'Automatisez', false);
-wrapLetters('subheadline', 'vos t\u00e2ches r\u00e9p\u00e9titives', false);
-wrapLetters('desctext', 'Automatisation sur mesure pour les TPE et PME\nde Lorient et sa r\u00e9gion', true);
+wrapLetters('subheadline', 'vos tâches répétitives', false);
+wrapLetters('desctext', 'Automatisation sur mesure pour les TPE et PME\nde Lorient et sa région', true);
 
+// ── Metro animation (corridor pathfinding) + glow + trails ──
 const canvas = document.getElementById('metro');
 const ctx = canvas.getContext('2d');
-let W, H;
+let W, H, DPR;
 function resize() {
-    W = window.innerWidth;
-    H = window.innerHeight;
-    canvas.width = W;
-    canvas.height = H;
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 }
 resize();
 window.addEventListener('resize', resize);
 
-const COLORS = ['#e6c840', '#5cb85c', '#4a9fd6', '#e05555'];
+const COLORS = ['#e6c840', '#5cb85c', '#56b0ea', '#e05555'];
 const missions = [];
 const MAX_MISSIONS = 3;
 const SHAPE_COUNT = 3;
 const SHAPE_SIZE = 6;
-// Speed scales with screen width: ~3s to cross full screen regardless of resolution
-const BASE_SPEED_RATIO = 0.08; // 8% of screen width per second
+const BASE_SPEED_RATIO = 0.08;
 const SPAWN_INTERVAL = 3000;
-const SHAPE_DELAY_SEC = 1.5; // seconds between shapes
+const SHAPE_DELAY_SEC = 1.5;
+const TRAIL_LEN = 14;
 let lastFrameTime = 0;
 let isTabVisible = true;
 
-// Handle tab visibility
 document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        isTabVisible = false;
-    } else {
-        isTabVisible = true;
-        lastFrameTime = 0; // reset to avoid huge dt on return
-        // Clear stale missions
-        missions.length = 0;
-        cachedCorridors = null;
-        cachedEdges = null;
-    }
+    if (document.hidden) { isTabVisible = false; }
+    else { isTabVisible = true; lastFrameTime = 0; missions.length = 0; cachedCorridors = null; cachedEdges = null; }
 });
 
-const GRID_SIZE = 10; // collision grid cell size
-
-function getAllLetters() { return document.querySelectorAll('.letter'); }
-
+function getAllLetters() { return document.querySelectorAll('#tagline .letter, #headline .letter, #subheadline .letter, #desctext .letter'); }
 function getWhiteLetters() {
-    const all = getAllLetters();
-    const white = [];
-    all.forEach(l => {
-        if (l.dataset.isSpace === 'true') return;
-        if (l.dataset.colored === 'false') white.push(l);
-    });
+    const all = getAllLetters(); const white = [];
+    all.forEach(l => { if (l.dataset.isSpace === 'true') return; if (l.dataset.colored === 'false') white.push(l); });
     if (white.length > 0) return white;
-    const fallback = [];
-    all.forEach(l => { if (l.dataset.isSpace !== 'true') fallback.push(l); });
-    return fallback;
+    const fb = []; all.forEach(l => { if (l.dataset.isSpace !== 'true') fb.push(l); }); return fb;
 }
-
 function getAvailableColor() {
     const used = new Set();
     missions.forEach(m => used.add(m.color));
     getAllLetters().forEach(l => { if (l.dataset.colored === 'true') used.add(l.style.color); });
     const avail = COLORS.filter(c => !used.has(c));
-    return avail.length > 0 ? avail[Math.floor(Math.random() * avail.length)] : null;
+    return avail.length > 0 ? avail[Math.floor(Math.random()*avail.length)] : null;
 }
-
-// Random side but never repeat last, and track usage to balance
-let lastSide = -1;
-let sideUsage = [0, 0, 0, 0]; // top, right, bottom, left
-
+let lastSide = -1; let sideUsage = [0,0,0,0];
 function randomEdgePoint() {
-    // Pick the least used side, excluding last
-    let candidates = [0, 1, 2, 3].filter(s => s !== lastSide);
-    // Sort by least used
-    candidates.sort((a, b) => sideUsage[a] - sideUsage[b]);
-    // Pick randomly from the 2 least used
-    const pick = candidates[Math.floor(Math.random() * Math.min(2, candidates.length))];
-    lastSide = pick;
-    sideUsage[pick]++;
-
-    switch(pick) {
-        case 0: return { x: Math.random() * W, y: -20 };
-        case 1: return { x: W + 20, y: Math.random() * H };
-        case 2: return { x: Math.random() * W, y: H + 20 };
-        case 3: return { x: -20, y: Math.random() * H };
-    }
+    let candidates = [0,1,2,3].filter(s => s !== lastSide);
+    candidates.sort((a,b)=>sideUsage[a]-sideUsage[b]);
+    const pick = candidates[Math.floor(Math.random()*Math.min(2,candidates.length))];
+    lastSide = pick; sideUsage[pick]++;
+    switch(pick){ case 0: return {x:Math.random()*W,y:-20}; case 1: return {x:W+20,y:Math.random()*H}; case 2: return {x:Math.random()*W,y:H+20}; case 3: return {x:-20,y:Math.random()*H}; }
 }
+function getLetterCenter(el){ const r=el.getBoundingClientRect(); return {x:r.left+r.width/2, y:r.top+r.height/2}; }
 
-// Letter positions — only valid when not scrolled
-function getLetterCenter(el) {
-    const r = el.getBoundingClientRect();
-    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
-}
-
-// Pause animation when scrolled past first section
-let animationPaused = false;
-let lastScrollY = 0;
+let animationPaused = false; let lastScrollY = 0;
 window.addEventListener('scroll', () => {
-    animationPaused = window.scrollY > window.innerHeight * 0.3;
-    // Any scroll movement invalidates paths since letter positions shift
-    if (Math.abs(window.scrollY - lastScrollY) > 2) {
-        missions.length = 0;
-        cachedCorridors = null;
-        cachedEdges = null;
-    }
+    animationPaused = window.scrollY > window.innerHeight * 0.35;
+    if (Math.abs(window.scrollY - lastScrollY) > 2) { missions.length = 0; cachedCorridors = null; cachedEdges = null; }
     lastScrollY = window.scrollY;
 });
 
-// ── Corridor-based pathfinding ──────────────────────────────
-let cachedCorridors = null;
-let cachedEdges = null;
-
-function getCorridors() {
+let cachedCorridors = null; let cachedEdges = null;
+function getCorridors(){
     if (cachedCorridors) return cachedCorridors;
-    // Collect all visual line rects
     const lineRects = [];
-    const elements = ['tagline', 'headline', 'subheadline', 'desctext'];
-    for (const id of elements) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        // Get individual line rects (handles word-wrap)
-        const letters = el.querySelectorAll('.letter');
-        if (letters.length === 0) continue;
-        let lineTop = null, lineBottom = null;
-        let lastY = null;
-        letters.forEach(l => {
-            const r = l.getBoundingClientRect();
-            const midY = Math.round(r.top + r.height / 2);
-            if (lastY === null || Math.abs(midY - lastY) > 10) {
-                // New visual line
-                if (lineTop !== null) lineRects.push({ top: lineTop, bottom: lineBottom });
-                lineTop = r.top; lineBottom = r.bottom;
-            } else {
-                lineBottom = Math.max(lineBottom, r.bottom);
-            }
-            lastY = midY;
-        });
-        if (lineTop !== null) lineRects.push({ top: lineTop, bottom: lineBottom });
+    const elements = ['tagline','headline','subheadline','desctext'];
+    for (const id of elements){
+        const el = document.getElementById(id); if(!el) continue;
+        const letters = el.querySelectorAll('.letter'); if(letters.length===0) continue;
+        let lineTop=null,lineBottom=null,lastY=null;
+        letters.forEach(l=>{ const r=l.getBoundingClientRect(); const midY=Math.round(r.top+r.height/2);
+            if(lastY===null||Math.abs(midY-lastY)>10){ if(lineTop!==null) lineRects.push({top:lineTop,bottom:lineBottom}); lineTop=r.top; lineBottom=r.bottom; }
+            else { lineBottom=Math.max(lineBottom,r.bottom); } lastY=midY; });
+        if(lineTop!==null) lineRects.push({top:lineTop,bottom:lineBottom});
     }
-
-    // Also add CTA
-    const cta = document.querySelector('.cta');
-    if (cta) {
-        const r = cta.getBoundingClientRect();
-        lineRects.push({ top: r.top, bottom: r.bottom });
+    const cta = document.querySelector('.benefit');
+    if(cta){ const r=cta.getBoundingClientRect(); lineRects.push({top:r.top,bottom:r.bottom}); }
+    lineRects.sort((a,b)=>a.top-b.top);
+    const corridors=[];
+    if(lineRects.length>0){
+        corridors.push({y:lineRects[0].top-50});
+        for(let i=0;i<lineRects.length-1;i++){ corridors.push({y:(lineRects[i].bottom+lineRects[i+1].top)/2}); }
+        corridors.push({y:lineRects[lineRects.length-1].bottom+50});
     }
-
-    // Sort by top position
-    lineRects.sort((a, b) => a.top - b.top);
-
-    // Build corridors: above first line, between each pair, below last line
-    const corridors = [];
-    if (lineRects.length > 0) {
-        corridors.push({ y: lineRects[0].top - 50 });
-        for (let i = 0; i < lineRects.length - 1; i++) {
-            const gap = (lineRects[i].bottom + lineRects[i + 1].top) / 2;
-            corridors.push({ y: gap });
-        }
-        corridors.push({ y: lineRects[lineRects.length - 1].bottom + 50 });
-    }
-
-    cachedCorridors = corridors;
-    return corridors;
+    cachedCorridors=corridors; return corridors;
 }
-
-// Find which corridor is closest above and below a letter
-function findNearestCorridors(letterY, corridors) {
-    let above = corridors[0], below = corridors[corridors.length - 1];
-    for (const c of corridors) {
-        if (c.y < letterY && c.y > above.y) above = c;
-        if (c.y > letterY && c.y < below.y) below = c;
-    }
-    return { above, below };
+function findNearestCorridors(letterY,corridors){
+    let above=corridors[0], below=corridors[corridors.length-1];
+    for(const c of corridors){ if(c.y<letterY&&c.y>above.y) above=c; if(c.y>letterY&&c.y<below.y) below=c; }
+    return {above,below};
 }
-
-// Get the safe vertical X positions (left and right edges of all text)
-function getTextEdges() {
-    if (cachedEdges) return cachedEdges;
-    const els = [
-        document.getElementById('tagline'),
-        document.getElementById('headline'),
-        document.getElementById('subheadline'),
-        document.querySelector('.desc')
-    ];
-    let leftMost = W, rightMost = 0;
-    for (const el of els) {
-        if (!el) continue;
-        const r = el.getBoundingClientRect();
-        if (r.left < leftMost) leftMost = r.left;
-        if (r.right > rightMost) rightMost = r.right;
-    }
-    cachedEdges = { left: leftMost - 30, right: rightMost + 30 };
-    return cachedEdges;
+function getTextEdges(){
+    if(cachedEdges) return cachedEdges;
+    const els=[document.getElementById('tagline'),document.getElementById('headline'),document.getElementById('subheadline'),document.getElementById('desctext')];
+    let leftMost=W,rightMost=0;
+    for(const el of els){ if(!el) continue; const r=el.getBoundingClientRect(); if(r.left<leftMost) leftMost=r.left; if(r.right>rightMost) rightMost=r.right; }
+    cachedEdges={left:leftMost-30,right:rightMost+30}; return cachedEdges;
 }
-
-// Switch corridor via a safe edge: go horizontal to edge, vertical to new corridor, horizontal back
-function addCorridorSwitch(points, fromX, fromY, toY, edges) {
-    // Pick left or right edge — whichever is closer
-    const distLeft = Math.abs(fromX - edges.left);
-    const distRight = Math.abs(fromX - edges.right);
-    const edgeX = distLeft < distRight ? edges.left : edges.right;
-
-    points.push({ x: edgeX, y: fromY });  // horizontal to edge
-    points.push({ x: edgeX, y: toY });    // vertical along edge (safe, no text)
-}
-
-// Build path using corridors, vertical moves only on edges
-function buildCorridorPath(spawn, target, targetLetter) {
-    const corridors = getCorridors();
-    const edges = getTextEdges();
-    const letterY = target.y;
-    const letterX = target.x;
-    const { above, below } = findNearestCorridors(letterY, corridors);
-
-    const points = [{ x: spawn.x, y: spawn.y }];
-
-    // Pick entry corridor closest to spawn
-    let entryCorridor = corridors[0];
-    let bestDist = Infinity;
-    for (const c of corridors) {
-        const d = Math.abs(spawn.y - c.y);
-        if (d < bestDist) { bestDist = d; entryCorridor = c; }
+function buildCorridorPath(spawn,target){
+    const corridors=getCorridors(); const edges=getTextEdges();
+    const letterY=target.y, letterX=target.x;
+    const {above,below}=findNearestCorridors(letterY,corridors);
+    const points=[{x:spawn.x,y:spawn.y}];
+    let entryCorridor=corridors[0], bestDist=Infinity;
+    for(const c of corridors){ const d=Math.abs(spawn.y-c.y); if(d<bestDist){bestDist=d; entryCorridor=c;} }
+    const goingRight=spawn.x<letterX;
+    const verticalEdgeX=goingRight?edges.left:edges.right;
+    points.push({x:spawn.x,y:entryCorridor.y});
+    let currentCorridorY=entryCorridor.y, currentX=spawn.x;
+    const approachFromAbove=currentCorridorY<=letterY;
+    const approachCorridor=approachFromAbove?above:below;
+    const midCorridors=corridors.filter(c=> approachFromAbove ? (c.y>currentCorridorY&&c.y<approachCorridor.y) : (c.y<currentCorridorY&&c.y>approachCorridor.y));
+    const visitCount=Math.min(midCorridors.length, Math.random()>0.5?1:0);
+    const toVisit=midCorridors.sort(()=>Math.random()-0.5).slice(0,visitCount);
+    toVisit.sort((a,b)=>approachFromAbove?a.y-b.y:b.y-a.y);
+    for(const corridor of toVisit){
+        const progressX=goingRight?currentX+(letterX-currentX)*(0.2+Math.random()*0.3):currentX-(currentX-letterX)*(0.2+Math.random()*0.3);
+        points.push({x:progressX,y:currentCorridorY}); currentX=progressX;
+        points.push({x:verticalEdgeX,y:currentCorridorY}); points.push({x:verticalEdgeX,y:corridor.y});
+        currentCorridorY=corridor.y; currentX=verticalEdgeX;
     }
-
-    // Determine overall horizontal direction: spawn → letter
-    const goingRight = spawn.x < letterX;
-    // Use one edge for ALL vertical transitions (consistent side)
-    const verticalEdgeX = goingRight ? edges.left : edges.right;
-
-    // Step 1: go to entry corridor
-    points.push({ x: spawn.x, y: entryCorridor.y });
-
-    let currentCorridorY = entryCorridor.y;
-    let currentX = spawn.x;
-
-    // Step 2: find approach corridor
-    const approachFromAbove = currentCorridorY <= letterY;
-    const approachCorridor = approachFromAbove ? above : below;
-
-    // Find intermediate corridors between entry and approach
-    const midCorridors = corridors.filter(c => {
-        if (approachFromAbove) return c.y > currentCorridorY && c.y < approachCorridor.y;
-        return c.y < currentCorridorY && c.y > approachCorridor.y;
-    });
-
-    // Visit 0-1 intermediate corridor for variety
-    const visitCount = Math.min(midCorridors.length, Math.random() > 0.5 ? 1 : 0);
-    const toVisit = midCorridors.sort(() => Math.random() - 0.5).slice(0, visitCount);
-    toVisit.sort((a, b) => approachFromAbove ? a.y - b.y : b.y - a.y);
-
-    for (const corridor of toVisit) {
-        // Progress horizontally toward letter (never back)
-        const progressX = goingRight
-            ? currentX + (letterX - currentX) * (0.2 + Math.random() * 0.3)
-            : currentX - (currentX - letterX) * (0.2 + Math.random() * 0.3);
-        points.push({ x: progressX, y: currentCorridorY });
-        currentX = progressX;
-
-        // Switch corridor via the consistent vertical edge
-        points.push({ x: verticalEdgeX, y: currentCorridorY });
-        points.push({ x: verticalEdgeX, y: corridor.y });
-        currentCorridorY = corridor.y;
-        currentX = verticalEdgeX;
+    if(Math.abs(currentCorridorY-approachCorridor.y)>5){
+        const progressX=goingRight?currentX+(letterX-currentX)*(0.3+Math.random()*0.3):currentX-(currentX-letterX)*(0.3+Math.random()*0.3);
+        points.push({x:progressX,y:currentCorridorY}); currentX=progressX;
+        points.push({x:verticalEdgeX,y:currentCorridorY}); points.push({x:verticalEdgeX,y:approachCorridor.y});
+        currentCorridorY=approachCorridor.y; currentX=verticalEdgeX;
     }
-
-    // Step 3: get to approach corridor if not already there
-    if (Math.abs(currentCorridorY - approachCorridor.y) > 5) {
-        // Progress horizontally first
-        const progressX = goingRight
-            ? currentX + (letterX - currentX) * (0.3 + Math.random() * 0.3)
-            : currentX - (currentX - letterX) * (0.3 + Math.random() * 0.3);
-        points.push({ x: progressX, y: currentCorridorY });
-        currentX = progressX;
-
-        // Switch via vertical edge
-        points.push({ x: verticalEdgeX, y: currentCorridorY });
-        points.push({ x: verticalEdgeX, y: approachCorridor.y });
-        currentCorridorY = approachCorridor.y;
-        currentX = verticalEdgeX;
-    }
-
-    // Step 4: go to letter X in approach corridor (single direction)
-    points.push({ x: letterX, y: currentCorridorY });
-
-    // Step 5: drop/rise to letter
-    points.push({ x: letterX, y: letterY });
-
+    points.push({x:letterX,y:currentCorridorY});
+    points.push({x:letterX,y:letterY});
     return points;
 }
-
-function drawShape(x, y, type, color, size) {
-    ctx.fillStyle = color;
-    switch(type) {
-        case 0:
-            ctx.beginPath(); ctx.arc(x, y, size, 0, Math.PI * 2); ctx.fill(); break;
-        case 1:
-            ctx.fillRect(x - size, y - size, size * 2, size * 2); break;
-        case 2:
-            ctx.beginPath(); ctx.moveTo(x, y - size * 1.2);
-            ctx.lineTo(x + size, y + size * 0.8); ctx.lineTo(x - size, y + size * 0.8);
-            ctx.closePath(); ctx.fill(); break;
+function drawShape(x,y,type,color,size){
+    ctx.save();
+    ctx.shadowColor=color; ctx.shadowBlur=14; ctx.fillStyle=color;
+    switch(type){
+        case 0: ctx.beginPath(); ctx.arc(x,y,size,0,Math.PI*2); ctx.fill(); break;
+        case 1: ctx.fillRect(x-size,y-size,size*2,size*2); break;
+        case 2: ctx.beginPath(); ctx.moveTo(x,y-size*1.2); ctx.lineTo(x+size,y+size*0.8); ctx.lineTo(x-size,y+size*0.8); ctx.closePath(); ctx.fill(); break;
     }
+    ctx.restore();
 }
-
-// Track which text lines have active missions
-function getTargetLine(letter) {
-    if (letter.closest('#tagline')) return 'tag';
-    if (letter.closest('#headline')) return 'h1';
-    if (letter.closest('#subheadline')) return 'sub';
-    if (letter.closest('#desctext')) return 'desc';
+function drawTrail(trail,color,size){
+    if(trail.length<2) return;
+    ctx.save();
+    for(let i=1;i<trail.length;i++){
+        const a=(i/trail.length)*0.5;
+        ctx.strokeStyle=color; ctx.globalAlpha=a; ctx.lineWidth=size*1.6*(i/trail.length);
+        ctx.lineCap='round';
+        ctx.beginPath(); ctx.moveTo(trail[i-1].x,trail[i-1].y); ctx.lineTo(trail[i].x,trail[i].y); ctx.stroke();
+    }
+    ctx.restore();
+}
+function getTargetLine(letter){
+    if(letter.closest('#tagline')) return 'tag';
+    if(letter.closest('#headline')) return 'h1';
+    if(letter.closest('#subheadline')) return 'sub';
+    if(letter.closest('#desctext')) return 'desc';
     return 'other';
 }
-
-function createMission() {
-    if (missions.length >= MAX_MISSIONS) return;
-    const whites = getWhiteLetters();
-
-    // Filter out letters on lines that already have an active mission
-    const busyLines = new Set();
-    missions.forEach(m => busyLines.add(m.targetLine));
-    const available = whites.filter(l => !busyLines.has(getTargetLine(l)));
-    if (available.length === 0) return;
-
-    // Group by line and pick from the least targeted line
-    const byLine = {};
-    available.forEach(l => {
-        const line = getTargetLine(l);
-        if (!byLine[line]) byLine[line] = [];
-        byLine[line].push(l);
-    });
-
-    // Count how many letters are already colored per line
-    const coloredCount = {};
-    getAllLetters().forEach(l => {
-        if (l.dataset.isSpace === 'true') return;
-        const line = getTargetLine(l);
-        if (!coloredCount[line]) coloredCount[line] = 0;
-        if (l.dataset.colored === 'true') coloredCount[line]++;
-    });
-
-    // Pick the line with fewest colored letters
-    let bestLine = null, bestCount = Infinity;
-    for (const line of Object.keys(byLine)) {
-        const count = coloredCount[line] || 0;
-        if (count < bestCount) { bestCount = count; bestLine = line; }
-    }
-
-    const pool = byLine[bestLine] || available;
-    const targetLetter = pool[Math.floor(Math.random() * pool.length)];
-    const color = getAvailableColor();
-    if (!color) return;
-
-    const spawn = randomEdgePoint();
-    const target = getLetterCenter(targetLetter);
-    const path = buildCorridorPath(spawn, target, targetLetter);
-    // Pick shape type that isn't overused (max 1 mission per shape type = 3 shapes each)
-    const shapeCount = [0, 0, 0]; // circle, square, triangle
-    missions.forEach(m => shapeCount[m.shapeType]++);
-    const availableShapes = [0, 1, 2].filter(s => shapeCount[s] < 1);
-    if (availableShapes.length === 0) return;
-    const shapeType = availableShapes[Math.floor(Math.random() * availableShapes.length)];
-
-    const shapes = [];
-    for (let i = 0; i < SHAPE_COUNT; i++) {
-        shapes.push({
-            pathIndex: 0, x: spawn.x, y: spawn.y,
-            arrived: false, delaySec: i * SHAPE_DELAY_SEC
-        });
-    }
-
-    const targetLine = getTargetLine(targetLetter);
-    missions.push({ spawn, target, path, color, shapeType, shapes, targetLetter, targetLine, phase: 'traveling', fillStart: 0 });
+function createMission(){
+    if(missions.length>=MAX_MISSIONS) return;
+    const whites=getWhiteLetters();
+    const busyLines=new Set(); missions.forEach(m=>busyLines.add(m.targetLine));
+    const available=whites.filter(l=>!busyLines.has(getTargetLine(l)));
+    if(available.length===0) return;
+    const byLine={}; available.forEach(l=>{ const line=getTargetLine(l); (byLine[line]=byLine[line]||[]).push(l); });
+    const coloredCount={};
+    getAllLetters().forEach(l=>{ if(l.dataset.isSpace==='true') return; const line=getTargetLine(l); coloredCount[line]=coloredCount[line]||0; if(l.dataset.colored==='true') coloredCount[line]++; });
+    let bestLine=null,bestCount=Infinity;
+    for(const line of Object.keys(byLine)){ const c=coloredCount[line]||0; if(c<bestCount){bestCount=c; bestLine=line;} }
+    const pool=byLine[bestLine]||available;
+    const targetLetter=pool[Math.floor(Math.random()*pool.length)];
+    const color=getAvailableColor(); if(!color) return;
+    const spawn=randomEdgePoint(); const target=getLetterCenter(targetLetter);
+    const path=buildCorridorPath(spawn,target);
+    const shapeCount=[0,0,0]; missions.forEach(m=>shapeCount[m.shapeType]++);
+    const availableShapes=[0,1,2].filter(s=>shapeCount[s]<1); if(availableShapes.length===0) return;
+    const shapeType=availableShapes[Math.floor(Math.random()*availableShapes.length)];
+    const shapes=[];
+    for(let i=0;i<SHAPE_COUNT;i++) shapes.push({pathIndex:0,x:spawn.x,y:spawn.y,arrived:false,delaySec:i*SHAPE_DELAY_SEC,trail:[]});
+    missions.push({spawn,target,path,color,shapeType,shapes,targetLetter,targetLine:getTargetLine(targetLetter),phase:'traveling'});
 }
-
-function update(timestamp) {
-    // Delta time in seconds, capped
-    if (!lastFrameTime) lastFrameTime = timestamp;
-    let dt = (timestamp - lastFrameTime) / 1000;
-    lastFrameTime = timestamp;
-    if (dt > 0.1) dt = 0.016; // cap: skip huge gaps (tab switch, lag)
-    if (dt <= 0) dt = 0.016;
-
-    // Speed in pixels/sec, proportional to screen width
-    const speed = W * BASE_SPEED_RATIO * dt;
-
-    ctx.clearRect(0, 0, W, H);
-
-    // Don't update when scrolled away or tab hidden
-    if (animationPaused || !isTabVisible) {
-        requestAnimationFrame(update);
-        return;
-    }
-
-    for (let m = missions.length - 1; m >= 0; m--) {
-        const mission = missions[m];
-
-        if (mission.phase === 'traveling') {
-            // Spawn dot
-            ctx.globalAlpha = 0.5 + 0.5 * Math.sin(Date.now() * 0.005);
-            ctx.fillStyle = mission.color;
-            ctx.beginPath(); ctx.arc(mission.spawn.x, mission.spawn.y, 8, 0, Math.PI * 2); ctx.fill();
-            ctx.globalAlpha = 1;
-
-            let allArrived = true;
-            for (const shape of mission.shapes) {
-                if (shape.arrived) {
-                    // Shrink to nothing over 400ms
-                    if (!shape.arriveTime) shape.arriveTime = Date.now();
-                    const shrinkProgress = (Date.now() - shape.arriveTime) / 400;
-                    const shrinkSize = SHAPE_SIZE * Math.max(0, 1 - shrinkProgress);
-                    if (shrinkSize > 0.3) {
-                        drawShape(shape.x, shape.y, mission.shapeType, mission.color, shrinkSize);
-                    }
+function update(timestamp){
+    if(!lastFrameTime) lastFrameTime=timestamp;
+    let dt=(timestamp-lastFrameTime)/1000; lastFrameTime=timestamp;
+    if(dt>0.1) dt=0.016; if(dt<=0) dt=0.016;
+    const speed=W*BASE_SPEED_RATIO*dt;
+    ctx.clearRect(0,0,W,H);
+    if(animationPaused||!isTabVisible){ requestAnimationFrame(update); return; }
+    for(let m=missions.length-1;m>=0;m--){
+        const mission=missions[m];
+        if(mission.phase==='traveling'){
+            ctx.save();
+            ctx.globalAlpha=0.4+0.4*Math.sin(timestamp*0.005);
+            ctx.shadowColor=mission.color; ctx.shadowBlur=18; ctx.fillStyle=mission.color;
+            ctx.beginPath(); ctx.arc(mission.spawn.x,mission.spawn.y,7,0,Math.PI*2); ctx.fill();
+            ctx.restore();
+            let allArrived=true;
+            for(const shape of mission.shapes){
+                if(shape.arrived){
+                    if(!shape.arriveTime) shape.arriveTime=timestamp;
+                    const sp=(timestamp-shape.arriveTime)/400; const ss=SHAPE_SIZE*Math.max(0,1-sp);
+                    if(ss>0.3) drawShape(shape.x,shape.y,mission.shapeType,mission.color,ss);
                     continue;
                 }
-                if (shape.delaySec > 0) { shape.delaySec -= dt; allArrived = false; continue; }
-
-                // Check if shape has reached the actual letter
-                const lp = getLetterCenter(mission.targetLetter);
-                if (Math.abs(shape.x - lp.x) + Math.abs(shape.y - lp.y) < Math.max(speed + 2, 5)) {
-                    shape.x = lp.x; shape.y = lp.y;
-                    shape.arrived = true;
-                } else {
-                    // Move along path, consuming full speed budget per frame
-                    let remaining = speed;
-                    while (remaining > 0.5) {
-                        const npt = mission.path[shape.pathIndex + 1];
-                        const tx = npt ? npt.x : lp.x;
-                        const ty = npt ? npt.y : lp.y;
-                        const mdx = tx - shape.x;
-                        const mdy = ty - shape.y;
-                        const dist = Math.sqrt(mdx * mdx + mdy * mdy);
-
-                        if (dist < 0.5) {
-                            // At target point
-                            if (npt) { shape.pathIndex++; continue; }
-                            else break;
-                        }
-
-                        if (remaining >= dist) {
-                            // Reach this waypoint and keep going
-                            shape.x = tx; shape.y = ty;
-                            remaining -= dist;
-                            if (npt) shape.pathIndex++;
-                            else break;
-                        } else {
-                            // Partial move
-                            shape.x += (mdx / dist) * remaining;
-                            shape.y += (mdy / dist) * remaining;
-                            remaining = 0;
-                        }
+                if(shape.delaySec>0){ shape.delaySec-=dt; allArrived=false; continue; }
+                const lp=getLetterCenter(mission.targetLetter);
+                if(Math.abs(shape.x-lp.x)+Math.abs(shape.y-lp.y)<Math.max(speed+2,5)){ shape.x=lp.x; shape.y=lp.y; shape.arrived=true; }
+                else {
+                    let remaining=speed;
+                    while(remaining>0.5){
+                        const npt=mission.path[shape.pathIndex+1];
+                        const tx=npt?npt.x:lp.x, ty=npt?npt.y:lp.y;
+                        const mdx=tx-shape.x, mdy=ty-shape.y; const dist=Math.sqrt(mdx*mdx+mdy*mdy);
+                        if(dist<0.5){ if(npt){shape.pathIndex++; continue;} else break; }
+                        if(remaining>=dist){ shape.x=tx; shape.y=ty; remaining-=dist; if(npt) shape.pathIndex++; else break; }
+                        else { shape.x+=(mdx/dist)*remaining; shape.y+=(mdy/dist)*remaining; remaining=0; }
                     }
-                    allArrived = false;
+                    allArrived=false;
                 }
-                drawShape(shape.x, shape.y, mission.shapeType, mission.color, SHAPE_SIZE);
+                shape.trail.push({x:shape.x,y:shape.y}); if(shape.trail.length>TRAIL_LEN) shape.trail.shift();
+                drawTrail(shape.trail,mission.color,SHAPE_SIZE);
+                if(!shape.arrived) drawShape(shape.x,shape.y,mission.shapeType,mission.color,SHAPE_SIZE);
             }
-
-            if (allArrived && !mission.colorApplied) {
-                mission.targetLetter.style.color = mission.color;
-                mission.targetLetter.dataset.colored = 'true';
-                mission.colorApplied = true;
+            if(allArrived&&!mission.colorApplied){ mission.targetLetter.style.color=mission.color; mission.targetLetter.dataset.colored='true'; mission.colorApplied=true; }
+            if(allArrived){
+                let allShrunk=true;
+                for(const shape of mission.shapes){ if(!shape.arriveTime||(timestamp-shape.arriveTime)<400){ allShrunk=false; break; } }
+                if(allShrunk) mission.phase='done';
             }
-
-            // Check if all shapes finished shrinking
-            if (allArrived) {
-                let allShrunk = true;
-                for (const shape of mission.shapes) {
-                    if (!shape.arriveTime || (Date.now() - shape.arriveTime) < 400) {
-                        allShrunk = false; break;
-                    }
-                }
-                if (allShrunk) mission.phase = 'done';
-            }
-        }
-        else if (mission.phase === 'done') {
-            missions.splice(m, 1);
-        }
+        } else if(mission.phase==='done'){ missions.splice(m,1); }
     }
     requestAnimationFrame(update);
 }
-
 setInterval(createMission, SPAWN_INTERVAL);
 setTimeout(createMission, 500);
 requestAnimationFrame(update);
