@@ -1,0 +1,18 @@
+# Securite : bloque TOUT a la racine par defaut.
+# Seuls les fichiers du site public (GitHub Pages) sont whitelistes ci-dessous.
+# Empeche tout commit accidentel de cles/API/workflows/scripts/backups
+# (ex: "API Key.txt", *.json n8n, scraper/, scripts/) meme avec `git add -A`.
+/*
+
+# --- Fichiers du site a garder versionnes ---
+!/.gitignore
+!/index.html
+!/services.html
+!/CNAME
+!/2_site_bg.png
+!/BingSiteAuth.xml
+!/googleb33cb1ab27e025e9.html
+!/llms.txt
+!/robots.txt
+!/sitemap.xml
+!/icons/
