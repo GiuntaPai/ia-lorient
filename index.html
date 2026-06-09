@@ -553,8 +553,6 @@ function update(timestamp){
                     }
                     allArrived=false;
                 }
-                shape.trail.push({x:shape.x,y:shape.y}); if(shape.trail.length>TRAIL_LEN) shape.trail.shift();
-                drawTrail(shape.trail,mission.color,SHAPE_SIZE);
                 if(!shape.arrived) drawShape(shape.x,shape.y,mission.shapeType,mission.color,SHAPE_SIZE);
             }
             if(allArrived&&!mission.colorApplied){ mission.targetLetter.style.color=mission.color; mission.targetLetter.dataset.colored='true'; mission.colorApplied=true; }
