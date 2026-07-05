@@ -1,26 +1,41 @@
 # IA Lorient - Paul Giunta
 
 ## About
-IA Lorient is a freelance automation and AI service based in Lorient, Brittany, France. Paul Giunta helps small and medium businesses (TPE/PME) automate their repetitive tasks using modern tools and artificial intelligence.
+IA Lorient is a freelance automation and AI service based in Lorient, Brittany, France. Paul Giunta helps small and medium businesses (TPE/PME) automate their repetitive tasks using modern tools and artificial intelligence. The site has two parts: a custom automation service, and a catalogue of ready-made tools sold as one-time purchases (owned, not rented).
 
-## Services
-- CRM setup and automation
-- Email and follow-up automation
-- Reporting dashboards (auto-updated)
+## Automation service
+Custom automation built around the client's real problem, without changing their existing tools:
+- CRM setup and automation (client tracking, prospects, follow-ups)
+- Automated business documents (invoices, quotes, confirmations)
+- Auto-updating reporting dashboards
 - Tool synchronization (Google Sheets, Notion, CRM platforms)
-- AI integration (OpenAI, Claude) for data processing and lead qualification
-- Lead generation pipeline automation
-- API integrations and webhook workflows
+- AI integration (Claude, OpenAI) for lead qualification, content, data analysis
+- Smart alerts (expiring contracts, late payments)
+Free diagnostic, no commitment. Every project has a fixed quote agreed before work starts.
+
+## Catalogue (products owned, no subscription)
+Ready-made tools already built for real clients, adapted to each new client, bought once and owned. Key selling point: own it instead of renting it monthly.
+- Site web possédé (owned website): a clean, fast website on the client's own account, no Wix/WordPress subscription. From 350 EUR, one time.
+- Boutons de gestion client (client-management buttons): buttons directly on the client cards inside a CRM to change a status, log an action or trigger a follow-up in one click. Fixed price, one time, adapted to the client's CRM. Alternative to tools rented around 300 USD per month.
+How it works: pick a product, contact Paul, he adapts it to your activity, it is yours. No subscription, no dependency.
+
+## Proven work (client cases)
+- Sales agency: automated commercial tracking and real-time reporting dashboards.
+- Coaching business: automated client onboarding and weekly follow-up generation.
+- Prospecting: automated lead-generation pipeline (targeting, contact finding, outreach prep).
+- Press relations: automated monitoring of an article's visibility across search engines, plus an AI-built website.
 
 ## Location
-Lorient, Bretagne, France. Serving Lorient, Lanester, Hennebont, Ploemeur and surrounding areas.
+Lorient, Bretagne, France. Serving Lorient, Lanester, Hennebont, Quimperlé, Ploemeur and the wider Pays de Lorient.
 
 ## Contact
 Email: paulgiunta@ia-lorient.fr
-Website: https://ia-lorient.fr
+Phone: +33 6 52 75 95 81
+Website: https://ia-lorient.fr (Automatisation), https://ia-lorient.fr/catalogue.html (Catalogue)
+Paul answers directly. French and English.
 
 ## Background
-Paul Giunta is a former project manager at Naval Group (3 years, 40M+ EUR budgets) turned automation specialist. He builds end-to-end automation systems using n8n, Notion API, Google Sheets API, and AI tools. Bilingual French/English.
+Paul Giunta is a former engineer at Naval Group (3 years) turned automation specialist. Polyvalent profile across engineering, management, marketing and project work. He builds end-to-end automation systems with n8n, Notion API, Google Sheets API, Python and AI tools.
 
 ## Keywords
-automatisation Lorient, IA Lorient, AI Lorient, automatisation TPE PME Bretagne, CRM automatisation, integration API Lorient
+automatisation Lorient, IA Lorient, AI Lorient, automatisation TPE PME Bretagne, CRM automatisation, integration API Lorient, site web sans abonnement, outils possédés, automatisation Morbihan
