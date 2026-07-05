@@ -194,6 +194,27 @@
         }
         .foot a { color: rgba(218,215,205,0.75); text-decoration: none; }
         .foot a:hover { color: #fff; }
+
+        /* ── Modal contact ──────────────────── */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(24,36,32,0.55); backdrop-filter: blur(3px); display: none; align-items: center; justify-content: center; padding: 1.5rem; z-index: 500; }
+        .modal-overlay.open { display: flex; }
+        .modal { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; max-width: 460px; width: 100%; padding: clamp(1.6rem, 4vw, 2.3rem); box-shadow: 0 24px 70px rgba(24,36,32,0.28); position: relative; }
+        .modal h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.6rem; padding-right: 1.5rem; }
+        .modal .m-intro { color: var(--muted); font-size: 0.97rem; margin-bottom: 1.4rem; }
+        .modal .contact-block { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.4rem 1.1rem; margin-bottom: 1.2rem; }
+        .modal .cb-row { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; padding: 0.85rem 0; }
+        .modal .cb-row + .cb-row { border-top: 1px solid var(--line); }
+        .modal .cb-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.15rem; }
+        .modal .cb-val { font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; color: var(--ink); font-weight: 600; }
+        .modal .copy-btn { flex-shrink: 0; background: transparent; border: 1px solid var(--line); color: var(--hunter); border-radius: 6px; padding: 0.45rem 0.9rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.2s; font-family: inherit; }
+        .modal .copy-btn:hover { background: var(--panel); border-color: var(--fern); }
+        .modal .copy-btn.done { background: var(--fern); color: #fff; border-color: var(--fern); }
+        .modal .m-open { display: block; width: 100%; text-align: center; }
+        .modal .m-note { font-size: 0.83rem; color: var(--muted); margin-top: 1.1rem; line-height: 1.55; }
+        .modal .m-close { position: absolute; top: 0.9rem; right: 1rem; background: transparent; border: 0; font-size: 1.6rem; line-height: 1; color: var(--muted); cursor: pointer; padding: 0.2rem 0.4rem; }
+        .modal .m-close:hover { color: var(--ink); }
+        @media (prefers-reduced-motion: no-preference) { .modal-overlay.open .modal { animation: modal-in 0.22s ease; } }
+        @keyframes modal-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
     </style>
 </head>
 <body>
@@ -217,7 +238,7 @@
         <h1>Je supprime les tâches répétitives des TPE de Lorient.</h1>
         <p class="lead">Devis, relances, reporting, ressaisies entre logiciels&nbsp;: je les automatise, sans changer vos outils.</p>
         <p class="strong">Vous gagnez <b>plusieurs heures chaque semaine</b>, et vous les consacrez à votre métier.</p>
-        <a class="btn" href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Diagnostic gratuit</a>
+        <a class="btn js-contact" data-product="Diagnostic gratuit" href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Diagnostic gratuit</a>
         <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;·&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
     </div>
     <figure class="hero-photo">
@@ -359,7 +380,7 @@
     <div class="final-in">
         <h2>Parlons de votre première automatisation</h2>
         <p>Un échange court et gratuit pour identifier ce qui vous fait perdre le plus de temps. Sans engagement. C'est moi qui réponds.</p>
-        <a class="btn btn-light" href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Demander mon diagnostic gratuit</a>
+        <a class="btn btn-light js-contact" data-product="Diagnostic gratuit" href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Demander mon diagnostic gratuit</a>
         <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;·&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
         <div class="foot">
             <span>Paul Giunta · Lorient, Bretagne · <a href="tel:+33652759581">06 52 75 95 81</a></span>
@@ -367,6 +388,82 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+  <div class="modal">
+    <button class="m-close" id="cm-close" aria-label="Fermer">&times;</button>
+    <h3 id="cm-title">Vous voulez me contacter</h3>
+    <p class="m-intro" id="cm-intro">Écrivez-moi ou appelez-moi, je réponds vite. C'est moi qui réponds, pas un standard.</p>
+    <div class="contact-block">
+      <div class="cb-row">
+        <div><div class="cb-label">e-mail</div><div class="cb-val" id="cm-email">paulgiunta@ia-lorient.fr</div></div>
+        <button class="copy-btn" id="cm-copy" type="button">Copier</button>
+      </div>
+      <div class="cb-row">
+        <div><div class="cb-label">téléphone</div><div class="cb-val">06&nbsp;52&nbsp;75&nbsp;95&nbsp;81</div></div>
+        <a class="copy-btn" href="tel:+33652759581">Appeler</a>
+      </div>
+    </div>
+    <a class="btn m-open" id="cm-open" href="mailto:paulgiunta@ia-lorient.fr">Ouvrir mon logiciel de mail</a>
+    <p class="m-note">Si rien ne s'ouvre en cliquant, pas d'inquiétude&nbsp;: votre ordinateur n'a peut-être pas de logiciel de mail configuré. Copiez mon adresse ci-dessus et écrivez-moi depuis votre messagerie habituelle (Gmail, Outlook, etc.).</p>
+  </div>
+</div>
+<script>
+(function () {
+  var email = 'paulgiunta@ia-lorient.fr';
+  var overlay = document.getElementById('contact-modal');
+  if (!overlay) return;
+  var title = document.getElementById('cm-title');
+  var intro = document.getElementById('cm-intro');
+  var openBtn = document.getElementById('cm-open');
+  var copyBtn = document.getElementById('cm-copy');
+  var closeBtn = document.getElementById('cm-close');
+  var lastFocus = null;
+
+  function openModal(product, mailto) {
+    lastFocus = document.activeElement;
+    if (product) {
+      title.textContent = 'Intéressé par : ' + product;
+      intro.textContent = 'Pour lancer votre projet, écrivez-moi ou appelez-moi. Je réponds vite, et c\'est moi directement.';
+    } else {
+      title.textContent = 'Vous voulez me contacter';
+      intro.textContent = 'Écrivez-moi ou appelez-moi, je réponds vite. C\'est moi qui réponds, pas un standard.';
+    }
+    openBtn.setAttribute('href', mailto || ('mailto:' + email));
+    copyBtn.textContent = 'Copier';
+    copyBtn.classList.remove('done');
+    overlay.classList.add('open');
+    closeBtn.focus();
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.js-contact').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(a.getAttribute('data-product'), a.getAttribute('href'));
+    });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+  copyBtn.addEventListener('click', function () {
+    function ok() { copyBtn.textContent = 'Copié !'; copyBtn.classList.add('done'); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(ok, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var t = document.createElement('textarea'); t.value = email; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); ok(); } catch (err) {}
+      document.body.removeChild(t);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
