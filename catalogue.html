@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - IA Lorient | Des outils que vous possédez, sans abonnement</title>
+    <meta name="description" content="Des outils déjà construits, que j'adapte à votre activité et que vous achetez une seule fois. Site web, boutons de gestion client. Aucun abonnement.">
+    <link rel="canonical" href="https://ia-lorient.fr/catalogue.html">
+    <meta property="og:title" content="Le catalogue : des outils que vous achetez une fois, et que vous possédez.">
+    <meta property="og:description" content="Les logiciels qu'on vous loue au mois, je vous les vends en propriété. Construits, adaptés à votre activité, à vous pour de bon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ia-lorient.fr/catalogue.html">
+    <meta property="og:image" content="https://ia-lorient.fr/2_site_bg.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="color-scheme" content="light">
+    <meta name="darkreader-lock">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <style>
+        :root {
+            --paper: #f6f7f4;
+            --panel: #eceee8;
+            --ink: #182420;
+            --muted: #4a554f;
+            --line: #d8dbd3;
+            --fern: #588157;
+            --hunter: #3a5a40;
+            --pine: #344e41;
+            --paper-on-dark: #dad7cd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            font-size: 17px;
+        }
+        a { color: var(--fern); text-underline-offset: 3px; }
+        a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--fern); outline-offset: 3px; }
+        .mono { font-family: 'IBM Plex Mono', monospace; }
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2rem); }
+
+        /* ── Header ─────────────────────────── */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(246,247,244,0.92); backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+        }
+        .head-in {
+            max-width: 1080px; margin: 0 auto; padding: 0.8rem clamp(1.2rem, 4vw, 2rem);
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        }
+        .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.02rem; letter-spacing: -0.01em; }
+        .brand small { font-weight: 400; color: var(--muted); }
+        .head-right { display: flex; align-items: center; gap: clamp(0.9rem, 2.5vw, 1.8rem); }
+        .head-right nav { display: flex; gap: clamp(0.9rem, 2vw, 1.4rem); }
+        .head-right nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        .head-right nav a:hover { color: var(--ink); }
+        .head-right nav a.active { color: var(--ink); border-bottom: 2px solid var(--fern); padding-bottom: 2px; }
+        .head-tel { font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem; color: var(--ink); text-decoration: none; }
+        .head-tel:hover { color: var(--hunter); }
+        @media (max-width: 640px) { .head-tel { display: none; } }
+
+        /* ── Hero ───────────────────────────── */
+        .hero { padding: clamp(3.5rem, 9vh, 6rem) 0 clamp(2.5rem, 6vh, 4rem); }
+        .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fern); font-weight: 600; margin-bottom: 1.1rem; }
+        h1 {
+            font-size: clamp(2rem, 4.6vw, 3.3rem); font-weight: 700; line-height: 1.06;
+            letter-spacing: -0.02em; max-width: 21ch; text-wrap: balance; margin-bottom: 1.2rem;
+        }
+        .hero p.lead { font-size: clamp(1.02rem, 1.6vw, 1.2rem); color: var(--muted); max-width: 56ch; margin-bottom: 0.7rem; }
+        .hero p.strong { font-weight: 500; color: var(--ink); max-width: 56ch; margin-bottom: 2rem; }
+        .hero p.strong b { color: var(--hunter); }
+
+        .btn {
+            display: inline-block; background: var(--hunter); color: #fff;
+            padding: 0.85rem 1.7rem; border-radius: 6px; text-decoration: none;
+            font-weight: 500; font-size: 1rem; transition: background 0.3s;
+        }
+        .btn:hover { background: var(--fern); }
+        .btn-light { background: var(--paper); color: var(--pine); }
+        .btn-light:hover { background: #fff; }
+        .contact-line { margin-top: 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--muted); }
+        .contact-line a { color: var(--muted); text-decoration: none; }
+        .contact-line a:hover { color: var(--ink); }
+
+        /* ── Ligne repères ──────────────────── */
+        .marks { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .marks-in {
+            max-width: 1080px; margin: 0 auto; padding: 0.85rem clamp(1.2rem, 4vw, 2rem);
+            display: flex; flex-wrap: wrap; gap: 0.4rem 2.2rem;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--muted);
+        }
+
+        /* ── Sections produit ───────────────── */
+        section { padding: clamp(2.8rem, 7vh, 4.5rem) 0; }
+        section + section { border-top: 1px solid var(--line); }
+        .sec-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fern); font-weight: 600; margin-bottom: 0.9rem; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.8rem; text-wrap: balance; }
+        .sec-lead { color: var(--muted); max-width: 60ch; margin-bottom: 2rem; }
+
+        .prod { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+        @media (max-width: 780px) { .prod { grid-template-columns: 1fr; } }
+        .prod h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.7rem; }
+        .prod .desc { color: var(--muted); margin-bottom: 1.1rem; max-width: 58ch; }
+        .prod .desc b { color: var(--ink); font-weight: 600; }
+        .prod ul.incl { list-style: none; margin: 0 0 1.6rem; }
+        .prod ul.incl li { padding: 0.45rem 0 0.45rem 1.4rem; position: relative; color: var(--ink); font-size: 0.97rem; border-top: 1px solid var(--line); }
+        .prod ul.incl li:first-child { border-top: 0; }
+        .prod ul.incl li::before { content: "–"; position: absolute; left: 0; color: var(--fern); }
+
+        .pricebox { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem; }
+        .pricebox .plabel { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.3rem; }
+        .pricebox .price { font-family: 'IBM Plex Mono', monospace; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; color: var(--hunter); line-height: 1.2; }
+        .pricebox .ponce { font-size: 0.95rem; color: var(--ink); font-weight: 500; margin-bottom: 1.1rem; }
+        table.compare { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin-bottom: 1.3rem; }
+        table.compare td { padding: 0.6rem 0.2rem; border-top: 1px solid var(--line); vertical-align: top; }
+        table.compare td:first-child { color: var(--muted); width: 42%; padding-right: 0.8rem; }
+        table.compare td:last-child { color: var(--ink); }
+        table.compare tr.win td:last-child { font-weight: 600; color: var(--hunter); }
+        .pricebox .btn { width: 100%; text-align: center; }
+
+        /* ── Étapes ─────────────────────────── */
+        ol.steps { list-style: none; counter-reset: st; max-width: 720px; }
+        ol.steps li { counter-increment: st; padding: 1.1rem 0 1.1rem 3.4rem; position: relative; border-top: 1px solid var(--line); }
+        ol.steps li:first-child { border-top: 0; }
+        ol.steps li::before {
+            content: "0" counter(st); position: absolute; left: 0; top: 1.15rem;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; font-weight: 600; color: var(--fern);
+        }
+        ol.steps li b { font-weight: 600; }
+        ol.steps li span { color: var(--muted); }
+
+        /* ── FAQ ────────────────────────────── */
+        .faq { max-width: 720px; }
+        details { border-top: 1px solid var(--line); }
+        details:last-child { border-bottom: 1px solid var(--line); }
+        summary { cursor: pointer; padding: 1rem 0; font-weight: 600; font-size: 1.02rem; list-style: none; position: relative; padding-right: 2rem; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "+"; position: absolute; right: 0.2rem; top: 0.9rem; font-family: 'IBM Plex Mono', monospace; color: var(--fern); font-size: 1.1rem; }
+        details[open] summary::after { content: "–"; }
+        details .a { padding: 0 0 1.2rem; color: var(--muted); max-width: 62ch; }
+
+        /* ── Bloc final sombre ──────────────── */
+        .final { background: var(--pine); color: var(--paper-on-dark); }
+        .final-in { max-width: 1080px; margin: 0 auto; padding: clamp(3rem, 8vh, 5rem) clamp(1.2rem, 4vw, 2rem) 2.2rem; }
+        .final h2 { color: #fff; margin-bottom: 0.6rem; }
+        .final p { max-width: 56ch; margin-bottom: 1.8rem; color: var(--paper-on-dark); }
+        .final .contact-line { color: var(--paper-on-dark); }
+        .final .contact-line a { color: var(--paper-on-dark); }
+        .final .contact-line a:hover { color: #fff; }
+        .foot {
+            border-top: 1px solid rgba(218,215,205,0.25); margin-top: 2.6rem; padding-top: 1.3rem;
+            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+            font-size: 0.82rem; color: rgba(218,215,205,0.75);
+        }
+        .foot a { color: rgba(218,215,205,0.75); text-decoration: none; }
+        .foot a:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="head-in">
+        <a class="brand" href="/">IA Lorient <small>· Paul Giunta</small></a>
+        <div class="head-right">
+            <nav>
+                <a href="/">Automatisation</a>
+                <a href="/catalogue.html" class="active">Catalogue</a>
+            </nav>
+            <a class="head-tel" href="tel:+33652759581">06 52 75 95 81</a>
+        </div>
+    </div>
+</header>
+
+<div class="hero wrap">
+    <p class="kicker">Catalogue · propriété, pas location</p>
+    <h1>Des outils que vous achetez une fois. Et que vous possédez.</h1>
+    <p class="lead">Ces outils existent déjà&nbsp;: je les ai construits pour de vrais clients, ils tournent tous les jours. Je les adapte à votre activité, vous les payez une seule fois, et ils sont à vous.</p>
+    <p class="strong">Pas d'abonnement, pas de location, <b>pas de dépendance</b>.</p>
+    <a class="btn" href="#site-web">Voir les deux produits</a>
+    <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;·&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
+</div>
+
+<div class="marks">
+    <div class="marks-in">
+        <span>payé une fois, possédé pour de bon</span>
+        <span>adapté à votre activité</span>
+        <span>aucun abonnement</span>
+        <span>Lorient, Bretagne Sud</span>
+    </div>
+</div>
+
+<section id="site-web">
+    <div class="wrap">
+        <p class="sec-label">Produit 01</p>
+        <div class="prod">
+            <div>
+                <h3>Site web possédé</h3>
+                <p class="desc">Un site propre et rapide, à votre nom, hébergé sur votre compte. Pas de constructeur à abonnement&nbsp;: un site que <b>vous possédez pour de bon</b>, livré avec de quoi le faire évoluer vous-même.</p>
+                <ul class="incl">
+                    <li>Conçu à partir de votre activité réelle, pas d'un gabarit générique</li>
+                    <li>Hébergé sur votre propre compte&nbsp;: vous gardez les clés</li>
+                    <li>Livré avec un guide simple pour les modifications courantes</li>
+                    <li>Corrections incluses après la livraison</li>
+                </ul>
+            </div>
+            <div class="pricebox">
+                <p class="plabel">tarif</p>
+                <p class="price">à partir de 350&nbsp;&euro;</p>
+                <p class="ponce">une seule fois</p>
+                <table class="compare">
+                    <tr><td>Wix, WordPress géré</td><td>200 à 400&nbsp;&euro; par an, à vie, et le site ne vous appartient jamais vraiment</td></tr>
+                    <tr class="win"><td>Ici</td><td>payé une fois, le site est à vous, point</td></tr>
+                </table>
+                <a class="btn" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Site%20web%20poss%C3%A9d%C3%A9&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0AMon%20site%20actuel%20(si%20j'en%20ai%20un)%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Ce produit m'intéresse</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="boutons-crm">
+    <div class="wrap">
+        <p class="sec-label">Produit 02</p>
+        <div class="prod">
+            <div>
+                <h3>Boutons de gestion client</h3>
+                <p class="desc">Des boutons directement sur la fiche de vos clients, dans votre CRM&nbsp;: changer un statut, enregistrer une action, lancer un suivi. <b>Un clic</b>, au lieu des allers-retours et des copier-coller.</p>
+                <ul class="incl">
+                    <li>Installé dans votre CRM actuel, sans changer d'outil</li>
+                    <li>Boutons définis avec vous, selon votre façon de travailler</li>
+                    <li>Déjà en production chez un client&nbsp;: ce n'est pas un prototype</li>
+                    <li>Corrections incluses après la livraison</li>
+                </ul>
+            </div>
+            <div class="pricebox">
+                <p class="plabel">tarif</p>
+                <p class="price">prix fixe</p>
+                <p class="ponce">une seule fois, adapté à votre CRM</p>
+                <table class="compare">
+                    <tr><td>En location ailleurs</td><td>autour de 300&nbsp;$ par mois, en abonnement, pour toujours</td></tr>
+                    <tr class="win"><td>Ici</td><td>payé une fois, l'outil est à vous</td></tr>
+                </table>
+                <a class="btn" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Boutons%20de%20gestion%20client&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20CRM%20%3A%20%0D%0ACe%20que%20je%20voudrais%20g%C3%A9rer%20en%20un%20clic%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Ce produit m'intéresse</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <p class="sec-label">La méthode</p>
+        <h2>Comment ça se passe</h2>
+        <p class="sec-lead">Pas de tunnel de vente, pas de devis à rallonge.</p>
+        <ol class="steps">
+            <li><b>Vous repérez un produit</b> qui vous parle dans le catalogue.</li>
+            <li><b>Vous me contactez</b> et vous me dites votre besoin, en deux lignes. <span>Je vous réponds vite, et on se parle.</span></li>
+            <li><b>On l'adapte ensemble.</b> <span>Je vous montre ce que je livre, et je l'ajuste à votre activité. Le prix exact est fixé à ce moment-là, avant de commencer.</span></li>
+            <li><b>Il est à vous.</b> <span>Pas d'abonnement, pas de dépendance, pas de mauvaise surprise.</span></li>
+        </ol>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <p class="sec-label">Questions directes</p>
+        <h2>Ce que vous vous demandez sûrement</h2>
+        <div class="faq" style="margin-top: 1.6rem;">
+            <details>
+                <summary>Qui possède quoi, exactement&nbsp;?</summary>
+                <div class="a">Vous. Le site ou l'outil est installé sur vos comptes, à votre nom. Si on arrête de travailler ensemble demain, tout continue de fonctionner et tout reste chez vous.</div>
+            </details>
+            <details>
+                <summary>Et si ça casse un jour&nbsp;?</summary>
+                <div class="a">Les corrections de ce que j'ai livré sont incluses&nbsp;: si quelque chose ne marche pas comme convenu, je le répare, sans facturer. Les petites retouches courantes sont comprises aussi. Seules les évolutions importantes font l'objet d'un devis, annoncé avant, jamais après.</div>
+            </details>
+            <details>
+                <summary>C'est vraiment sans abonnement&nbsp;?</summary>
+                <div class="a">Oui. Vous me payez une fois, pour le travail. Il peut rester des coûts d'hébergement à votre nom selon votre cas (souvent zéro ou quelques euros par mois, chez l'hébergeur, pas chez moi). Je vous dis lesquels avant de commencer, noir sur blanc.</div>
+            </details>
+            <details>
+                <summary>Mon activité est particulière, ça marchera chez moi&nbsp;?</summary>
+                <div class="a">C'est le principe du catalogue&nbsp;: la base existe et fonctionne déjà, et je l'adapte à votre façon de travailler. Si votre besoin est trop éloigné de ce que je sais bien faire, je vous le dis franchement au premier échange.</div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<div class="final">
+    <div class="final-in">
+        <h2>Un produit vous intéresse&nbsp;?</h2>
+        <p>Ou vous avez un besoin proche&nbsp;? Écrivez-moi ou appelez-moi, on en parle simplement. C'est moi qui réponds.</p>
+        <a class="btn btn-light" href="mailto:paulgiunta@ia-lorient.fr?subject=Catalogue">Contactez-moi</a>
+        <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;·&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
+        <div class="foot">
+            <span>Paul Giunta · Lorient, Bretagne · <a href="tel:+33652759581">06 52 75 95 81</a></span>
+            <span><a href="/">ia-lorient.fr</a> · hébergé sur GitHub Pages</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

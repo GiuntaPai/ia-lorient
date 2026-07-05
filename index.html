@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Lorient - Automatisation et IA pour TPE/PME à Lorient</title>
-    <meta name="description" content="Automatisation et intelligence artificielle pour TPE et PME à Lorient et alentours. Gagnez des heures chaque semaine sur vos tâches répétitives. Diagnostic gratuit.">
-    <meta name="keywords" content="IA Lorient, AI Lorient, automatisation Lorient, intelligence artificielle entreprise Lorient, automatisation PME Bretagne, automatisation TPE Lorient">
+    <title>IA Lorient - Automatisation pour TPE et PME à Lorient | Paul Giunta</title>
+    <meta name="description" content="J'automatise les tâches répétitives des TPE et PME de Lorient : devis, relances, reporting, connexion entre outils. Sans changer vos logiciels. Diagnostic gratuit.">
+    <meta name="keywords" content="IA Lorient, automatisation Lorient, intelligence artificielle entreprise Lorient, automatisation PME Bretagne, automatisation TPE Lorient">
     <link rel="canonical" href="https://ia-lorient.fr">
-    <meta property="og:title" content="IA Lorient - Automatisation pour entreprises">
-    <meta property="og:description" content="Gagnez des heures chaque semaine. Automatisation et IA pour TPE/PME à Lorient et alentours.">
+    <meta property="og:title" content="IA Lorient - Automatisation pour TPE et PME">
+    <meta property="og:description" content="Je supprime les tâches répétitives des TPE de Lorient. Sans changer vos outils. Diagnostic gratuit.">
     <meta property="og:url" content="https://ia-lorient.fr">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:image" content="https://ia-lorient.fr/2_site_bg.png">
     <meta property="og:site_name" content="IA Lorient">
-    <meta name="color-scheme" content="dark">
+    <meta name="color-scheme" content="light">
     <meta name="darkreader-lock">
 
-    <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "IA Lorient - Paul Giunta",
-        "description": "Automatisation et intelligence artificielle pour TPE et PME. CRM, relances, reporting, synchronisation entre outils.",
+        "description": "Automatisation et intelligence artificielle pour TPE et PME. CRM, relances, reporting, synchronisation entre outils. Catalogue d'outils vendus en propriété, sans abonnement.",
         "url": "https://ia-lorient.fr",
         "email": "paulgiunta@ia-lorient.fr",
         "telephone": "+33652759581",
@@ -41,561 +40,333 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <style>
         :root {
-            --bg: #11162a;
-            --bg2: #0c1020;
-            --ink: #ffffff;
-            --muted: rgba(255,255,255,0.72);
-            --faint: rgba(255,255,255,0.5);
-            --line: rgba(255,255,255,0.1);
-            --card: rgba(255,255,255,0.04);
-            --accent: #4a9fd6;
-            --accent2: #2f7fd0;
-            --green: #5cb85c;
+            --paper: #f6f7f4;
+            --panel: #eceee8;
+            --ink: #182420;
+            --muted: #4a554f;
+            --line: #d8dbd3;
+            --fern: #588157;
+            --hunter: #3a5a40;
+            --pine: #344e41;
+            --paper-on-dark: #dad7cd;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--muted);
-            min-height: 100vh;
-            overflow-x: hidden;
+            font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+            background: var(--paper);
+            color: var(--ink);
             line-height: 1.6;
+            font-size: 17px;
         }
-        a { color: inherit; }
-        .accent { color: var(--accent); }
+        a { color: var(--fern); text-underline-offset: 3px; }
+        a:focus-visible, summary:focus-visible { outline: 2px solid var(--fern); outline-offset: 3px; }
+        .mono { font-family: 'IBM Plex Mono', monospace; }
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2rem); }
 
-        /* ── Hero ───────────────────────────── */
-        .hero-wrap { position: relative; min-height: 100vh; background: radial-gradient(120% 80% at 50% 0%, #1a2140 0%, var(--bg) 55%, var(--bg2) 100%); }
-        canvas#metro { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; }
-        main {
-            position: relative; z-index: 1; min-height: 100vh;
-            max-width: 920px; margin: 0 auto; padding: 0 clamp(1.2rem, 4vw, 2rem);
-            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(246,247,244,0.92); backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
         }
-        .tag {
-            font-size: 0.78rem; letter-spacing: 0.32em; text-transform: uppercase;
-            color: var(--faint); margin-bottom: 1.6rem; font-weight: 600;
+        .head-in {
+            max-width: 1080px; margin: 0 auto; padding: 0.8rem clamp(1.2rem, 4vw, 2rem);
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
         }
+        .brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.02rem; letter-spacing: -0.01em; }
+        .brand small { font-weight: 400; color: var(--muted); }
+        .head-right { display: flex; align-items: center; gap: clamp(0.9rem, 2.5vw, 1.8rem); }
+        .head-right nav { display: flex; gap: clamp(0.9rem, 2vw, 1.4rem); }
+        .head-right nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        .head-right nav a:hover { color: var(--ink); }
+        .head-right nav a.active { color: var(--ink); border-bottom: 2px solid var(--fern); padding-bottom: 2px; }
+        .head-tel { font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem; color: var(--ink); text-decoration: none; }
+        .head-tel:hover { color: var(--hunter); }
+        @media (max-width: 640px) { .head-tel { display: none; } }
+
+        /* ── Hero split ─────────────────────── */
+        .hero { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; padding: clamp(3.5rem, 9vh, 6rem) 0 clamp(2.5rem, 6vh, 4rem); }
+        @media (max-width: 780px) { .hero { grid-template-columns: 1fr; } }
+        .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fern); font-weight: 600; margin-bottom: 1.1rem; }
         h1 {
-            font-size: clamp(2.8rem, 8vw, 6.5rem); font-weight: 900;
-            color: var(--ink); line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 0.4rem;
+            font-size: clamp(2rem, 4.6vw, 3.3rem); font-weight: 700; line-height: 1.06;
+            letter-spacing: -0.02em; text-wrap: balance; margin-bottom: 1.2rem; max-width: 18ch;
         }
-        .sub-headline {
-            font-size: clamp(1.4rem, 4vw, 3rem); font-weight: 300;
-            color: rgba(255,255,255,0.78); margin-bottom: 1.6rem; letter-spacing: -0.01em;
-        }
-        h1 .letter, .sub-headline .letter, .tag .letter, .desc .letter { display: inline-block; }
-        .letter { transition: color 0.8s ease; }
-        .desc {
-            font-size: clamp(1rem, 0.9rem + 0.4vw, 1.3rem); font-weight: 300; line-height: 1.7;
-            color: var(--muted); max-width: 560px; margin: 0 auto 0.6rem;
-        }
-        .benefit {
-            font-size: clamp(1rem, 0.95rem + 0.3vw, 1.25rem); font-weight: 500;
-            color: #fff; max-width: 560px; margin: 0 auto clamp(1.8rem, 3vw, 2.4rem);
-        }
-        .benefit b { color: var(--accent); font-weight: 700; }
-        .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+        .hero p.lead { font-size: clamp(1.02rem, 1.6vw, 1.2rem); color: var(--muted); max-width: 52ch; margin-bottom: 0.7rem; }
+        .hero p.strong { font-weight: 500; color: var(--ink); max-width: 52ch; margin-bottom: 2rem; }
+        .hero p.strong b { color: var(--hunter); }
         .btn {
-            display: inline-flex; align-items: center; gap: 0.55rem;
-            padding: 1rem 2rem; border-radius: 60px; text-decoration: none;
-            font-size: 1.05rem; font-weight: 600; transition: all 0.25s ease; border: 1px solid transparent;
+            display: inline-block; background: var(--hunter); color: #fff;
+            padding: 0.85rem 1.7rem; border-radius: 6px; text-decoration: none;
+            font-weight: 500; font-size: 1rem; transition: background 0.3s;
         }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            color: #fff; box-shadow: 0 6px 24px rgba(47,127,208,0.35);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(47,127,208,0.5); }
-        .btn-ghost { background: rgba(255,255,255,0.06); color: #fff; border-color: var(--line); }
-        .btn-ghost:hover { background: rgba(255,255,255,0.12); }
-        .btn .arrow { transition: transform 0.25s ease; }
-        .btn:hover .arrow { transform: translateX(4px); }
-        .contact-line { margin-top: 1.3rem; color: var(--faint); font-size: 0.9rem; }
+        .btn:hover { background: var(--fern); }
+        .btn-light { background: var(--paper); color: var(--pine); }
+        .btn-light:hover { background: #fff; }
+        .contact-line { margin-top: 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--muted); }
         .contact-line a { color: var(--muted); text-decoration: none; }
-        .contact-line a:hover { color: #fff; }
+        .contact-line a:hover { color: var(--ink); }
 
-        /* ── Section shell ──────────────────── */
-        section { position: relative; z-index: 1; }
-        .container { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 7vh, 5.5rem) clamp(1.2rem, 4vw, 2rem); }
-        .eyebrow { font-size: 0.75rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.7rem; text-align: center; }
-        .h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; text-align: center; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
-        .lead { color: var(--muted); text-align: center; max-width: 620px; margin: 0 auto 2.5rem; font-weight: 300; font-size: 1.05rem; }
+        .hero-photo { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); }
+        .hero-photo img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 12%; }
+        .hero-photo figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--muted); padding: 0.7rem 0.9rem; border-top: 1px solid var(--line); }
 
-        /* ── Trust strip ────────────────────── */
-        .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.02); }
-        .trust-inner { max-width: 1100px; margin: 0 auto; padding: 1.1rem clamp(1.2rem, 4vw, 2rem); display: flex; flex-wrap: wrap; gap: 0.6rem 2rem; justify-content: center; align-items: center; font-size: 0.9rem; color: var(--muted); }
-        .trust-inner span { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .trust-inner .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+        .marks { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .marks-in {
+            max-width: 1080px; margin: 0 auto; padding: 0.85rem clamp(1.2rem, 4vw, 2rem);
+            display: flex; flex-wrap: wrap; gap: 0.4rem 2.2rem;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--muted);
+        }
 
-        /* ── Before / After ─────────────────── */
-        .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }
-        .ba-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.6rem; display: flex; flex-direction: column; }
-        .ba-card h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
-        .ba-row { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.8rem; font-size: 0.95rem; }
-        .ba-row .ico { flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; margin-top: 1px; }
-        .ba-before .ico { background: rgba(224,85,85,0.15); color: #f08a8a; }
-        .ba-after .ico { background: rgba(92,184,92,0.15); color: #8fd98f; }
-        .ba-before { color: var(--faint); }
-        .ba-after { color: #fff; font-weight: 500; }
-        @media (max-width: 760px) { .ba-grid { grid-template-columns: 1fr; } }
+        section { padding: clamp(2.8rem, 7vh, 4.5rem) 0; }
+        section + section { border-top: 1px solid var(--line); }
+        .sec-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--fern); font-weight: 600; margin-bottom: 0.9rem; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.8rem; text-wrap: balance; }
+        .sec-lead { color: var(--muted); max-width: 60ch; margin-bottom: 2rem; }
 
-        /* ── Tech banner ────────────────────── */
-        .tech-banner { overflow: hidden; padding: 0.9rem 0; background: rgba(255,255,255,0.02); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-        .tech-scroll { display: flex; gap: 2.4rem; animation: scroll-left 38s linear infinite; width: max-content; }
-        .tech-scroll:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) { .tech-scroll { animation: none; } }
-        .tech-item { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; color: var(--faint); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; }
-        .tech-item img { width: 17px; height: 17px; opacity: 0.55; filter: brightness(0) invert(1); }
-        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* ── Avant / après (table) ──────────── */
+        table.ba { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; font-size: 0.97rem; }
+        table.ba th { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; font-weight: 600; text-transform: lowercase; color: var(--muted); text-align: left; padding: 0.8rem 1.1rem; border-bottom: 1px solid var(--line); }
+        table.ba td { padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+        table.ba tr:last-child td { border-bottom: 0; }
+        table.ba td.k { font-weight: 600; width: 18%; }
+        table.ba td.avant { color: var(--muted); width: 38%; }
+        table.ba td.apres { color: var(--ink); font-weight: 500; }
+        table.ba td.apres::before { content: "→ "; color: var(--fern); font-weight: 700; }
+        @media (max-width: 700px) {
+            table.ba, table.ba tbody, table.ba tr, table.ba td, table.ba th { display: block; }
+            table.ba thead { display: none; }
+            table.ba td { border-bottom: 0; padding: 0.35rem 1rem; }
+            table.ba td.k { padding-top: 1rem; }
+            table.ba tr { border-bottom: 1px solid var(--line); padding-bottom: 0.8rem; }
+        }
 
-        /* ── About + services ───────────────── */
-        .about { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); margin-bottom: 3rem; }
-        .about-photo { flex-basis: 320px; flex-grow: 1; aspect-ratio: 3/4; max-width: 360px; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
-        .about-photo > div { width: 100%; height: 100%; background: url('2_site_bg.png') center 15% / cover no-repeat; opacity: 0.92; }
-        .about-text { flex-basis: 420px; flex-grow: 2; }
-        .about-text h3 { color: #fff; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.2rem; }
-        .about-text .role { color: var(--accent); font-size: 0.95rem; font-weight: 500; margin-bottom: 1.1rem; }
-        .about-text p { color: var(--muted); font-size: 0.98rem; font-weight: 300; margin-bottom: 0.9rem; }
+        /* ── Liste éditoriale services ──────── */
+        ol.svc { list-style: none; counter-reset: sv; max-width: 760px; }
+        ol.svc li { counter-increment: sv; padding: 1.15rem 0 1.15rem 3.4rem; position: relative; border-top: 1px solid var(--line); }
+        ol.svc li:first-child { border-top: 0; }
+        ol.svc li::before {
+            content: "0" counter(sv); position: absolute; left: 0; top: 1.2rem;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; font-weight: 600; color: var(--fern);
+        }
+        ol.svc li b { font-weight: 600; display: block; }
+        ol.svc li span { color: var(--muted); font-size: 0.97rem; }
 
-        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.8rem, 1.8vw, 1.1rem); }
-        .service-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; transition: all 0.25s ease; }
-        .service-card:hover { border-color: rgba(74,159,214,0.4); transform: translateY(-3px); background: rgba(255,255,255,0.06); }
-        .service-card h4 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .service-card p { color: var(--faint); font-size: 0.88rem; line-height: 1.55; }
-        @media (max-width: 760px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 460px) { .service-grid { grid-template-columns: 1fr; } }
+        /* ── Cas réels ──────────────────────── */
+        .case { border-top: 1px solid var(--line); padding: 1.3rem 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem 2.5rem; max-width: 900px; }
+        .case:first-of-type { border-top: 0; }
+        @media (max-width: 700px) { .case { grid-template-columns: 1fr; gap: 0.4rem; } }
+        .case h3 { font-size: 1.05rem; font-weight: 700; }
+        .case .r { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--fern); margin-top: 0.2rem; }
+        .case p { color: var(--muted); font-size: 0.97rem; }
 
-        /* ── Final CTA ──────────────────────── */
-        .final { text-align: center; border-top: 1px solid var(--line); background: radial-gradient(100% 120% at 50% 100%, #1a2140 0%, var(--bg) 70%); }
-        .final .h2 { margin-bottom: 0.5rem; }
-        .final p { color: var(--muted); margin-bottom: 1.8rem; }
+        /* ── Qui répond ─────────────────────── */
+        .who { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: clamp(1.2rem, 3vw, 2.5rem); align-items: start; max-width: 900px; }
+        @media (max-width: 700px) { .who { grid-template-columns: 1fr; } }
+        .who img { width: 100%; max-width: 220px; border-radius: 8px; border: 1px solid var(--line); display: block; }
+        .who p { color: var(--muted); margin-bottom: 0.8rem; max-width: 60ch; }
+        .who p.name { color: var(--ink); font-weight: 600; margin-bottom: 0.1rem; }
+        .who .r { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--fern); margin-bottom: 1rem; }
 
-        /* ── Footer ─────────────────────────── */
-        .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; padding: 1.4rem clamp(1.2rem, 4vw, 2rem); font-size: 0.82rem; color: var(--faint); border-top: 1px solid var(--line); }
-        .foot a { color: var(--faint); text-decoration: none; }
+        .faq { max-width: 720px; }
+        details { border-top: 1px solid var(--line); }
+        details:last-child { border-bottom: 1px solid var(--line); }
+        summary { cursor: pointer; padding: 1rem 0; font-weight: 600; font-size: 1.02rem; list-style: none; position: relative; padding-right: 2rem; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "+"; position: absolute; right: 0.2rem; top: 0.9rem; font-family: 'IBM Plex Mono', monospace; color: var(--fern); font-size: 1.1rem; }
+        details[open] summary::after { content: "–"; }
+        details .a { padding: 0 0 1.2rem; color: var(--muted); max-width: 62ch; }
+
+        .final { background: var(--pine); color: var(--paper-on-dark); }
+        .final-in { max-width: 1080px; margin: 0 auto; padding: clamp(3rem, 8vh, 5rem) clamp(1.2rem, 4vw, 2rem) 2.2rem; }
+        .final h2 { color: #fff; margin-bottom: 0.6rem; }
+        .final p { max-width: 56ch; margin-bottom: 1.8rem; color: var(--paper-on-dark); }
+        .final .contact-line { color: var(--paper-on-dark); }
+        .final .contact-line a { color: var(--paper-on-dark); }
+        .final .contact-line a:hover { color: #fff; }
+        .foot {
+            border-top: 1px solid rgba(218,215,205,0.25); margin-top: 2.6rem; padding-top: 1.3rem;
+            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+            font-size: 0.82rem; color: rgba(218,215,205,0.75);
+        }
+        .foot a { color: rgba(218,215,205,0.75); text-decoration: none; }
         .foot a:hover { color: #fff; }
-        .foot svg { vertical-align: -4px; opacity: 0.8; }
     </style>
 </head>
 <body>
 
-<div class="hero-wrap">
-<canvas id="metro" aria-hidden="true"></canvas>
-<main>
-    <div class="tag" id="tagline">Lorient · Automatisation · IA</div>
-    <h1 id="headline">Automatisez</h1>
-    <p class="sub-headline" id="subheadline">vos tâches répétitives</p>
-    <p class="desc" id="desctext">Automatisation sur mesure pour les TPE et PME de Lorient et sa région</p>
-    <p class="benefit">Gagnez <b>plusieurs heures chaque semaine</b> sur vos tâches répétitives, sans changer vos outils.</p>
-    <div class="cta-row">
-        <a href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20" class="btn btn-primary">Diagnostic gratuit <span class="arrow">&rarr;</span></a>
-        <a href="#exemples" class="btn btn-ghost">Voir des exemples</a>
+<header>
+    <div class="head-in">
+        <a class="brand" href="/">IA Lorient <small>· Paul Giunta</small></a>
+        <div class="head-right">
+            <nav>
+                <a href="/" class="active">Automatisation</a>
+                <a href="/catalogue.html">Catalogue</a>
+            </nav>
+            <a class="head-tel" href="tel:+33652759581">06 52 75 95 81</a>
+        </div>
     </div>
-    <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;&middot;&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
-</main>
+</header>
+
+<div class="hero wrap">
+    <div>
+        <p class="kicker">Lorient · automatisation · IA</p>
+        <h1>Je supprime les tâches répétitives des TPE de Lorient.</h1>
+        <p class="lead">Devis, relances, reporting, ressaisies entre logiciels&nbsp;: je les automatise, sans changer vos outils.</p>
+        <p class="strong">Vous gagnez <b>plusieurs heures chaque semaine</b>, et vous les consacrez à votre métier.</p>
+        <a class="btn" href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Diagnostic gratuit</a>
+        <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;·&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
+    </div>
+    <figure class="hero-photo">
+        <img src="2_site_bg.png" alt="Paul Giunta, automaticien à Lorient" loading="eager">
+        <figcaption>Paul Giunta · Lorient · ex-chef de projet Naval Group</figcaption>
+    </figure>
 </div>
 
-<!-- Trust strip -->
-<div class="trust">
-    <div class="trust-inner">
-        <span><span class="dot"></span> Basé à Lorient, Bretagne Sud</span>
-        <span><span class="dot"></span> TPE &amp; PME locales</span>
-        <span><span class="dot"></span> Ex-chef de projet Naval Group (3 ans)</span>
-        <span><span class="dot"></span> Diagnostic gratuit, sans engagement</span>
+<div class="marks">
+    <div class="marks-in">
+        <span>basé à Lorient, Bretagne Sud</span>
+        <span>TPE &amp; PME locales</span>
+        <span>ex-chef de projet Naval Group (3 ans)</span>
+        <span>diagnostic gratuit, sans engagement</span>
     </div>
 </div>
 
-<!-- Before / After -->
 <section id="exemples">
-    <div class="container">
-        <p class="eyebrow">Concrètement</p>
-        <h2 class="h2">Ce que l'automatisation change pour vous</h2>
-        <p class="lead">Pas de jargon. Voici trois situations du quotidien d'une TPE, avant et après.</p>
-        <div class="ba-grid">
-            <div class="ba-card">
-                <h3>Devis &amp; factures</h3>
-                <div class="ba-row ba-before"><span class="ico">&times;</span><span>Vous les saisissez à la main, un par un, le soir.</span></div>
-                <div class="ba-row ba-after"><span class="ico">&check;</span><span>Générés et envoyés automatiquement depuis vos données, en quelques secondes.</span></div>
+    <div class="wrap">
+        <p class="sec-label">Avant / après</p>
+        <h2>Ce que l'automatisation change pour vous</h2>
+        <p class="sec-lead">Pas de jargon. Trois situations du quotidien d'une TPE.</p>
+        <table class="ba">
+            <thead>
+                <tr><th>tâche</th><th>avant</th><th>après</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="k">Devis &amp; factures</td>
+                    <td class="avant">Vous les saisissez à la main, un par un, le soir.</td>
+                    <td class="apres">Générés et envoyés automatiquement depuis vos données, en quelques secondes.</td>
+                </tr>
+                <tr>
+                    <td class="k">Relances clients</td>
+                    <td class="avant">Vous oubliez de relancer, et vous perdez des ventes.</td>
+                    <td class="apres">Relances et rappels envoyés tout seuls, au bon moment, avec le bon message.</td>
+                </tr>
+                <tr>
+                    <td class="k">Reporting</td>
+                    <td class="avant">Vous compilez vos chiffres dans Excel chaque semaine.</td>
+                    <td class="apres">Un tableau de bord toujours à jour, sans que vous ayez à y toucher.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <p class="sec-label">Ils m'ont fait confiance</p>
+        <h2>Des entreprises que j'ai aidées à gagner du temps</h2>
+        <p class="sec-lead">Trois automatisations livrées, et ce qu'elles ont changé au quotidien.</p>
+        <div class="case">
+            <div>
+                <h3>Agence commerciale</h3>
+                <p class="r">suivi commercial automatisé</p>
             </div>
-            <div class="ba-card">
-                <h3>Relances clients</h3>
-                <div class="ba-row ba-before"><span class="ico">&times;</span><span>Vous oubliez de relancer, et vous perdez des ventes.</span></div>
-                <div class="ba-row ba-after"><span class="ico">&check;</span><span>Relances et rappels envoyés tout seuls, au bon moment, avec le bon message.</span></div>
+            <p>Appels, ventes et tableaux de bord par commercial se mettent à jour tout seuls. Un reporting fiable en temps réel, fini les compilations à la main, et du temps rendu à l'équipe pour vendre plutôt que saisir des chiffres.</p>
+        </div>
+        <div class="case">
+            <div>
+                <h3>Coaching</h3>
+                <p class="r">onboarding client automatisé</p>
             </div>
-            <div class="ba-card">
-                <h3>Reporting</h3>
-                <div class="ba-row ba-before"><span class="ico">&times;</span><span>Vous compilez vos chiffres dans Excel chaque semaine.</span></div>
-                <div class="ba-row ba-after"><span class="ico">&check;</span><span>Un tableau de bord toujours à jour, sans que vous touchiez à rien.</span></div>
+            <p>Le formulaire d'inscription devient un programme personnalisé livré automatiquement, avec un suivi hebdomadaire généré tout seul. Chaque nouveau client est pris en charge instantanément, ce qui permet d'en accueillir plus sans s'épuiser.</p>
+        </div>
+        <div class="case">
+            <div>
+                <h3>Prospection</h3>
+                <p class="r">machine de prospection</p>
             </div>
+            <p>Identification des entreprises ciblées, recherche et vérification des contacts, préparation des envois. Un flux régulier de prospects qualifiés sans passer des heures à chercher, du temps pour se concentrer sur la vente.</p>
         </div>
     </div>
 </section>
 
-<!-- Cas clients -->
-<section id="cas">
-    <div class="container">
-        <p class="eyebrow">Ils m'ont fait confiance</p>
-        <h2 class="h2">Des entreprises que j'ai aidées à gagner du temps</h2>
-        <p class="lead">Trois automatisations livrées, et ce qu'elles ont changé au quotidien.</p>
-        <div class="service-grid">
-            <div class="service-card">
-                <h4>Agence commerciale</h4>
-                <p>J'ai automatisé leur suivi commercial : appels, ventes et tableaux de bord par commercial se mettent à jour tout seuls. Résultat : un reporting fiable en temps réel, fini les compilations à la main, et du temps rendu à l'équipe pour vendre plutôt que pour saisir des chiffres.</p>
-            </div>
-            <div class="service-card">
-                <h4>Coaching</h4>
-                <p>J'ai automatisé tout leur onboarding client : le formulaire d'inscription devient un programme personnalisé livré automatiquement, avec un suivi hebdomadaire généré tout seul. Résultat : chaque nouveau client est pris en charge instantanément, ce qui leur permet d'en accueillir plus sans s'épuiser.</p>
-            </div>
-            <div class="service-card">
-                <h4>Prospection</h4>
-                <p>J'ai mis en place leur machine de prospection : identification des entreprises ciblées, recherche et vérification des contacts, préparation des envois. Résultat : un flux régulier de prospects qualifiés sans passer des heures à chercher, du temps pour se concentrer sur la vente.</p>
-            </div>
-        </div>
+<section>
+    <div class="wrap">
+        <p class="sec-label">Ce que je mets en place</p>
+        <h2>Offres d'automatisation sur mesure</h2>
+        <p class="sec-lead">On part toujours de votre besoin réel, jamais d'un outil à la mode.</p>
+        <ol class="svc">
+            <li><b>CRM sur mesure</b><span>Suivi de vos clients, prospects et relances. Tout au même endroit, mis à jour automatiquement.</span></li>
+            <li><b>Communication professionnelle</b><span>Factures, devis, bons de commande, mails de confirmation et accusés de réception, envoyés sans vous.</span></li>
+            <li><b>Tableaux de bord</b><span>Vos chiffres se mettent à jour tout seuls. Un coup d'œil suffit pour savoir où vous en êtes.</span></li>
+            <li><b>Connexion entre outils</b><span>Vos logiciels communiquent entre eux. Plus besoin de copier-coller d'un outil à l'autre.</span></li>
+            <li><b>Intelligence artificielle</b><span>Qualification de prospects, génération de contenu, analyse de données. L'IA au service de votre activité, sans le jargon.</span></li>
+            <li><b>Alertes intelligentes</b><span>Soyez prévenu quand un contrat expire, un paiement est en retard ou un client revient.</span></li>
+        </ol>
     </div>
 </section>
 
-<!-- Tech banner -->
-<div class="tech-banner">
-    <div class="tech-scroll" id="techScroll"></div>
-</div>
-
-<!-- About + services -->
-<section id="services">
-    <div class="container">
-        <div class="about">
-            <div class="about-photo"><div></div></div>
-            <div class="about-text">
-                <h3>Paul Giunta</h3>
-                <p class="role">Automaticien &amp; Chef de Projet Digital</p>
-                <p>Ancien chef de projet chez Naval Group (3 ans), je conçois aujourd'hui des solutions d'automatisation et d'IA pour les TPE et PME de Lorient et ses environs qui veulent arrêter de perdre du temps sur des tâches répétitives.</p>
-                <p>Mon approche : comprendre votre problème, proposer une automatisation simple, la mettre en place, puis vous accompagner dans sa maintenance et ses mises à jour.</p>
-                <p>Chaque solution est conçue pour faire gagner du temps à votre équipe, réduire vos coûts opérationnels et s'adapter précisément à votre activité.</p>
+<section>
+    <div class="wrap">
+        <p class="sec-label">Qui répond au téléphone</p>
+        <div class="who" style="margin-top: 0.5rem;">
+            <img src="2_site_bg.png" alt="Paul Giunta">
+            <div>
+                <p class="name">Paul Giunta</p>
+                <p class="r">automaticien &amp; chef de projet digital</p>
+                <p>Pendant trois ans chez Naval Group, j'ai coordonné des projets où une erreur de suivi coûtait très cher. J'en ai gardé une obsession&nbsp;: des systèmes fiables, documentés, qui ne dépendent pas de la mémoire d'une personne.</p>
+                <p>Aujourd'hui, je mets cette exigence au service des TPE et PME de Lorient&nbsp;: comprendre votre problème, proposer une solution simple, la mettre en place, et vous former dessus. Pas de jargon, pas de complexité inutile.</p>
                 <p>J'interviens à Lorient, Lanester, Hennebont, Quimperlé, Ploemeur et dans tout le Pays de Lorient.</p>
             </div>
         </div>
-
-        <p class="eyebrow">Ce que je mets en place</p>
-        <h2 class="h2">Offres d'automatisation sur-mesure</h2>
-        <p class="lead">On part toujours de votre besoin réel, jamais d'un outil à la mode.</p>
-        <div class="service-grid">
-            <div class="service-card"><h4>CRM</h4><p>Gestion de la relation clients, suivi de vos prospects et relances. Automatisation de vos actions marketing et de votre stratégie commerciale.</p></div>
-            <div class="service-card"><h4>Communication professionnelle</h4><p>Gestion commerciale : factures, devis, bons de commande, mails de confirmation et accusés de réception.</p></div>
-            <div class="service-card"><h4>Tableaux de bord</h4><p>Mise à jour automatique de vos données chiffrées selon vos échéances et vos reportings.</p></div>
-            <div class="service-card"><h4>Connexion API (REST)</h4><p>Vos logiciels de gestion communiquent entre eux, sur commande et selon vos instructions.</p></div>
-            <div class="service-card"><h4>Intelligences artificielles</h4><p>Gestion de plusieurs LLMs et agents pour la qualification de données, la génération de contenu (support écrit, articles, scripts) en français et en anglais, l'analyse de données.</p></div>
-            <div class="service-card"><h4>Alertes intelligentes</h4><p>Pilotage de vos agendas, notifications, dates d'expiration de contrats. Alertes de paiement et gestion clients.</p></div>
-        </div>
-        <p style="text-align:center;margin-top:2.4rem;"><a href="/services.html" style="color:#4a9fd6;text-decoration:none;font-weight:600;">Voir le détail des services &rarr;</a></p>
     </div>
 </section>
 
-<!-- Final CTA -->
-<section class="final">
-    <div class="container">
-        <h2 class="h2">Parlons de votre première automatisation</h2>
-        <p>Un échange court et gratuit pour identifier ce qui vous fait perdre le plus de temps. Sans engagement.</p>
-        <div class="cta-row" style="justify-content:center;">
-            <a href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20" class="btn btn-primary">Demander mon diagnostic gratuit <span class="arrow">&rarr;</span></a>
+<section>
+    <div class="wrap">
+        <p class="sec-label">Questions directes</p>
+        <h2>Ce que vous vous demandez sûrement</h2>
+        <div class="faq" style="margin-top: 1.6rem;">
+            <details>
+                <summary>Est-ce que je vais dépendre de vous ensuite&nbsp;?</summary>
+                <div class="a">Non. Ce que j'installe vous appartient et tourne sur vos comptes. Je documente ce que je livre, je vous forme dessus, et si on arrête de travailler ensemble, tout continue de fonctionner.</div>
+            </details>
+            <details>
+                <summary>Et si ça casse un jour&nbsp;?</summary>
+                <div class="a">Les corrections de ce que j'ai livré sont incluses&nbsp;: si quelque chose ne marche pas comme convenu, je le corrige, sans facturer. Les évolutions importantes font l'objet d'un devis, annoncé avant, jamais après.</div>
+            </details>
+            <details>
+                <summary>Où vont mes données&nbsp;?</summary>
+                <div class="a">Elles restent dans vos outils, sur vos comptes. Quand une IA intervient, elle est utilisée en mode professionnel&nbsp;: vos données ne servent jamais à entraîner des modèles publics.</div>
+            </details>
+            <details>
+                <summary>Combien ça coûte&nbsp;?</summary>
+                <div class="a">Le diagnostic est gratuit et sans engagement. Ensuite, chaque projet a un devis fixe, établi avant de commencer. Vous savez ce que vous payez avant que je travaille, pas après. Les outils du <a href="/catalogue.html">catalogue</a> ont leur prix affiché.</div>
+            </details>
+            <details>
+                <summary>Avec quels outils travaillez-vous&nbsp;?</summary>
+                <div class="a">Vos outils d'abord&nbsp;: l'objectif est de ne pas changer vos habitudes. Côté technique, je travaille notamment avec n8n, Make, Zapier, Claude, OpenAI, Google Sheets, Notion, Airtable et Python.</div>
+            </details>
         </div>
-        <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;&middot;&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
     </div>
 </section>
 
-<div class="foot">
-    <span>Paul Giunta &middot; Lorient, Bretagne &middot; <span style="white-space:nowrap;">Tel : 06 52 75 95 81</span> &middot; <a href="https://www.linkedin.com/in/paul-giunta-pro/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></span>
-    <span>ia-lorient.fr</span>
+<div class="final">
+    <div class="final-in">
+        <h2>Parlons de votre première automatisation</h2>
+        <p>Un échange court et gratuit pour identifier ce qui vous fait perdre le plus de temps. Sans engagement. C'est moi qui réponds.</p>
+        <a class="btn btn-light" href="mailto:paulgiunta@ia-lorient.fr?subject=Diagnostic%20gratuit&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0ACe%20qui%20me%20fait%20perdre%20le%20plus%20de%20temps%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Demander mon diagnostic gratuit</a>
+        <p class="contact-line"><a href="mailto:paulgiunta@ia-lorient.fr">paulgiunta@ia-lorient.fr</a> &nbsp;·&nbsp; <a href="tel:+33652759581">06 52 75 95 81</a></p>
+        <div class="foot">
+            <span>Paul Giunta · Lorient, Bretagne · <a href="tel:+33652759581">06 52 75 95 81</a></span>
+            <span><a href="/catalogue.html">Catalogue</a> · hébergé sur GitHub Pages</span>
+        </div>
+    </div>
 </div>
-
-<script>
-// ── Tech stack banner (built from array, duplicated for seamless loop) ──
-const TECH = [
-    ['https://cdn.simpleicons.org/n8n/white','n8n'],['https://cdn.simpleicons.org/zapier/white','Zapier'],
-    ['https://cdn.simpleicons.org/anthropic/white','Claude'],['icons/openai.svg','OpenAI'],
-    ['https://cdn.simpleicons.org/googlegemini/white','Gemini'],['https://cdn.simpleicons.org/googlesheets/white','Google Sheets'],
-    ['icons/microsoftexcel.svg','Excel'],['https://cdn.simpleicons.org/notion/white','Notion'],
-    ['https://cdn.simpleicons.org/airtable/white','Airtable'],['https://cdn.simpleicons.org/python/white','Python'],
-    ['https://cdn.simpleicons.org/javascript/white','JavaScript'],['https://cdn.simpleicons.org/googledrive/white','Google Drive'],
-    ['https://cdn.simpleicons.org/gmail/white','Gmail'],['https://cdn.simpleicons.org/hubspot/white','HubSpot'],
-    ['icons/salesforce.svg','Salesforce'],['icons/slack.svg','Slack'],
-    ['https://cdn.simpleicons.org/stripe/white','Stripe'],['https://cdn.simpleicons.org/html5/white','HTML/CSS'],
-    ['https://cdn.simpleicons.org/googlebigquery/white','BigQuery'],['https://cdn.simpleicons.org/looker/white','Looker']
-];
-(function(){
-    const wrap = document.getElementById('techScroll');
-    let html = '';
-    for (let pass = 0; pass < 2; pass++) {
-        for (const [src,label] of TECH) html += '<span class="tech-item"><img src="'+src+'" alt="">'+label+'</span>';
-    }
-    wrap.innerHTML = html;
-})();
-
-// ── Headline letter wrapping (for the animation to target) ──
-function wrapLetters(elementId, text, allowWrap) {
-    const el = document.getElementById(elementId);
-    el.innerHTML = '';
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] === '\n') { el.appendChild(document.createElement('br')); continue; }
-        if (text[i] === ' ') {
-            if (allowWrap) { el.appendChild(document.createTextNode(' ')); }
-            else { const s = document.createElement('span'); s.className='letter'; s.textContent=' '; s.dataset.colored='false'; s.dataset.isSpace='true'; el.appendChild(s); }
-            continue;
-        }
-        const span = document.createElement('span');
-        span.className = 'letter'; span.textContent = text[i];
-        span.dataset.colored = 'false'; span.dataset.isSpace = 'false';
-        el.appendChild(span);
-    }
-}
-wrapLetters('tagline', 'Lorient · Automatisation · IA', false);
-wrapLetters('headline', 'Automatisez', false);
-wrapLetters('subheadline', 'vos tâches répétitives', false);
-wrapLetters('desctext', 'Automatisation sur mesure pour les TPE et PME\nde Lorient et sa région', true);
-
-// ── Metro animation (corridor pathfinding) + glow + trails ──
-const canvas = document.getElementById('metro');
-const ctx = canvas.getContext('2d');
-let W, H, DPR;
-function resize() {
-    DPR = Math.min(window.devicePixelRatio || 1, 2);
-    W = window.innerWidth; H = window.innerHeight;
-    canvas.width = W * DPR; canvas.height = H * DPR;
-    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-}
-resize();
-window.addEventListener('resize', resize);
-
-const COLORS = ['#e6c840', '#5cb85c', '#56b0ea', '#e05555'];
-const missions = [];
-const MAX_MISSIONS = 3;
-const SHAPE_COUNT = 3;
-const SHAPE_SIZE = 6;
-const BASE_SPEED_RATIO = 0.08;
-const SPAWN_INTERVAL = 3000;
-const SHAPE_DELAY_SEC = 1.5;
-const TRAIL_LEN = 14;
-let lastFrameTime = 0;
-let isTabVisible = true;
-
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { isTabVisible = false; }
-    else { isTabVisible = true; lastFrameTime = 0; missions.length = 0; cachedCorridors = null; cachedEdges = null; }
-});
-
-function getAllLetters() { return document.querySelectorAll('#tagline .letter, #headline .letter, #subheadline .letter, #desctext .letter'); }
-function getWhiteLetters() {
-    const all = getAllLetters(); const white = [];
-    all.forEach(l => { if (l.dataset.isSpace === 'true') return; if (l.dataset.colored === 'false') white.push(l); });
-    if (white.length > 0) return white;
-    const fb = []; all.forEach(l => { if (l.dataset.isSpace !== 'true') fb.push(l); }); return fb;
-}
-function getAvailableColor() {
-    const used = new Set();
-    missions.forEach(m => used.add(m.color));
-    getAllLetters().forEach(l => { if (l.dataset.colored === 'true') used.add(l.style.color); });
-    const avail = COLORS.filter(c => !used.has(c));
-    return avail.length > 0 ? avail[Math.floor(Math.random()*avail.length)] : null;
-}
-let lastSide = -1; let sideUsage = [0,0,0,0];
-function randomEdgePoint() {
-    let candidates = [0,1,2,3].filter(s => s !== lastSide);
-    candidates.sort((a,b)=>sideUsage[a]-sideUsage[b]);
-    const pick = candidates[Math.floor(Math.random()*Math.min(2,candidates.length))];
-    lastSide = pick; sideUsage[pick]++;
-    switch(pick){ case 0: return {x:Math.random()*W,y:-20}; case 1: return {x:W+20,y:Math.random()*H}; case 2: return {x:Math.random()*W,y:H+20}; case 3: return {x:-20,y:Math.random()*H}; }
-}
-function getLetterCenter(el){ const r=el.getBoundingClientRect(); return {x:r.left+r.width/2, y:r.top+r.height/2}; }
-
-let animationPaused = false; let lastScrollY = 0;
-window.addEventListener('scroll', () => {
-    animationPaused = window.scrollY > window.innerHeight * 0.35;
-    if (Math.abs(window.scrollY - lastScrollY) > 2) { missions.length = 0; cachedCorridors = null; cachedEdges = null; }
-    lastScrollY = window.scrollY;
-});
-
-let cachedCorridors = null; let cachedEdges = null;
-function getCorridors(){
-    if (cachedCorridors) return cachedCorridors;
-    const lineRects = [];
-    const elements = ['tagline','headline','subheadline','desctext'];
-    for (const id of elements){
-        const el = document.getElementById(id); if(!el) continue;
-        const letters = el.querySelectorAll('.letter'); if(letters.length===0) continue;
-        let lineTop=null,lineBottom=null,lastY=null;
-        letters.forEach(l=>{ const r=l.getBoundingClientRect(); const midY=Math.round(r.top+r.height/2);
-            if(lastY===null||Math.abs(midY-lastY)>10){ if(lineTop!==null) lineRects.push({top:lineTop,bottom:lineBottom}); lineTop=r.top; lineBottom=r.bottom; }
-            else { lineBottom=Math.max(lineBottom,r.bottom); } lastY=midY; });
-        if(lineTop!==null) lineRects.push({top:lineTop,bottom:lineBottom});
-    }
-    const cta = document.querySelector('.benefit');
-    if(cta){ const r=cta.getBoundingClientRect(); lineRects.push({top:r.top,bottom:r.bottom}); }
-    lineRects.sort((a,b)=>a.top-b.top);
-    const corridors=[];
-    if(lineRects.length>0){
-        corridors.push({y:lineRects[0].top-50});
-        for(let i=0;i<lineRects.length-1;i++){ corridors.push({y:(lineRects[i].bottom+lineRects[i+1].top)/2}); }
-        corridors.push({y:lineRects[lineRects.length-1].bottom+50});
-    }
-    cachedCorridors=corridors; return corridors;
-}
-function findNearestCorridors(letterY,corridors){
-    let above=corridors[0], below=corridors[corridors.length-1];
-    for(const c of corridors){ if(c.y<letterY&&c.y>above.y) above=c; if(c.y>letterY&&c.y<below.y) below=c; }
-    return {above,below};
-}
-function getTextEdges(){
-    if(cachedEdges) return cachedEdges;
-    const els=[document.getElementById('tagline'),document.getElementById('headline'),document.getElementById('subheadline'),document.getElementById('desctext')];
-    let leftMost=W,rightMost=0;
-    for(const el of els){ if(!el) continue; const r=el.getBoundingClientRect(); if(r.left<leftMost) leftMost=r.left; if(r.right>rightMost) rightMost=r.right; }
-    cachedEdges={left:leftMost-30,right:rightMost+30}; return cachedEdges;
-}
-function buildCorridorPath(spawn,target){
-    const corridors=getCorridors(); const edges=getTextEdges();
-    const letterY=target.y, letterX=target.x;
-    const {above,below}=findNearestCorridors(letterY,corridors);
-    const points=[{x:spawn.x,y:spawn.y}];
-    let entryCorridor=corridors[0], bestDist=Infinity;
-    for(const c of corridors){ const d=Math.abs(spawn.y-c.y); if(d<bestDist){bestDist=d; entryCorridor=c;} }
-    const goingRight=spawn.x<letterX;
-    const verticalEdgeX=goingRight?edges.left:edges.right;
-    points.push({x:spawn.x,y:entryCorridor.y});
-    let currentCorridorY=entryCorridor.y, currentX=spawn.x;
-    const approachFromAbove=currentCorridorY<=letterY;
-    const approachCorridor=approachFromAbove?above:below;
-    const midCorridors=corridors.filter(c=> approachFromAbove ? (c.y>currentCorridorY&&c.y<approachCorridor.y) : (c.y<currentCorridorY&&c.y>approachCorridor.y));
-    const visitCount=Math.min(midCorridors.length, Math.random()>0.5?1:0);
-    const toVisit=midCorridors.sort(()=>Math.random()-0.5).slice(0,visitCount);
-    toVisit.sort((a,b)=>approachFromAbove?a.y-b.y:b.y-a.y);
-    for(const corridor of toVisit){
-        const progressX=goingRight?currentX+(letterX-currentX)*(0.2+Math.random()*0.3):currentX-(currentX-letterX)*(0.2+Math.random()*0.3);
-        points.push({x:progressX,y:currentCorridorY}); currentX=progressX;
-        points.push({x:verticalEdgeX,y:currentCorridorY}); points.push({x:verticalEdgeX,y:corridor.y});
-        currentCorridorY=corridor.y; currentX=verticalEdgeX;
-    }
-    if(Math.abs(currentCorridorY-approachCorridor.y)>5){
-        const progressX=goingRight?currentX+(letterX-currentX)*(0.3+Math.random()*0.3):currentX-(currentX-letterX)*(0.3+Math.random()*0.3);
-        points.push({x:progressX,y:currentCorridorY}); currentX=progressX;
-        points.push({x:verticalEdgeX,y:currentCorridorY}); points.push({x:verticalEdgeX,y:approachCorridor.y});
-        currentCorridorY=approachCorridor.y; currentX=verticalEdgeX;
-    }
-    points.push({x:letterX,y:currentCorridorY});
-    points.push({x:letterX,y:letterY});
-    return points;
-}
-function drawShape(x,y,type,color,size){
-    ctx.save();
-    ctx.shadowColor=color; ctx.shadowBlur=14; ctx.fillStyle=color;
-    switch(type){
-        case 0: ctx.beginPath(); ctx.arc(x,y,size,0,Math.PI*2); ctx.fill(); break;
-        case 1: ctx.fillRect(x-size,y-size,size*2,size*2); break;
-        case 2: ctx.beginPath(); ctx.moveTo(x,y-size*1.2); ctx.lineTo(x+size,y+size*0.8); ctx.lineTo(x-size,y+size*0.8); ctx.closePath(); ctx.fill(); break;
-    }
-    ctx.restore();
-}
-function drawTrail(trail,color,size){
-    if(trail.length<2) return;
-    ctx.save();
-    for(let i=1;i<trail.length;i++){
-        const a=(i/trail.length)*0.5;
-        ctx.strokeStyle=color; ctx.globalAlpha=a; ctx.lineWidth=size*1.6*(i/trail.length);
-        ctx.lineCap='round';
-        ctx.beginPath(); ctx.moveTo(trail[i-1].x,trail[i-1].y); ctx.lineTo(trail[i].x,trail[i].y); ctx.stroke();
-    }
-    ctx.restore();
-}
-function getTargetLine(letter){
-    if(letter.closest('#tagline')) return 'tag';
-    if(letter.closest('#headline')) return 'h1';
-    if(letter.closest('#subheadline')) return 'sub';
-    if(letter.closest('#desctext')) return 'desc';
-    return 'other';
-}
-function createMission(){
-    if(missions.length>=MAX_MISSIONS) return;
-    const whites=getWhiteLetters();
-    const busyLines=new Set(); missions.forEach(m=>busyLines.add(m.targetLine));
-    const available=whites.filter(l=>!busyLines.has(getTargetLine(l)));
-    if(available.length===0) return;
-    const byLine={}; available.forEach(l=>{ const line=getTargetLine(l); (byLine[line]=byLine[line]||[]).push(l); });
-    const coloredCount={};
-    getAllLetters().forEach(l=>{ if(l.dataset.isSpace==='true') return; const line=getTargetLine(l); coloredCount[line]=coloredCount[line]||0; if(l.dataset.colored==='true') coloredCount[line]++; });
-    let bestLine=null,bestCount=Infinity;
-    for(const line of Object.keys(byLine)){ const c=coloredCount[line]||0; if(c<bestCount){bestCount=c; bestLine=line;} }
-    const pool=byLine[bestLine]||available;
-    const targetLetter=pool[Math.floor(Math.random()*pool.length)];
-    const color=getAvailableColor(); if(!color) return;
-    const spawn=randomEdgePoint(); const target=getLetterCenter(targetLetter);
-    const path=buildCorridorPath(spawn,target);
-    const shapeCount=[0,0,0]; missions.forEach(m=>shapeCount[m.shapeType]++);
-    const availableShapes=[0,1,2].filter(s=>shapeCount[s]<1); if(availableShapes.length===0) return;
-    const shapeType=availableShapes[Math.floor(Math.random()*availableShapes.length)];
-    const shapes=[];
-    for(let i=0;i<SHAPE_COUNT;i++) shapes.push({pathIndex:0,x:spawn.x,y:spawn.y,arrived:false,delaySec:i*SHAPE_DELAY_SEC,trail:[]});
-    missions.push({spawn,target,path,color,shapeType,shapes,targetLetter,targetLine:getTargetLine(targetLetter),phase:'traveling'});
-}
-function update(timestamp){
-    if(!lastFrameTime) lastFrameTime=timestamp;
-    let dt=(timestamp-lastFrameTime)/1000; lastFrameTime=timestamp;
-    if(dt>0.1) dt=0.016; if(dt<=0) dt=0.016;
-    const speed=W*BASE_SPEED_RATIO*dt;
-    ctx.clearRect(0,0,W,H);
-    if(animationPaused||!isTabVisible){ requestAnimationFrame(update); return; }
-    for(let m=missions.length-1;m>=0;m--){
-        const mission=missions[m];
-        if(mission.phase==='traveling'){
-            ctx.save();
-            ctx.globalAlpha=0.4+0.4*Math.sin(timestamp*0.005);
-            ctx.shadowColor=mission.color; ctx.shadowBlur=18; ctx.fillStyle=mission.color;
-            ctx.beginPath(); ctx.arc(mission.spawn.x,mission.spawn.y,7,0,Math.PI*2); ctx.fill();
-            ctx.restore();
-            let allArrived=true;
-            for(const shape of mission.shapes){
-                if(shape.arrived){
-                    if(!shape.arriveTime) shape.arriveTime=timestamp;
-                    const sp=(timestamp-shape.arriveTime)/400; const ss=SHAPE_SIZE*Math.max(0,1-sp);
-                    if(ss>0.3) drawShape(shape.x,shape.y,mission.shapeType,mission.color,ss);
-                    continue;
-                }
-                if(shape.delaySec>0){ shape.delaySec-=dt; allArrived=false; continue; }
-                const lp=getLetterCenter(mission.targetLetter);
-                if(Math.abs(shape.x-lp.x)+Math.abs(shape.y-lp.y)<Math.max(speed+2,5)){ shape.x=lp.x; shape.y=lp.y; shape.arrived=true; }
-                else {
-                    let remaining=speed;
-                    while(remaining>0.5){
-                        const npt=mission.path[shape.pathIndex+1];
-                        const tx=npt?npt.x:lp.x, ty=npt?npt.y:lp.y;
-                        const mdx=tx-shape.x, mdy=ty-shape.y; const dist=Math.sqrt(mdx*mdx+mdy*mdy);
-                        if(dist<0.5){ if(npt){shape.pathIndex++; continue;} else break; }
-                        if(remaining>=dist){ shape.x=tx; shape.y=ty; remaining-=dist; if(npt) shape.pathIndex++; else break; }
-                        else { shape.x+=(mdx/dist)*remaining; shape.y+=(mdy/dist)*remaining; remaining=0; }
-                    }
-                    allArrived=false;
-                }
-                if(!shape.arrived) drawShape(shape.x,shape.y,mission.shapeType,mission.color,SHAPE_SIZE);
-            }
-            if(allArrived&&!mission.colorApplied){ mission.targetLetter.style.color=mission.color; mission.targetLetter.dataset.colored='true'; mission.colorApplied=true; }
-            if(allArrived){
-                let allShrunk=true;
-                for(const shape of mission.shapes){ if(!shape.arriveTime||(timestamp-shape.arriveTime)<400){ allShrunk=false; break; } }
-                if(allShrunk) mission.phase='done';
-            }
-        } else if(mission.phase==='done'){ missions.splice(m,1); }
-    }
-    requestAnimationFrame(update);
-}
-if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    setInterval(createMission, SPAWN_INTERVAL);
-    setTimeout(createMission, 500);
-    requestAnimationFrame(update);
-}
-</script>
 
 </body>
 </html>
