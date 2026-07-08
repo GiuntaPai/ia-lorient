@@ -15,7 +15,7 @@ Free diagnostic, no commitment. Every project has a fixed quote agreed before wo
 
 ## Catalogue (products owned, no subscription)
 Ready-made tools already built for real clients, adapted to each new client, bought once and owned. Key selling point: own it instead of renting it monthly.
-- Site web possédé (owned website): a clean, fast website on the client's own account, no Wix/WordPress subscription. From 350 EUR, one time.
+- Votre propre site web (owned website): a clean, fast website on the client's own account, no Wix/WordPress subscription. From 350 EUR, one time.
 - Boutons de gestion client (client-management buttons): buttons directly on the client cards inside a CRM to change a status, log an action or trigger a follow-up in one click. Fixed price, one time, adapted to the client's CRM. Alternative to tools rented around 300 USD per month.
 How it works: pick a product, contact Paul, he adapts it to your activity, it is yours. No subscription, no dependency.
 
@@ -38,4 +38,4 @@ Paul answers directly. French and English.
 Paul Giunta is a former engineer at Naval Group (3 years) turned automation specialist. Polyvalent profile across engineering, management, marketing and project work. He builds end-to-end automation systems with n8n, Notion API, Google Sheets API, Python and AI tools.
 
 ## Keywords
-automatisation Lorient, IA Lorient, AI Lorient, automatisation TPE PME Bretagne, CRM automatisation, integration API Lorient, site web sans abonnement, outils possédés, automatisation Morbihan
+automatisation Lorient, IA Lorient, AI Lorient, automatisation TPE PME Bretagne, CRM automatisation, integration API Lorient, site web sans abonnement, outils en propriété, automatisation Morbihan
