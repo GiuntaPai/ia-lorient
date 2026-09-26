@@ -16,8 +16,8 @@ Free diagnostic, no commitment. Every project has a fixed quote agreed before wo
 ## Catalogue (products owned, no subscription)
 Ready-made tools already built for real clients, adapted to each new client, bought once and owned. Key selling point: own it instead of renting it monthly.
 - Votre propre site web (owned website): a clean, fast website on the client's own account, no Wix/WordPress subscription. From 350 EUR, one time.
-- Boutons de gestion client (client-management buttons): buttons directly on the client cards inside a CRM to change a status, log an action or trigger a follow-up in one click. Fixed price, one time, adapted to the client's CRM. Alternative to tools rented around 300 USD per month.
-- Le CRM qui vous dit quoi faire le matin (the CRM that tells you what to do each morning): contacts grouped with the reason they matter, a morning dashboard (today's tasks, replies to handle, stalled opportunities), automatic email tracking, a clear pipeline, email templates and a one-page routine guide. Set up in HubSpot, adaptable to the client's CRM. 400 EUR, one time.
+- Boutons d'action dans GoHighLevel (GoHighLevel action buttons): buttons directly on the client cards inside GoHighLevel to change a status, log an action or trigger a follow-up in one click. Fixed price, one time, adapted to the client's GoHighLevel account. Alternative to tools rented around 300 USD per month.
+- Mise en place HubSpot : le CRM qui vous dit quoi faire le matin (HubSpot setup: the CRM that tells you what to do each morning): contacts grouped with the reason they matter, a morning dashboard (today's tasks, replies to handle, stalled opportunities), automatic email tracking, a clear pipeline, email templates and a one-page routine guide. Set up in the client's HubSpot account, free plan included. 400 EUR, one time.
 How it works: pick a product, contact Paul, he adapts it to your activity, it is yours. No subscription, no dependency.
 
 ## Proven work (client cases)
