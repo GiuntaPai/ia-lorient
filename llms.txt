@@ -17,13 +17,15 @@ Free diagnostic, no commitment. Every project has a fixed quote agreed before wo
 Ready-made tools already built for real clients, adapted to each new client, bought once and owned. Key selling point: own it instead of renting it monthly.
 - Votre propre site web (owned website): a clean, fast website on the client's own account, no Wix/WordPress subscription. From 350 EUR, one time.
 - Boutons de gestion client (client-management buttons): buttons directly on the client cards inside a CRM to change a status, log an action or trigger a follow-up in one click. Fixed price, one time, adapted to the client's CRM. Alternative to tools rented around 300 USD per month.
+- Le CRM qui vous dit quoi faire le matin (the CRM that tells you what to do each morning): contacts grouped with the reason they matter, a morning dashboard (today's tasks, replies to handle, stalled opportunities), automatic email tracking, a clear pipeline, email templates and a one-page routine guide. Set up in HubSpot, adaptable to the client's CRM. 400 EUR, one time.
 How it works: pick a product, contact Paul, he adapts it to your activity, it is yours. No subscription, no dependency.
 
 ## Proven work (client cases)
+- E-commerce: an engine that builds a complete Shopify store from a few documents (pages, collections, mobile version, reviewed copy); each product gets its written page, studio and on-model photos per colour, and translated images. A store that took days is set up in under an hour.
 - Sales agency: automated commercial tracking and real-time reporting dashboards.
 - Coaching business: automated client onboarding and weekly follow-up generation.
 - Prospecting: automated lead-generation pipeline (targeting, contact finding, outreach prep).
-- Press relations: automated monitoring of an article's visibility across search engines, plus an AI-built website.
+- Strategy consulting: a CRM organized so the owner knows each morning who to follow up with and why, with automatic email tracking and a clear pipeline; plus a rebuilt website and media visibility monitoring.
 
 ## Location
 Lorient, Bretagne, France. Serving Lorient, Lanester, Hennebont, Quimperlé, Ploemeur and the wider Pays de Lorient.
@@ -31,7 +33,7 @@ Lorient, Bretagne, France. Serving Lorient, Lanester, Hennebont, Quimperlé, Plo
 ## Contact
 Email: paulgiunta@ia-lorient.fr
 Phone: +33 6 52 75 95 81
-Website: https://ia-lorient.fr (Automatisation), https://ia-lorient.fr/catalogue.html (Catalogue)
+Website: https://ia-lorient.fr (Automatisation), https://ia-lorient.fr/catalogue.html (Catalogue), https://ia-lorient.fr/mentions-legales.html (Legal notice)
 Paul answers directly. French and English.
 
 ## Background
