@@ -122,6 +122,27 @@
         table.compare td:last-child { color: var(--ink); }
         table.compare tr.win td:last-child { font-weight: 600; color: var(--hunter); }
         .pricebox .btn { width: 100%; text-align: center; }
+        @media (min-width: 781px) {
+            .prod { row-gap: 1.4rem; }
+            .prod > div:first-child { grid-column: 1; grid-row: 1; }
+            .prod > .pricebox { grid-column: 2; grid-row: 1 / span 2; position: sticky; top: 84px; }
+            .prod > .gallery { grid-column: 1; grid-row: 2; }
+        }
+
+        /* ── Galerie d'exemples ─────────────── */
+        .gallery { margin-bottom: 0.4rem; }
+        .gallery .g-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--fern); font-weight: 600; margin-bottom: 0.6rem; }
+        .gallery .g-grid { display: grid; gap: 0.8rem; grid-template-columns: minmax(0, 1fr); }
+        .gallery.multi .g-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .gallery figure { margin: 0; }
+        .gallery button { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); cursor: zoom-in; }
+        .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.3s; }
+        .gallery button:hover img { transform: scale(1.02); }
+        .gallery figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
+        .lb { position: relative; width: min(1200px, 94vw); margin: 0; }
+        .lb img { display: block; width: auto; max-width: 100%; height: auto; max-height: 82vh; margin: 0 auto; border-radius: 10px; box-shadow: 0 24px 70px rgba(24,36,32,0.35); }
+        .lb figcaption { color: #fff; text-align: center; margin-top: 0.8rem; font-size: 0.95rem; }
+        .lb .lb-close { position: absolute; top: -2.6rem; right: 0; background: transparent; border: 0; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; padding: 0.2rem 0.4rem; }
 
         /* ── Étapes ─────────────────────────── */
         ol.steps { list-style: none; counter-reset: st; max-width: 720px; }
@@ -404,6 +425,13 @@
                 </table>
                 <a class="btn js-contact" data-product="Votre propre site web" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Votre%20propre%20site%20web&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20%3A%20%0D%0AMon%20site%20actuel%20(si%20j'en%20ai%20un)%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Ce produit m'intéresse</a>
             </div>
+            <div class="gallery multi">
+                <p class="g-label">à quoi ça ressemble</p>
+                <div class="g-grid">
+                    <figure><button type="button" data-full="galerie/01a_site_osteo.webp"><img src="galerie/01a_site_osteo_m.webp" alt="Site d'un cabinet d'ostéopathie fictif, avec ses créneaux de rendez-vous" width="960" height="600" loading="lazy"></button><figcaption>Le site d'un cabinet, avec ses créneaux de rendez-vous (exemple fictif)</figcaption></figure>
+                    <figure><button type="button" data-full="galerie/01b_site_electricien_mobile.webp"><img src="galerie/01b_site_electricien_mobile_m.webp" alt="Site d'un électricien fictif sur téléphone, avec appel et demande de devis" width="960" height="600" loading="lazy"></button><figcaption>Un artisan sur téléphone : appel en un geste, devis en trois questions (exemple fictif)</figcaption></figure>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -432,6 +460,12 @@
                 </table>
                 <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.1rem;">Des adaptations plus poussées&nbsp;? On en parle, et le prix est fixé avant de commencer.</p>
                 <a class="btn js-contact" data-product="Boutons d'action dans GoHighLevel" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Boutons%20GoHighLevel&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20CRM%20%3A%20%0D%0ACe%20que%20je%20voudrais%20g%C3%A9rer%20en%20un%20clic%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Ce produit m'intéresse</a>
+            </div>
+            <div class="gallery">
+                <p class="g-label">à quoi ça ressemble</p>
+                <div class="g-grid">
+                    <figure><button type="button" data-full="galerie/02_crm_boutons.webp"><img src="galerie/02_crm_boutons_m.webp" alt="Fiche client d'un CRM avec quatre boutons d'action" width="960" height="600" loading="lazy"></button><figcaption>Une fiche client et ses quatre actions, un clic chacune (exemple fictif)</figcaption></figure>
+                </div>
             </div>
         </div>
     </div>
@@ -463,6 +497,12 @@
                 <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.1rem;">Mise en place dans HubSpot, y compris sa version gratuite. L'abonnement éventuel à HubSpot reste chez l'éditeur, pas chez moi.</p>
                 <a class="btn js-contact" data-product="Mise en place HubSpot : le CRM du matin" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Mise%20en%20place%20HubSpot&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20CRM%20actuel%20%3A%20%0D%0ACe%20que%20je%20perds%20de%20vue%20aujourd%27hui%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Ce produit m'intéresse</a>
             </div>
+            <div class="gallery">
+                <p class="g-label">à quoi ça ressemble</p>
+                <div class="g-grid">
+                    <figure><button type="button" data-full="galerie/03_crm_tableau_matin.webp"><img src="galerie/03_crm_tableau_matin_m.webp" alt="Tableau du matin d'un CRM : relances du jour, réponses à traiter, opportunités qui dorment" width="960" height="600" loading="lazy"></button><figcaption>Le tableau du matin : qui relancer, quoi traiter, ce qui dort (exemple fictif)</figcaption></figure>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -492,6 +532,12 @@
                 <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.1rem;">Tout commence par une conversation&nbsp;: on regarde votre méthode et votre volume, puis le prix est fixé avant de commencer.</p>
                 <a class="btn js-contact" data-product="Suivi client automatisé pour coachs" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Suivi%20client%20pour%20coachs&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20activit%C3%A9%20de%20coaching%20%3A%20%0D%0ANombre%20de%20clients%20suivis%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Parlons-en</a>
             </div>
+            <div class="gallery">
+                <p class="g-label">à quoi ça ressemble</p>
+                <div class="g-grid">
+                    <figure><button type="button" data-full="galerie/04a_coach_whatsapp_pdf.webp"><img src="galerie/04a_coach_whatsapp_pdf_m.webp" alt="Conversation WhatsApp d'un coach fictif et programme personnalisé en PDF" width="960" height="600" loading="lazy"></button><figcaption>Le programme part sur WhatsApp, le bilan revient le vendredi (exemple fictif)</figcaption></figure>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -520,6 +566,12 @@
                 </table>
                 <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.1rem;">Tout commence par une conversation&nbsp;: nombre de boutiques, langues, volume de produits, puis le prix est fixé avant de commencer. L'abonnement Shopify et les frais d'IA restent à votre nom.</p>
                 <a class="btn js-contact" data-product="Boutique e-commerce générée" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Boutique%20e-commerce%20g%C3%A9n%C3%A9r%C3%A9e&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMa%20boutique%20ou%20mon%20projet%20%3A%20%0D%0ANombre%20de%20boutiques%20et%20de%20produits%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Parlons-en</a>
+            </div>
+            <div class="gallery">
+                <p class="g-label">à quoi ça ressemble</p>
+                <div class="g-grid">
+                    <figure><button type="button" data-full="galerie/05a_boutique_avant_apres.webp"><img src="galerie/05a_boutique_avant_apres_m.webp" alt="Fiche produit d'un fournisseur, puis la fiche produit générée par le moteur" width="960" height="600" loading="lazy"></button><figcaption>La fiche du fournisseur, et la fiche que le moteur en tire (exemple fictif)</figcaption></figure>
+                </div>
             </div>
         </div>
     </div>
@@ -597,6 +649,13 @@
     <p class="m-note">Si rien ne s'ouvre en cliquant, pas d'inquiétude&nbsp;: votre ordinateur n'a peut-être pas de logiciel de mail configuré. Copiez mon adresse ci-dessus et écrivez-moi depuis votre messagerie habituelle (Gmail, Outlook, etc.).</p>
   </div>
 </div>
+<div class="modal-overlay" id="g-lightbox" role="dialog" aria-modal="true" aria-label="Exemple agrandi">
+  <figure class="lb">
+    <button class="lb-close" id="g-close" type="button" aria-label="Fermer">&times;</button>
+    <img id="g-img" alt="">
+    <figcaption id="g-cap"></figcaption>
+  </figure>
+</div>
 <script>
 (function () {
   var email = 'paulgiunta@ia-lorient.fr';
@@ -650,6 +709,39 @@
       document.body.removeChild(t);
     }
   });
+})();
+(function () {
+  var lb = document.getElementById('g-lightbox');
+  if (!lb) return;
+  var img = document.getElementById('g-img');
+  var cap = document.getElementById('g-cap');
+  var closeBtn = document.getElementById('g-close');
+  var lastFocus = null;
+
+  function openLb(src, alt, text) {
+    lastFocus = document.activeElement;
+    img.src = src;
+    img.alt = alt;
+    cap.textContent = text;
+    lb.classList.add('open');
+    closeBtn.focus();
+  }
+  function closeLb() {
+    lb.classList.remove('open');
+    img.removeAttribute('src');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.gallery button[data-full]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var vignette = b.querySelector('img');
+      var legende = b.parentNode.querySelector('figcaption');
+      openLb(b.getAttribute('data-full'), vignette ? vignette.alt : '', legende ? legende.textContent : '');
+    });
+  });
+  closeBtn.addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
 })();
 </script>
 
