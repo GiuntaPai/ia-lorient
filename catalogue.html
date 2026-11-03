@@ -134,6 +134,7 @@
         .gallery .g-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--fern); font-weight: 600; margin-bottom: 0.6rem; }
         .gallery .g-grid { display: grid; gap: 0.8rem; grid-template-columns: minmax(0, 1fr); }
         .gallery.multi .g-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .gallery.multi figure:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
         .gallery figure { margin: 0; }
         .gallery button { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); cursor: zoom-in; }
         .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.3s; }
@@ -464,7 +465,7 @@
             <div class="gallery">
                 <p class="g-label">à quoi ça ressemble</p>
                 <div class="g-grid">
-                    <figure><button type="button" data-full="galerie/02_crm_boutons.webp"><img src="galerie/02_crm_boutons_m.webp" alt="Fiche client d'un CRM avec quatre boutons d'action" width="960" height="600" loading="lazy"></button><figcaption>Une fiche client et ses quatre actions, un clic chacune (exemple fictif)</figcaption></figure>
+                    <figure><button type="button" data-full="galerie/02_crm_boutons.webp"><img src="galerie/02_crm_boutons_m.webp" alt="Fiche d'un contact dans GoHighLevel avec le bouton Outcome ouvert sur la liste des statuts" width="960" height="600" loading="lazy"></button><figcaption>Le bouton « Outcome » : un clic change le statut et fait avancer l'opportunité dans le pipeline (exemple fictif)</figcaption></figure>
                 </div>
             </div>
         </div>
@@ -496,12 +497,6 @@
                 </table>
                 <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.1rem;">Mise en place dans HubSpot, y compris sa version gratuite. L'abonnement éventuel à HubSpot reste chez l'éditeur, pas chez moi.</p>
                 <a class="btn js-contact" data-product="Mise en place HubSpot : le CRM du matin" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Mise%20en%20place%20HubSpot&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMon%20CRM%20actuel%20%3A%20%0D%0ACe%20que%20je%20perds%20de%20vue%20aujourd%27hui%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Ce produit m'intéresse</a>
-            </div>
-            <div class="gallery">
-                <p class="g-label">à quoi ça ressemble</p>
-                <div class="g-grid">
-                    <figure><button type="button" data-full="galerie/03_crm_tableau_matin.webp"><img src="galerie/03_crm_tableau_matin_m.webp" alt="Tableau du matin d'un CRM : relances du jour, réponses à traiter, opportunités qui dorment" width="960" height="600" loading="lazy"></button><figcaption>Le tableau du matin : qui relancer, quoi traiter, ce qui dort (exemple fictif)</figcaption></figure>
-                </div>
             </div>
         </div>
     </div>
@@ -567,10 +562,12 @@
                 <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.1rem;">Tout commence par une conversation&nbsp;: nombre de boutiques, langues, volume de produits, puis le prix est fixé avant de commencer. L'abonnement Shopify et les frais d'IA restent à votre nom.</p>
                 <a class="btn js-contact" data-product="Boutique e-commerce générée" href="mailto:paulgiunta@ia-lorient.fr?subject=Produit%20%3A%20Boutique%20e-commerce%20g%C3%A9n%C3%A9r%C3%A9e&amp;body=Bonjour%20Paul%2C%0D%0A%0D%0AMa%20boutique%20ou%20mon%20projet%20%3A%20%0D%0ANombre%20de%20boutiques%20et%20de%20produits%20%3A%20%0D%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20">Parlons-en</a>
             </div>
-            <div class="gallery">
+            <div class="gallery multi">
                 <p class="g-label">à quoi ça ressemble</p>
                 <div class="g-grid">
-                    <figure><button type="button" data-full="galerie/05a_boutique_avant_apres.webp"><img src="galerie/05a_boutique_avant_apres_m.webp" alt="Fiche produit d'un fournisseur, puis la fiche produit générée par le moteur" width="960" height="600" loading="lazy"></button><figcaption>La fiche du fournisseur, et la fiche que le moteur en tire (exemple fictif)</figcaption></figure>
+                    <figure><button type="button" data-full="galerie/05b_boutique_accueil.webp"><img src="galerie/05b_boutique_accueil_m.webp" alt="Page d'accueil d'une boutique en ligne montée avec le moteur, nom de la marque masqué" width="960" height="600" loading="lazy"></button><figcaption>Une boutique montée avec le moteur, en ligne aujourd'hui (nom masqué)</figcaption></figure>
+                    <figure><button type="button" data-full="galerie/05a_boutique_produit.webp"><img src="galerie/05a_boutique_produit_m.webp" alt="Fiche produit d'un sac avec une photo par couleur et des photos portées" width="960" height="600" loading="lazy"></button><figcaption>Une fiche produit : une photo par couleur, et des photos portées</figcaption></figure>
+                    <figure><button type="button" data-full="galerie/05c_boutique_mobile.webp"><img src="galerie/05c_boutique_mobile_m.webp" alt="La même boutique sur téléphone, accueil et fiche produit" width="960" height="600" loading="lazy"></button><figcaption>La même boutique sur téléphone</figcaption></figure>
                 </div>
             </div>
         </div>
