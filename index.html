@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatisation et IA pour TPE et PME à Lorient, Bretagne | Paul Giunta</title>
-    <meta name="description" content="J'automatise les tâches répétitives des TPE et PME de Lorient, du Morbihan et de Bretagne : devis, relances, reporting, connexion entre outils. Des réalisations qui tournent déjà chez de vrais clients. Sur devis.">
+    <title>Formation IA et automatisation à Lorient pour TPE et PME | Paul Giunta</title>
+    <meta name="description" content="Une journée dans vos locaux à Lorient : j'installe l'IA sur votre poste, on règle un de vos problèmes, vous savez vous en servir le soir. 350 €. Automatisation pour TPE et PME du Morbihan et de Bretagne, sur devis.">
     <link rel="canonical" href="https://ia-lorient.fr">
-    <meta property="og:title" content="Paul Giunta · Automatisation et IA pour les TPE et PME de Lorient et de Bretagne">
-    <meta property="og:description" content="Je supprime les tâches répétitives des TPE et PME de Lorient, du Morbihan et de Bretagne. Sans changer vos outils. Sur devis.">
+    <meta property="og:title" content="La journée IA chez vous, à Lorient · Paul Giunta">
+    <meta property="og:description" content="En une journée, l'IA est installée dans votre entreprise et règle un de vos problèmes. 350 €, premier mois de Claude offert. TPE et PME de Lorient, du Morbihan et de Bretagne.">
     <meta property="og:url" content="https://ia-lorient.fr">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
@@ -36,7 +36,16 @@
             {"@type": "AdministrativeArea", "name": "Morbihan"},
             {"@type": "AdministrativeArea", "name": "Bretagne"}
         ],
-        "serviceType": ["Automatisation", "Intelligence Artificielle", "CRM", "Integration API"],
+        "serviceType": ["Automatisation", "Intelligence Artificielle", "Formation à l'intelligence artificielle", "Installation d'un assistant IA en entreprise", "CRM", "Integration API"],
+        "priceRange": "350 € la journée IA, automatisations sur devis",
+        "makesOffer": [{
+            "@type": "Offer",
+            "name": "La journée IA chez vous",
+            "description": "Une journée dans les locaux de l'entreprise : installation de Claude sur le poste, prise en main sur les vrais cas du client, résolution d'un problème choisi avant la journée. Premier mois de Claude offert, 15 jours de questions ensuite.",
+            "price": "350",
+            "priceCurrency": "EUR",
+            "url": "https://ia-lorient.fr/#journee"
+        }],
         "knowsLanguage": ["fr", "en"],
         "sameAs": ["https://www.upwork.com/freelancers/~013a14ee137dd608b3"]
     }
@@ -165,6 +174,63 @@
         .offres span { color: var(--doux); font-size: 16px; }
 
         /* Méthode */
+
+        /* LA JOURNEE IA CHEZ VOUS (esquisse du 10/11/2026) */
+        .journee { padding: 90px 0 100px; background: var(--noir); border-bottom: 1px solid var(--ligne); }
+        .journee .tete { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: start; }
+        .bande-photo h2 { font-size: clamp(34px, 3.6vw, 54px); }
+        .journee .tete h3 { margin: 0 0 16px; }
+        .journee .pourquoi { color: var(--doux); font-size: 20px; max-width: 640px; }
+        .journee .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 72px; }
+        .journee .photos img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--ligne); }
+        .journee .photos figcaption { font-size: 14px; color: var(--doux); margin-top: 10px; }
+        .journee .pourquoi strong { color: var(--texte); font-weight: 500; }
+        .journee .prix { background: var(--surface); border: 1px solid var(--ligne); border-radius: 16px; padding: 32px; }
+        .journee .montant { font-size: 60px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+        .journee .montant small { display: block; font-size: 16px; font-weight: 500; color: var(--doux); letter-spacing: 0; margin-top: 10px; }
+        .journee .prix ul { list-style: none; margin: 24px 0 26px; }
+        .journee .prix li { color: var(--doux); font-size: 16px; padding: 10px 0; border-top: 1px solid var(--ligne); }
+        .journee .prix li b { color: var(--texte); font-weight: 500; }
+        .journee .prix .btn { width: 100%; }
+        .journee .prix .note { font-size: 13px; color: var(--doux); margin-top: 14px; text-align: center; }
+        .journee h3 { font-size: 24px; margin: 72px 0 0; }
+        .journee .etapes { grid-template-columns: repeat(5, 1fr); margin-top: 28px; }
+        .journee .etapes { gap: 0; border-top: 1px solid var(--ligne); }
+        .journee .etapes li { position: relative; border-top: 0; padding: 30px 22px 0 0; }
+        .journee .etapes li::before { content: ""; position: absolute; top: -6px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--sable); margin: 0; }
+        .journee .etapes svg { width: 34px; height: 34px; stroke: var(--sable); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; margin-bottom: 14px; }
+        .journee .etapes .heure { display: block; font-family: 'IBM Plex Mono', monospace; color: var(--sable); font-size: 14px; margin-bottom: 8px; }
+        .journee .visuel { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; margin-top: 72px; }
+        .journee .ecran { background: var(--marine); border: 1px solid var(--ligne); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+        .journee .ecran .barre { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--ligne); background: var(--surface); font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--doux); }
+        .journee .ecran .barre i { width: 10px; height: 10px; border-radius: 50%; background: var(--ligne); }
+        .journee .ecran .barre em { font-style: normal; margin-left: 8px; }
+        .journee .ecran .corps { padding: 22px; }
+        .journee .bulle { background: var(--surface); border-radius: 14px 14px 4px 14px; padding: 14px 16px; margin: 0 0 18px 18%; font-size: 15px; color: var(--texte); }
+        .journee .reponse { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .journee .tuile { border: 1px solid var(--ligne); border-radius: 12px; padding: 14px; }
+        .journee .tuile b { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; margin-bottom: 12px; }
+        .journee .tuile b::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--sable); }
+        .journee .tuile u { display: block; height: 7px; border-radius: 4px; background: var(--ligne); margin-bottom: 8px; text-decoration: none; }
+        .journee .tuile u:nth-child(3) { width: 82%; } .journee .tuile u:nth-child(4) { width: 64%; } .journee .tuile u:nth-child(5) { width: 74%; }
+        .journee .legende { font-size: 13px; color: var(--doux); margin-top: 14px; }
+        .journee .exemples h3 { margin: 0 0 18px; }
+        .journee .exemples ul { list-style: none; }
+        .journee .exemples li { display: flex; gap: 14px; align-items: flex-start; padding: 13px 0; border-top: 1px solid var(--ligne); color: var(--doux); font-size: 17px; }
+        .journee .exemples li svg { flex: none; width: 22px; height: 22px; margin-top: 2px; stroke: var(--sable); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        @media (max-width: 900px) {
+            .journee { padding: 72px 0; }
+            .journee .tete { grid-template-columns: 1fr; gap: 34px; }
+            .journee .montant { font-size: 48px; }
+            .journee .etapes { grid-template-columns: 1fr; border-top: 0; border-left: 1px solid var(--ligne); }
+            .journee .etapes li { padding: 0 0 30px 24px; }
+            .journee .etapes li::before { top: 4px; left: -6px; }
+            .journee .visuel { grid-template-columns: 1fr; gap: 36px; margin-top: 48px; }
+            .journee .photos { grid-template-columns: 1fr; margin-top: 48px; }
+            .journee .bulle { margin-left: 8%; }
+            .journee h3 { margin-top: 48px; }
+        }
+
         .methode { padding: 110px 0; }
         .etapes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 44px; counter-reset: e; }
         .etapes li { list-style: none; border-top: 1px solid var(--ligne); padding-top: 22px; }
@@ -252,6 +318,7 @@
         <a class="marque" href="#qui">Paul Giunta<span>IA Lorient</span></a>
         <nav>
             <a href="#qui">Qui je suis</a>
+            <a href="#journee">La journée IA</a>
             <a href="#realisations">Réalisations</a>
             <a href="#methode">Méthode</a>
             <a href="#questions">Questions</a>
@@ -287,6 +354,75 @@
         </div>
     </div>
 </section>
+
+<section class="bande-photo" id="journee" style="--photo: url('images/journee-ia.webp')" aria-label="La journée IA chez vous">
+    <div class="wrap">
+        <div class="txt">
+            <p class="kicker">Nouveau · installation et formation · 1 journée</p>
+            <h2>En une journée, l'IA est installée chez vous et règle un de vos problèmes.</h2>
+            <p>Je viens dans vos locaux, à Lorient et autour. Le matin, j'installe l'outil sur votre poste et je le règle sur votre activité. L'après-midi, on résout ensemble un vrai problème de votre quotidien. Le soir, vous savez vous en servir seul.</p>
+            <span class="devis">350 € la journée, prix fixe</span><br>
+            <a class="btn js-contact" data-product="La journée IA chez vous" href="mailto:paulgiunta@ia-lorient.fr?subject=La%20journ%C3%A9e%20IA%20chez%20vous">Réserver ma journée</a>
+        </div>
+    </div>
+</section>
+<section class="journee">
+    <div class="wrap">
+        <div class="tete">
+            <div>
+                <h3>Pourquoi maintenant</h3>
+                <p class="pourquoi"><strong>Vos clients, vos fournisseurs et vos concurrents s'y mettent.</strong> Une entreprise qui sait se servir de l'IA répond plus vite, écrit mieux et passe moins de temps sur l'administratif. Celle qui attend prend un peu plus de retard chaque mois. Une journée suffit pour s'y mettre, sur vos vrais dossiers.</p>
+            </div>
+            <aside class="prix" aria-label="Prix de la journée IA">
+                <p class="montant">350 €<small>la journée, prix fixe</small></p>
+                <ul>
+                    <li><b>Chez vous</b>, sur votre poste, à Lorient et autour</li>
+                    <li><b>Seul ou en équipe</b>, jusqu'à 4 personnes</li>
+                    <li><b>Premier mois de Claude offert</b>, déduit de votre facture</li>
+                    <li><b>15 jours de questions</b> après la journée</li>
+                </ul>
+                <a class="btn js-contact" data-product="La journée IA chez vous" href="mailto:paulgiunta@ia-lorient.fr?subject=La%20journ%C3%A9e%20IA%20chez%20vous">Réserver ma journée</a>
+                <p class="note">TVA non applicable, art. 293 B du CGI</p>
+            </aside>
+        </div>
+        <div class="visuel">
+            <figure class="ecran" aria-label="Exemple : une demande de devis traitée avec Claude">
+                <div class="barre"><i></i><i></i><i></i><em>Claude · réglé sur votre activité</em></div>
+                <div class="corps">
+                    <p class="bulle">Voici la demande de ce client et mes tarifs. Prépare le devis et le mail qui l'accompagne.</p>
+                    <div class="reponse">
+                        <div class="tuile"><b>Devis prêt à relire</b><u></u><u></u><u></u><u></u></div>
+                        <div class="tuile"><b>Mail d'accompagnement</b><u></u><u></u><u></u><u></u></div>
+                    </div>
+                    <p class="legende">Illustration : un des problèmes qu'on peut régler ce jour-là, la réponse aux demandes de devis.</p>
+                </div>
+            </figure>
+            <div class="exemples">
+                <h3>Ce qu'on peut régler ce jour-là</h3>
+                <ul>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Répondre aux demandes de devis sans y passer la soirée</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Écrire les mails, les relances et les réponses aux avis</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Résumer un contrat, un appel d'offres, un courrier</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Préparer les publications et les fiches de vos produits</li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Mettre de l'ordre dans un tableau de chiffres</li>
+                </ul>
+            </div>
+        </div>
+        <div class="photos">
+            <figure><img src="images/journee-atelier.webp" alt="Un menuisier à son établi, devant son ordinateur portable" width="1200" height="800" loading="lazy"><figcaption>Dans votre atelier, votre boutique ou votre bureau : on travaille sur votre poste.</figcaption></figure>
+            <figure><img src="images/journee-equipe.webp" alt="Trois collègues d'une petite entreprise autour d'un ordinateur portable" width="1200" height="800" loading="lazy"><figcaption>Seul ou avec votre équipe, jusqu'à 4 personnes.</figcaption></figure>
+        </div>
+        <h3>Le déroulé de votre journée</h3>
+        <ol class="etapes">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span class="heure">Avant</span><b>On choisit votre problème</b><span>Un échange gratuit. Vous me dites ce qui vous prend le plus de temps : devis, mails, plannings, réponses aux clients. On en retient un, celui qu'on réglera le jour J.</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M12 7v5M9.5 10l2.5 2.5 2.5-2.5"/></svg><span class="heure">9 h</span><b>Installation</b><span>J'installe Claude sur votre poste, sur un compte à votre nom. Je le règle sur votre activité : vos documents, votre façon d'écrire, vos tarifs.</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span class="heure">11 h</span><b>Prise en main</b><span>Vous apprenez à lui demander ce que vous voulez, sur vos vrais cas, pas sur des exemples d'école.</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 00-5.2 5.2L4 17l3 3 5.3-5.3a4 4 0 005.2-5.2L15 12l-3-3z"/></svg><span class="heure">14 h</span><b>Votre problème</b><span>On construit ensemble la solution du problème choisi, et vous la faites tourner vous-même devant moi.</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h6l2 2h8v10H4z"/><path d="M9.5 14l2 2 3.5-4"/></svg><span class="heure">17 h</span><b>Ce que vous gardez</b><span>L'outil installé et réglé, la solution en service, une fiche d'une page pour refaire les gestes, et mes réponses à vos questions pendant 15 jours.</span></li>
+        </ol>
+    </div>
+</section>
+
 
 <section class="bio">
     <div class="wrap">
@@ -481,7 +617,10 @@
     <div class="wrap">
         <p class="kicker">Questions directes</p>
         <h2>Ce que vous vous demandez sûrement</h2>
-        <details><summary>Combien ça coûte ?</summary><p>Le premier échange est gratuit et sans engagement. Ensuite, chaque projet a un devis fixe, établi avant de commencer. Vous savez ce que vous payez avant que je travaille, pas après.</p></details>
+        <details><summary>Je n'y connais rien en informatique, la journée IA est-elle pour moi ?</summary><p>Oui, elle est faite pour ça. On part de votre métier et de vos mots, pas du jargon. Si vous savez écrire un mail, vous saurez vous servir de l'outil le soir même.</p></details>
+        <details><summary>Pourquoi Claude plutôt que ChatGPT ?</summary><p>C'est l'outil que j'utilise chaque jour chez mes clients : il écrit bien en français et il travaille sur vos propres documents. Si vous avez déjà ChatGPT ou Copilot, on fait la journée avec, la méthode est la même.</p></details>
+        <details><summary>Que se passe-t-il après la journée IA ?</summary><p>Vous gardez l'outil installé, la solution en service et une fiche d'une page. Pendant 15 jours, je réponds à vos questions. L'abonnement à Claude est à votre nom, une vingtaine d'euros par mois, sans engagement : le premier mois est déduit de votre facture. Pour aller plus loin (automatiser, relier vos logiciels), je vous fais un devis, sans obligation.</p></details>
+        <details><summary>Combien ça coûte ?</summary><p>La journée IA chez vous est à prix fixe : 350 €. Pour le reste, le premier échange est gratuit et sans engagement. Ensuite, chaque projet a un devis fixe, établi avant de commencer. Vous savez ce que vous payez avant que je travaille, pas après.</p></details>
         <details><summary>Est-ce que je vais dépendre de vous ensuite ?</summary><p>Non. Ce que j'installe vous appartient et tourne sur vos comptes, à votre nom. Je documente ce que je livre, je vous forme dessus, et si on arrête de travailler ensemble, tout continue de fonctionner.</p></details>
         <details><summary>C'est vraiment sans abonnement ?</summary><p>Oui. Vous me payez une fois, pour le travail. Il peut rester des coûts d'hébergement à votre nom selon votre cas (souvent zéro ou quelques euros par mois, chez l'hébergeur, pas chez moi). Je vous dis lesquels avant de commencer, noir sur blanc.</p></details>
         <details><summary>Et si ça casse un jour ?</summary><p>Les corrections de ce que j'ai livré sont incluses : si quelque chose ne marche pas comme convenu, je le répare, sans facturer. Les évolutions importantes font l'objet d'un devis, annoncé avant, jamais après.</p></details>
@@ -549,8 +688,11 @@
   function openModal(product, mailto) {
     lastFocus = document.activeElement;
     if (product) {
-      title.textContent = 'Devis : ' + product;
-      intro.textContent = 'Dites-moi votre besoin en deux lignes, par mail ou par téléphone. Je réponds sous 24 h ouvrées, et c\'est moi directement.';
+      var journee = product.indexOf('journée IA') !== -1;
+      title.textContent = (journee ? 'Réserver : ' : 'Devis : ') + product;
+      intro.textContent = journee
+        ? 'Dites-moi votre activité et ce qui vous prend le plus de temps, par mail ou par téléphone. Je réponds sous 24 h ouvrées pour fixer la date.'
+        : 'Dites-moi votre besoin en deux lignes, par mail ou par téléphone. Je réponds sous 24 h ouvrées, et c\'est moi directement.';
     } else {
       title.textContent = 'Vous voulez me contacter';
       intro.textContent = 'Écrivez-moi ou appelez-moi : je réponds sous 24 h ouvrées. C\'est moi qui réponds, pas un standard.';
